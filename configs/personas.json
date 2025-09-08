@@ -1,0 +1,11 @@
+{
+  "commentators": [
+    { "id": "p1", "name": "Echo", "style": "play_by_play" },
+    { "id": "p2", "name": "Vision", "style": "analyst" },
+    { "id": "p3", "name": "Wildcard", "style": "meme" }
+  ],
+  "narratives": {
+    "rivalry": ["classic rival", "heated rematch"],
+    "comeback": ["against the odds", "never give up"]
+  }
+}

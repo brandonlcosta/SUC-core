@@ -1,0 +1,18 @@
+[
+  {
+    "event_id": "e1",
+    "event_type": "capture",
+    "athlete_id": "athlete123",
+    "crew": "SUC",
+    "timestamp": 1694000000000,
+    "metadata": { "turf": "K2" }
+  },
+  {
+    "event_id": "e2",
+    "event_type": "beam_flip",
+    "athlete_id": "athlete456",
+    "crew": "Rivals",
+    "timestamp": 1694000100000,
+    "metadata": { "turf": "K3" }
+  }
+]

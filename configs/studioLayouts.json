@@ -1,0 +1,12 @@
+{
+  "layouts": [
+    {
+      "id": "hud_default",
+      "widgets": ["scoreboard", "vibe_meter", "rivalry_strip"]
+    },
+    {
+      "id": "broadcast_multi",
+      "feeds": ["raw", "analyst", "meme", "sponsor", "chaos"]
+    }
+  ]
+}

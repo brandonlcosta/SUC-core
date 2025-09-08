@@ -1,0 +1,14 @@
+{
+  "modes": {
+    "shrinking_circle": {
+      "enabled": true,
+      "elimination_threshold": 2,
+      "tick_interval": 5000
+    }
+  },
+  "scoring": {
+    "capture": 10,
+    "beam_flip": 20,
+    "circle_shrink": 30
+  }
+}

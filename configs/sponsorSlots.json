@@ -1,0 +1,7 @@
+{
+  "slots": [
+    { "id": "s1", "brand": "Nike", "active": true },
+    { "id": "s2", "brand": "Adidas", "active": true },
+    { "id": "s3", "brand": "Monster Energy", "active": false }
+  ]
+}

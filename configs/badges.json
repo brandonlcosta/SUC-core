@@ -1,0 +1,7 @@
+{
+  "achievements": [
+    { "id": "b1", "name": "Hot Streak", "criteria": "3 captures in a row" },
+    { "id": "b2", "name": "Clutch Flip", "criteria": "Flip beam in last 10s" },
+    { "id": "b3", "name": "Survivor", "criteria": "Outlast shrinking circle" }
+  ]
+}

@@ -1,0 +1,42 @@
+name: Integrity Check
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Run tests
+        run: node tests/runAll.js
+
+      - name: Update README badge
+        shell: bash
+        run: |
+          result=$(jq -r '.integrity' outputs/logs/greenboard.json)
+          status="failing"
+          color="red"
+          if [ "$result" = "true" ]; then
+            status="passing"
+            color="brightgreen"
+          fi
+          badge="![Integrity](https://img.shields.io/badge/Integrity-$status-$color)"
+          awk -v b="$badge" 'BEGIN{done=0} {if(!done && $0 ~ /!\[Integrity\]\(/){print b; done=1} else {print}} END{if(!done) print b}' README.md > README.md.new
+          mv README.md.new README.md
+          git config user.name "ci-bot"
+          git config user.email "ci@example.com"
+          git add README.md || true
+          git commit -m "chore: update integrity badge" || true
+          git push || true
