@@ -1,48 +1,25 @@
-/**************************************************
- * Mode Engine v1.1
- * Purpose: Load active ruleset JSON + validate events
- * Includes: Shrinking Circle elimination mode
- **************************************************/
+/**
+ * modeEngine v0.1
+ * Purpose: Load a ruleset and expose templates & broadcast hints.
+ * Inputs:  { rulesetPath:string } OR { ruleset:object }
+ * Outputs: { getRuleset, getTemplates, getBroadcastHints }
+ * Notes:   Synchronous loader; throws if ruleset invalid (via validator).
+ */
+import { loadRuleset } from "../utils/rulesetValidator.js";
 
-import fs from "fs";
+export function createModeEngine(init = {}) {
+  const ruleset =
+    init.ruleset ?? loadRuleset(init.rulesetPath ?? "rulesets/backyardUltra.ruleset.json");
 
-export class ModeEngine {
-  constructor(rulesetPath) {
-    this.ruleset = JSON.parse(fs.readFileSync(rulesetPath));
-    this.eliminated = new Set();
+  function getRuleset() {
+    return ruleset;
+  }
+  function getTemplates() {
+    return ruleset.commentary_templates;
+  }
+  function getBroadcastHints() {
+    return ruleset.broadcast_hints;
   }
 
-  getRuleset() {
-    return this.ruleset;
-  }
-
-  isValidEventType(eventType) {
-    return this.ruleset.event_types.includes(eventType);
-  }
-
-  getScoringValue(eventType) {
-    return this.ruleset.scoring?.[eventType] ?? 0;
-  }
-
-  getCommentaryTemplates(role) {
-    return this.ruleset.commentary_templates?.[role] || [];
-  }
-
-  getBroadcastHints() {
-    return this.ruleset.broadcast_hints || {};
-  }
-
-  // --- Shrinking Circle Logic ---
-  applyShrinkingCircle(event) {
-    if (event.event_type === "circle_shrink") {
-      const eliminatedAthletes = event.metadata?.eliminated || [];
-      eliminatedAthletes.forEach(a => this.eliminated.add(a));
-    }
-  }
-
-  isEliminated(athleteId) {
-    return this.eliminated.has(athleteId);
-  }
+  return { getRuleset, getTemplates, getBroadcastHints };
 }
-
-export default ModeEngine;

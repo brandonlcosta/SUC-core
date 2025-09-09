@@ -1,0 +1,369 @@
+[
+  {
+    "tick": 0,
+    "events": [
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 0
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 0
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 1,
+    "events": [
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 1
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 0
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 2,
+    "events": [
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 0
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 0
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 3,
+    "events": [
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p1",
+        "details": "Underdog p1 is chasing p2 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p2",
+              "score": 2
+            },
+            {
+              "rank": 2,
+              "player": "p1",
+              "score": 1
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p2",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p2",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 4,
+    "events": [
+      {
+        "source": "Story",
+        "type": "ARC_COMEBACK",
+        "player": "p2",
+        "details": "Player p2 just set a new PR of 4",
+        "base": {
+          "source": "Meta",
+          "type": "PERSONAL_RECORD",
+          "player": "p2",
+          "score": 4,
+          "highlightPriority": "medium"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p1",
+        "details": "Underdog p1 is chasing p2 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p2",
+              "score": 4
+            },
+            {
+              "rank": 2,
+              "player": "p1",
+              "score": 1
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p2",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p2",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 5,
+    "events": [
+      {
+        "source": "Story",
+        "type": "ARC_COMEBACK",
+        "player": "p1",
+        "details": "Player p1 just set a new PR of 3",
+        "base": {
+          "source": "Meta",
+          "type": "PERSONAL_RECORD",
+          "player": "p1",
+          "score": 3,
+          "highlightPriority": "medium"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 3
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 1
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 6,
+    "events": [
+      {
+        "source": "Story",
+        "type": "ARC_COMEBACK",
+        "player": "p1",
+        "details": "Player p1 just set a new PR of 5",
+        "base": {
+          "source": "Meta",
+          "type": "PERSONAL_RECORD",
+          "player": "p1",
+          "score": 5,
+          "highlightPriority": "medium"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 5
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 1
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 7,
+    "events": [
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 4
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 2
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ]
+  }
+]

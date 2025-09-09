@@ -1,0 +1,13 @@
+{
+  "name": "strava-preset",
+  "source": "strava",
+  "transform": { "defaults": { "type": "sprint" } },
+  "mappings": {
+    "id":        { "path": "activity.id",         "fn": "string" },
+    "ts":        { "path": "activity.start_date", "fn": "dateIso" },
+    "type":      { "path": "eventType",           "fn": "string" },
+    "athleteId": { "path": "athlete.id",          "fn": "string" },
+    "score":     { "path": "metrics.watts",       "fn": "number" },
+    "payload":   { "path": "activity" }
+  }
+}

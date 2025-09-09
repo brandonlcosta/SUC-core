@@ -1,0 +1,22 @@
+{
+  "play_by_play": {
+    "voice": "crisp, time-stamped updates",
+    "style": ["concise", "factual", "clock-aware"],
+    "example": "Lap {metadata.lap} split for {athlete_id} at {metadata.split_time_sec}s."
+  },
+  "analyst": {
+    "voice": "numbers-first, trend-aware",
+    "style": ["metrics", "projection", "rank deltas"],
+    "example": "{athlete_id} has {metadata.laps_completed} laps; projected pace {metadata.projected_pace_min_per_mi}."
+  },
+  "color": {
+    "voice": "atmosphere, texture",
+    "style": ["sensory", "venue cues", "crowd"],
+    "example": "Neon SUC flags crack under a steady breeze as {athlete_id} rolls in."
+  },
+  "wildcard": {
+    "voice": "surprise and flavor",
+    "style": ["rumors", "quirks", "banter"],
+    "example": "Rumor: {athlete_id} switching shoes at lap {metadata.lap}."
+  }
+}

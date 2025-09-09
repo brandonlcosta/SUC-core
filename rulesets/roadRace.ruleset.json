@@ -1,0 +1,75 @@
+{
+  "id": "roadRace_v1",
+  "sport": "running",
+  "mode": "roadRace",
+  "version": "1.0.0",
+  "meta": {
+    "name": "Road Race",
+    "description": "Mass-start or chip-timed road race. Fastest elapsed time wins. Supports checkpoints and splits.",
+    "createdBy": "TWGM",
+    "createdAt": "2025-09-08"
+  },
+  "parameters": {
+    "distanceMiles": 26.219,
+    "allowChipStart": true,
+    "checkpoints": [
+      { "id": "cp5", "mile": 5 },
+      { "id": "cp10", "mile": 10 },
+      { "id": "cp13_1", "mile": 13.1 },
+      { "id": "cp20", "mile": 20 }
+    ],
+    "cutoffPolicy": { "enabled": true, "checkpointCutoffs": [] }
+  },
+  "fields": {
+    "athlete": ["athleteId", "bib", "displayName", "age", "gender", "country"],
+    "splits": ["checkpointId", "timestamp", "elapsedMs"],
+    "finish": ["timestamp", "elapsedMs", "status"]
+  },
+  "scoring": {
+    "units": "time",
+    "rankBy": [{ "key": "elapsedMs", "dir": "asc", "nulls": "last" }],
+    "derived": {
+      "pacePerMile": "elapsedMs / parameters.distanceMiles",
+      "checkpointOrder": "sort splits by timestamp asc"
+    },
+    "winnerCondition": "lowest_elapsed_time_with_valid_splits"
+  },
+  "overlays": {
+    "hud": {
+      "theme": "suc_esports",
+      "leaderboard": {
+        "columns": [
+          { "key": "rank", "label": "#" },
+          { "key": "displayName", "label": "Athlete" },
+          { "key": "elapsedMs", "label": "Time", "format": "HH:mm:ss" },
+          { "key": "pacePerMile", "label": "Pace", "format": "mm:ss/mi" }
+        ],
+        "rows": 20
+      },
+      "ticker": {
+        "slots": [
+          { "id": "raceClock", "bind": "now - event.startAt | HH:mm:ss" },
+          { "id": "sponsor", "bind": "sponsorRotator.currentAsset" }
+        ]
+      }
+    }
+  },
+  "commentary": {
+    "tone": "broadcast_informative",
+    "templates": {
+      "start": ["And we’re off! {fieldSize} athletes take on {distanceMiles} miles."],
+      "checkpoint": ["{displayName} through {checkpointId} at {splitTime} — on {pacePerMile}/mi pace."],
+      "finish": ["{displayName} breaks the tape in {elapsed} — brilliant run!"],
+      "winner": ["Winner: {displayName} in {elapsed}."]
+    },
+    "placeholders": {
+      "fieldSize": "event.fieldSize",
+      "distanceMiles": "parameters.distanceMiles",
+      "displayName": "athlete.displayName",
+      "checkpointId": "split.checkpointId",
+      "splitTime": "split.elapsedMs | mm:ss",
+      "pacePerMile": "athlete.pacePerMile | mm:ss",
+      "elapsed": "athlete.elapsedMs | HH:mm:ss"
+    }
+  }
+}

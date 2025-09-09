@@ -1,0 +1,213 @@
+[
+  {
+    "tick": 0,
+    "events": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      }
+    ]
+  },
+  {
+    "tick": 1,
+    "events": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 2,
+    "events": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      }
+    ]
+  },
+  {
+    "tick": 3,
+    "events": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p1 is chasing the leader!",
+          "analyst": "p1 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p1!",
+          "wildcard": "Underdog story alert! p1 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p2 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p2 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p2!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 4,
+    "events": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Player p2 sets a new PR: 4!",
+          "analyst": "That’s a sign of steady progress — p2 could turn this around.",
+          "color": "🙌 Huge comeback moment for p2!",
+          "wildcard": "Someone call the scriptwriters — p2 just flipped the story!"
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p1 is chasing the leader!",
+          "analyst": "p1 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p1!",
+          "wildcard": "Underdog story alert! p1 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p2 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p2 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p2!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 5,
+    "events": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Player p1 sets a new PR: 3!",
+          "analyst": "That’s a sign of steady progress — p1 could turn this around.",
+          "color": "🙌 Huge comeback moment for p1!",
+          "wildcard": "Someone call the scriptwriters — p1 just flipped the story!"
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 6,
+    "events": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Player p1 sets a new PR: 5!",
+          "analyst": "That’s a sign of steady progress — p1 could turn this around.",
+          "color": "🙌 Huge comeback moment for p1!",
+          "wildcard": "Someone call the scriptwriters — p1 just flipped the story!"
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ]
+  },
+  {
+    "tick": 7,
+    "events": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ]
+  }
+]

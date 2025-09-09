@@ -1,0 +1,4 @@
+[
+  { "tagReadId": "r1", "readTs": 1736380100000, "eventType": "checkpoint", "bib": "B101", "qualityScore": 0.98, "raw": { "antenna": 2 } },
+  { "tagReadId": "r2", "readTs": 1736380160000, "eventType": "checkpoint", "bib": "B102", "qualityScore": 0.95, "raw": { "antenna": 3 } }
+]

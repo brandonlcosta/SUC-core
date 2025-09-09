@@ -1,0 +1,255 @@
+[
+  {
+    "tick": 0,
+    "events": [
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 0
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 0
+          }
+        ],
+        "highlightPriority": "low"
+      }
+    ]
+  },
+  {
+    "tick": 1,
+    "events": [
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 1
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 0
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ]
+  },
+  {
+    "tick": 2,
+    "events": [
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 0
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 0
+          }
+        ],
+        "highlightPriority": "low"
+      }
+    ]
+  },
+  {
+    "tick": 3,
+    "events": [
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p2",
+            "score": 2
+          },
+          {
+            "rank": 2,
+            "player": "p1",
+            "score": 1
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p2",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ]
+  },
+  {
+    "tick": 4,
+    "events": [
+      {
+        "source": "Meta",
+        "type": "PERSONAL_RECORD",
+        "player": "p2",
+        "score": 4,
+        "highlightPriority": "medium"
+      },
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p2",
+            "score": 4
+          },
+          {
+            "rank": 2,
+            "player": "p1",
+            "score": 1
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p2",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ]
+  },
+  {
+    "tick": 5,
+    "events": [
+      {
+        "source": "Meta",
+        "type": "PERSONAL_RECORD",
+        "player": "p1",
+        "score": 3,
+        "highlightPriority": "medium"
+      },
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 3
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 1
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ]
+  },
+  {
+    "tick": 6,
+    "events": [
+      {
+        "source": "Meta",
+        "type": "PERSONAL_RECORD",
+        "player": "p1",
+        "score": 5,
+        "highlightPriority": "medium"
+      },
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 5
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 1
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ]
+  },
+  {
+    "tick": 7,
+    "events": [
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 4
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 2
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ]
+  }
+]

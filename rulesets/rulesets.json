@@ -1,0 +1,16 @@
+{
+  "rulesets": [
+    {
+      "id": "arcRules",
+      "description": "Rules governing story arcs",
+      "maxEventsPerArc": 5,
+      "allowBranching": true
+    },
+    {
+      "id": "persistenceRules",
+      "description": "Rules for persistent state and streaks",
+      "maxStreak": 10,
+      "resetOnFail": true
+    }
+  ]
+}

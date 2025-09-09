@@ -1,18 +1,6 @@
 [
-  {
-    "event_id": "e1",
-    "event_type": "capture",
-    "athlete_id": "athlete123",
-    "crew": "SUC",
-    "timestamp": 1694000000000,
-    "metadata": { "turf": "K2" }
-  },
-  {
-    "event_id": "e2",
-    "event_type": "beam_flip",
-    "athlete_id": "athlete456",
-    "crew": "Rivals",
-    "timestamp": 1694000100000,
-    "metadata": { "turf": "K3" }
-  }
+  { "event_id":"e1","event_type":"capture","athlete_id":"A","crew":"SUC","turf_id":"K2","timestamp": 1700000000000 },
+  { "event_id":"e2","event_type":"capture","athlete_id":"B","crew":"SUC","turf_id":"K2","timestamp": 1700000600000 },
+  { "event_id":"e3","event_type":"capture","athlete_id":"A","crew":"SUC","turf_id":"K2","timestamp": 1700001200000 },
+  { "event_id":"e4","event_type":"capture","athlete_id":"A","crew":"SUC","turf_id":"K2","timestamp": 1700001800000 }
 ]

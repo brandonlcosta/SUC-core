@@ -1,0 +1,19 @@
+{
+  "logging": {
+    "paths": {
+      "active": "./logs/active",
+      "archive": "./logs/archive"
+    },
+    "rotation": {
+      "maxFileSizeBytes": 10240,
+      "retentionSessions": 10
+    },
+    "storage": {
+      "driver": "fs",
+      "s3": {
+        "bucket": "example-logs-bucket",
+        "region": "us-east-1"
+      }
+    }
+  }
+}

@@ -1,25 +1,32 @@
-/**************************************************
- * Schema Validator (Stub v2)
- * Purpose: Provide placeholder validation until
- * full JSON schema validation is wired in
- **************************************************/
+// utils/schemaValidator.js
+// Ajv2020 + JSONC-tolerant loader.
 
-// Used by signalEngine.js
-export function validateSignal(signal) {
-  // For now, always true
-  return true;
+import Ajv2020 from "ajv/dist/2020.js";
+import addFormats from "ajv-formats";
+import fs from "fs";
+
+const ajv = new Ajv2020({ allErrors: true, strict: false });
+addFormats(ajv);
+
+function parseJSONC(text) {
+  let s = text.replace(/^\uFEFF/, "");
+  s = s.replace(/^\s*\/\/.*$/gm, "");
+  s = s.replace(/\/\*[\s\S]*?\*\//g, "");
+  return JSON.parse(s);
 }
 
-// Used by broadcastEngine.js
-export function validateBroadcast(item) {
-  // For now, always true
-  return true;
+let validateEventFn = null;
+
+export function validateEvent(event, schemaPath = "schemas/event.schema.json") {
+  if (!validateEventFn) {
+    const raw = fs.readFileSync(schemaPath, "utf8");
+    const schema = parseJSONC(raw);
+    validateEventFn = ajv.compile(schema);
+  }
+  return validateEventFn(event);
 }
 
-// Future extension: modeEngine / commentaryEngine schemas
-export function validateEvent(event) {
-  // For now, always true
-  return true;
-}
+export function validateSignal(_) { return true; }
+export function validateBroadcast(_) { return true; }
 
-export default { validateSignal, validateBroadcast, validateEvent };
+export default { validateEvent, validateSignal, validateBroadcast };

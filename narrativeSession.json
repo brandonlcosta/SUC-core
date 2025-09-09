@@ -1,0 +1,1041 @@
+[
+  {
+    "tick": 0,
+    "metaEvents": [
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 0
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 0
+          }
+        ],
+        "highlightPriority": "low"
+      }
+    ],
+    "storyEvents": [
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 0
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 0
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      }
+    ],
+    "commentaryEvents": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      }
+    ],
+    "broadcastEvents": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Underdog p2 is chasing the leader!",
+        "recap": [
+          "p2 is in striking distance if momentum shifts."
+        ],
+        "cards": [
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show."
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 1,
+    "metaEvents": [
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 1
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 0
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ],
+    "storyEvents": [
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 1
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 0
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ],
+    "commentaryEvents": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ],
+    "broadcastEvents": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Underdog p2 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "p2 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 2,
+    "metaEvents": [
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 0
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 0
+          }
+        ],
+        "highlightPriority": "low"
+      }
+    ],
+    "storyEvents": [
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 0
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 0
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      }
+    ],
+    "commentaryEvents": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      }
+    ],
+    "broadcastEvents": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Underdog p2 is chasing the leader!",
+        "recap": [
+          "p2 is in striking distance if momentum shifts."
+        ],
+        "cards": [
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show."
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 3,
+    "metaEvents": [
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p2",
+            "score": 2
+          },
+          {
+            "rank": 2,
+            "player": "p1",
+            "score": 1
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p2",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ],
+    "storyEvents": [
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p1",
+        "details": "Underdog p1 is chasing p2 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p2",
+              "score": 2
+            },
+            {
+              "rank": 2,
+              "player": "p1",
+              "score": 1
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p2",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p2",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ],
+    "commentaryEvents": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p1 is chasing the leader!",
+          "analyst": "p1 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p1!",
+          "wildcard": "Underdog story alert! p1 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p2 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p2 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p2!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ],
+    "broadcastEvents": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Underdog p1 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks | p2 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "p1 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records.",
+          "On current pace, p2 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Underdog p1 is chasing the leader!",
+            "subtitle": "p1 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          },
+          {
+            "title": "p2 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p2 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "💡 Never count out p1!",
+          "Underdog story alert! p1 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks",
+          "⚡️ Future’s looking bright for p2!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 4,
+    "metaEvents": [
+      {
+        "source": "Meta",
+        "type": "PERSONAL_RECORD",
+        "player": "p2",
+        "score": 4,
+        "highlightPriority": "medium"
+      },
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p2",
+            "score": 4
+          },
+          {
+            "rank": 2,
+            "player": "p1",
+            "score": 1
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p2",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ],
+    "storyEvents": [
+      {
+        "source": "Story",
+        "type": "ARC_COMEBACK",
+        "player": "p2",
+        "details": "Player p2 just set a new PR of 4",
+        "base": {
+          "source": "Meta",
+          "type": "PERSONAL_RECORD",
+          "player": "p2",
+          "score": 4,
+          "highlightPriority": "medium"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p1",
+        "details": "Underdog p1 is chasing p2 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p2",
+              "score": 4
+            },
+            {
+              "rank": 2,
+              "player": "p1",
+              "score": 1
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p2",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p2",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ],
+    "commentaryEvents": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Player p2 sets a new PR: 4!",
+          "analyst": "That’s a sign of steady progress — p2 could turn this around.",
+          "color": "🙌 Huge comeback moment for p2!",
+          "wildcard": "Someone call the scriptwriters — p2 just flipped the story!"
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p1 is chasing the leader!",
+          "analyst": "p1 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p1!",
+          "wildcard": "Underdog story alert! p1 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p2 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p2 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p2!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ],
+    "broadcastEvents": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Player p2 sets a new PR: 4! | Underdog p1 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks | p2 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "That’s a sign of steady progress — p2 could turn this around.",
+          "p1 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records.",
+          "On current pace, p2 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Player p2 sets a new PR: 4!",
+            "subtitle": "That’s a sign of steady progress — p2 could turn this around.",
+            "priority": "low"
+          },
+          {
+            "title": "Underdog p1 is chasing the leader!",
+            "subtitle": "p1 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          },
+          {
+            "title": "p2 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p2 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "🙌 Huge comeback moment for p2!",
+          "Someone call the scriptwriters — p2 just flipped the story!",
+          "💡 Never count out p1!",
+          "Underdog story alert! p1 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks",
+          "⚡️ Future’s looking bright for p2!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 5,
+    "metaEvents": [
+      {
+        "source": "Meta",
+        "type": "PERSONAL_RECORD",
+        "player": "p1",
+        "score": 3,
+        "highlightPriority": "medium"
+      },
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 3
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 1
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ],
+    "storyEvents": [
+      {
+        "source": "Story",
+        "type": "ARC_COMEBACK",
+        "player": "p1",
+        "details": "Player p1 just set a new PR of 3",
+        "base": {
+          "source": "Meta",
+          "type": "PERSONAL_RECORD",
+          "player": "p1",
+          "score": 3,
+          "highlightPriority": "medium"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 3
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 1
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ],
+    "commentaryEvents": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Player p1 sets a new PR: 3!",
+          "analyst": "That’s a sign of steady progress — p1 could turn this around.",
+          "color": "🙌 Huge comeback moment for p1!",
+          "wildcard": "Someone call the scriptwriters — p1 just flipped the story!"
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ],
+    "broadcastEvents": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Player p1 sets a new PR: 3! | Underdog p2 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "That’s a sign of steady progress — p1 could turn this around.",
+          "p2 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Player p1 sets a new PR: 3!",
+            "subtitle": "That’s a sign of steady progress — p1 could turn this around.",
+            "priority": "low"
+          },
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "🙌 Huge comeback moment for p1!",
+          "Someone call the scriptwriters — p1 just flipped the story!",
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 6,
+    "metaEvents": [
+      {
+        "source": "Meta",
+        "type": "PERSONAL_RECORD",
+        "player": "p1",
+        "score": 5,
+        "highlightPriority": "medium"
+      },
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 5
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 1
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ],
+    "storyEvents": [
+      {
+        "source": "Story",
+        "type": "ARC_COMEBACK",
+        "player": "p1",
+        "details": "Player p1 just set a new PR of 5",
+        "base": {
+          "source": "Meta",
+          "type": "PERSONAL_RECORD",
+          "player": "p1",
+          "score": 5,
+          "highlightPriority": "medium"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 5
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 1
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ],
+    "commentaryEvents": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Player p1 sets a new PR: 5!",
+          "analyst": "That’s a sign of steady progress — p1 could turn this around.",
+          "color": "🙌 Huge comeback moment for p1!",
+          "wildcard": "Someone call the scriptwriters — p1 just flipped the story!"
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ],
+    "broadcastEvents": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Player p1 sets a new PR: 5! | Underdog p2 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "That’s a sign of steady progress — p1 could turn this around.",
+          "p2 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Player p1 sets a new PR: 5!",
+            "subtitle": "That’s a sign of steady progress — p1 could turn this around.",
+            "priority": "low"
+          },
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "🙌 Huge comeback moment for p1!",
+          "Someone call the scriptwriters — p1 just flipped the story!",
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 7,
+    "metaEvents": [
+      {
+        "source": "Meta",
+        "type": "LEADERBOARD_UPDATE",
+        "leaderboard": [
+          {
+            "rank": 1,
+            "player": "p1",
+            "score": 4
+          },
+          {
+            "rank": 2,
+            "player": "p2",
+            "score": 2
+          }
+        ],
+        "highlightPriority": "low"
+      },
+      {
+        "source": "Meta",
+        "type": "PROJECTION",
+        "player": "p1",
+        "projection": "On pace to beat PR in ~3 ticks",
+        "highlightPriority": "medium"
+      }
+    ],
+    "storyEvents": [
+      {
+        "source": "Story",
+        "type": "ARC_UNDERDOG",
+        "player": "p2",
+        "details": "Underdog p2 is chasing p1 (leader)",
+        "base": {
+          "source": "Meta",
+          "type": "LEADERBOARD_UPDATE",
+          "leaderboard": [
+            {
+              "rank": 1,
+              "player": "p1",
+              "score": 4
+            },
+            {
+              "rank": 2,
+              "player": "p2",
+              "score": 2
+            }
+          ],
+          "highlightPriority": "low"
+        }
+      },
+      {
+        "source": "Story",
+        "type": "ARC_PROJECTION",
+        "player": "p1",
+        "details": "On pace to beat PR in ~3 ticks",
+        "base": {
+          "source": "Meta",
+          "type": "PROJECTION",
+          "player": "p1",
+          "projection": "On pace to beat PR in ~3 ticks",
+          "highlightPriority": "medium"
+        }
+      }
+    ],
+    "commentaryEvents": [
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "Underdog p2 is chasing the leader!",
+          "analyst": "p2 is in striking distance if momentum shifts.",
+          "color": "💡 Never count out p2!",
+          "wildcard": "Underdog story alert! p2 could steal the show."
+        }
+      },
+      {
+        "source": "Commentary",
+        "commentary": {
+          "playByPlay": "p1 projected: On pace to beat PR in ~3 ticks",
+          "analyst": "On current pace, p1 could rewrite their records.",
+          "color": "⚡️ Future’s looking bright for p1!",
+          "wildcard": "Crystal ball says: On pace to beat PR in ~3 ticks"
+        }
+      }
+    ],
+    "broadcastEvents": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Underdog p2 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "p2 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  }
+]

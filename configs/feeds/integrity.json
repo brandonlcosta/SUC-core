@@ -1,0 +1,7 @@
+{
+  "feedId": "integrity",
+  "safeMode": true,
+  "allowMemes": false,
+  "sponsorSafe": true,
+  "maxMessagesPerTick": 3
+}

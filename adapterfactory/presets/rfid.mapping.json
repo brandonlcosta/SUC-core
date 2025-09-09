@@ -1,0 +1,13 @@
+{
+  "name": "rfid-preset",
+  "source": "rfid",
+  "transform": { "defaults": { "type": "checkpoint" } },
+  "mappings": {
+    "id":        { "path": "tagReadId",    "fn": "string" },
+    "ts":        { "path": "readTs",       "fn": "dateIso" },
+    "type":      { "path": "eventType",    "fn": "string" },
+    "athleteId": { "path": "bib",          "fn": "string" },
+    "score":     { "path": "qualityScore", "fn": "number" },
+    "payload":   { "path": "raw" }
+  }
+}

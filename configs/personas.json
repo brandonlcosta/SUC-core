@@ -1,11 +1,22 @@
 {
-  "commentators": [
-    { "id": "p1", "name": "Echo", "style": "play_by_play" },
-    { "id": "p2", "name": "Vision", "style": "analyst" },
-    { "id": "p3", "name": "Wildcard", "style": "meme" }
-  ],
-  "narratives": {
-    "rivalry": ["classic rival", "heated rematch"],
-    "comeback": ["against the odds", "never give up"]
-  }
+  "personas": [
+    {
+      "id": "narrator",
+      "role": "story",
+      "tone": "neutral",
+      "phrases": ["Once upon a time...", "In the next scene...", "Suddenly..."]
+    },
+    {
+      "id": "commentator",
+      "role": "broadcast",
+      "tone": "excited",
+      "phrases": ["Unbelievable!", "What a move!", "This is insane!"]
+    },
+    {
+      "id": "chaos",
+      "role": "vibe",
+      "tone": "wild",
+      "phrases": ["Oops!", "Watch out!", "Chaos ensues!"]
+    }
+  ]
 }

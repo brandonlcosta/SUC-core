@@ -1,0 +1,282 @@
+[
+  {
+    "tick": 0,
+    "events": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Underdog p2 is chasing the leader!",
+        "recap": [
+          "p2 is in striking distance if momentum shifts."
+        ],
+        "cards": [
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show."
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 1,
+    "events": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Underdog p2 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "p2 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 2,
+    "events": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Underdog p2 is chasing the leader!",
+        "recap": [
+          "p2 is in striking distance if momentum shifts."
+        ],
+        "cards": [
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show."
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 3,
+    "events": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Underdog p1 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks | p2 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "p1 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records.",
+          "On current pace, p2 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Underdog p1 is chasing the leader!",
+            "subtitle": "p1 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          },
+          {
+            "title": "p2 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p2 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "💡 Never count out p1!",
+          "Underdog story alert! p1 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks",
+          "⚡️ Future’s looking bright for p2!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 4,
+    "events": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Player p2 sets a new PR: 4! | Underdog p1 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks | p2 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "That’s a sign of steady progress — p2 could turn this around.",
+          "p1 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records.",
+          "On current pace, p2 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Player p2 sets a new PR: 4!",
+            "subtitle": "That’s a sign of steady progress — p2 could turn this around.",
+            "priority": "low"
+          },
+          {
+            "title": "Underdog p1 is chasing the leader!",
+            "subtitle": "p1 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          },
+          {
+            "title": "p2 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p2 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "🙌 Huge comeback moment for p2!",
+          "Someone call the scriptwriters — p2 just flipped the story!",
+          "💡 Never count out p1!",
+          "Underdog story alert! p1 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks",
+          "⚡️ Future’s looking bright for p2!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 5,
+    "events": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Player p1 sets a new PR: 3! | Underdog p2 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "That’s a sign of steady progress — p1 could turn this around.",
+          "p2 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Player p1 sets a new PR: 3!",
+            "subtitle": "That’s a sign of steady progress — p1 could turn this around.",
+            "priority": "low"
+          },
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "🙌 Huge comeback moment for p1!",
+          "Someone call the scriptwriters — p1 just flipped the story!",
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 6,
+    "events": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Player p1 sets a new PR: 5! | Underdog p2 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "That’s a sign of steady progress — p1 could turn this around.",
+          "p2 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Player p1 sets a new PR: 5!",
+            "subtitle": "That’s a sign of steady progress — p1 could turn this around.",
+            "priority": "low"
+          },
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "🙌 Huge comeback moment for p1!",
+          "Someone call the scriptwriters — p1 just flipped the story!",
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 7,
+    "events": [
+      {
+        "source": "Broadcast",
+        "type": "BROADCAST_PACKAGE",
+        "ticker": "Underdog p2 is chasing the leader! | p1 projected: On pace to beat PR in ~3 ticks",
+        "recap": [
+          "p2 is in striking distance if momentum shifts.",
+          "On current pace, p1 could rewrite their records."
+        ],
+        "cards": [
+          {
+            "title": "Underdog p2 is chasing the leader!",
+            "subtitle": "p2 is in striking distance if momentum shifts.",
+            "priority": "low"
+          },
+          {
+            "title": "p1 projected: On pace to beat PR in ~3 ticks",
+            "subtitle": "On current pace, p1 could rewrite their records.",
+            "priority": "low"
+          }
+        ],
+        "social": [
+          "💡 Never count out p2!",
+          "Underdog story alert! p2 could steal the show.",
+          "⚡️ Future’s looking bright for p1!",
+          "Crystal ball says: On pace to beat PR in ~3 ticks"
+        ]
+      }
+    ]
+  }
+]

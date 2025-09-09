@@ -1,0 +1,26 @@
+{
+  "logger": {
+    "logs": []
+  },
+  "story": {
+    "arcs": []
+  },
+  "broadcast": {
+    "bundle": []
+  },
+  "meta": {
+    "streaks": {}
+  },
+  "timing": {
+    "tick": 0,
+    "elapsed": 0
+  },
+  "vibe": {
+    "mood": "neutral",
+    "intensity": 0
+  },
+  "context": {
+    "environment": "default",
+    "feeds": []
+  }
+}

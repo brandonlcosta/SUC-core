@@ -1,0 +1,1726 @@
+{
+  "history": {
+    "type": "EventHistory",
+    "events": [
+      {
+        "type": "Event",
+        "event_id": "e1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700000000000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "e2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700000600000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "e3",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700001200000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "e4",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700001800000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757394763072,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757394764072,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s3",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757394765072,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s4",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757394766072,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m1",
+        "event_type": "beam_flip",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757394823072,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m2",
+        "event_type": "defense",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757394824072,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m3",
+        "event_type": "split",
+        "athlete_id": "C",
+        "turf_id": "NA",
+        "timestamp": 1757394825072,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "e1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700000000000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "e2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700000600000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "e3",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700001200000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "e4",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700001800000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757395301453,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757395302453,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s3",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757395303453,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s4",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757395304453,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m1",
+        "event_type": "beam_flip",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757395361453,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m2",
+        "event_type": "defense",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757395362453,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m3",
+        "event_type": "split",
+        "athlete_id": "C",
+        "turf_id": "NA",
+        "timestamp": 1757395363453,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "d1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757395641696,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "d2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757395642696,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "d3",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757395643696,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700000000000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700000600000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h3",
+        "event_type": "beam_flip",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700001200000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h4",
+        "event_type": "defense",
+        "athlete_id": "B",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700001800000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h5",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700002400000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700000000000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700000600000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h3",
+        "event_type": "beam_flip",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700001200000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h4",
+        "event_type": "defense",
+        "athlete_id": "B",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700001800000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h5",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700002400000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700000000000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700000600000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h3",
+        "event_type": "beam_flip",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700001200000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h4",
+        "event_type": "defense",
+        "athlete_id": "B",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700001800000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "h5",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "crew": "SUC",
+        "turf_id": "K2",
+        "timestamp": 1700002400000,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "d1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396515551,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "d2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757396516551,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "d3",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396517551,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "d1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396517715,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "d2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757396518715,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "d3",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396519715,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396470065,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757396471065,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s3",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396472065,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s4",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396473065,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m1",
+        "event_type": "beam_flip",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396530065,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m2",
+        "event_type": "defense",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757396531065,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m3",
+        "event_type": "split",
+        "athlete_id": "C",
+        "turf_id": "NA",
+        "timestamp": 1757396532066,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s1",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396471543,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s2",
+        "event_type": "capture",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757396472543,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s3",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396473543,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "s4",
+        "event_type": "capture",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396474543,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m1",
+        "event_type": "beam_flip",
+        "athlete_id": "A",
+        "turf_id": "K2",
+        "timestamp": 1757396531543,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m2",
+        "event_type": "defense",
+        "athlete_id": "B",
+        "turf_id": "K2",
+        "timestamp": 1757396532543,
+        "__handled": true
+      },
+      {
+        "type": "Event",
+        "event_id": "m3",
+        "event_type": "split",
+        "athlete_id": "C",
+        "turf_id": "NA",
+        "timestamp": 1757396533543,
+        "__handled": true
+      }
+    ],
+    "byAthlete": {
+      "A": [
+        {
+          "type": "Event",
+          "event_id": "e1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000000000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001200000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001800000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757394763072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757394765072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757394766072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m1",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757394823072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000000000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001200000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001800000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395301453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395303453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395304453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m1",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395361453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395641696,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395643696,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000000000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h3",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001200000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h5",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700002400000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000000000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h3",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001200000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h5",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700002400000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000000000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h3",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001200000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h5",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700002400000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396515551,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396517551,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396517715,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396519715,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396470065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396472065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396473065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m1",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396530065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396471543,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396473543,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396474543,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m1",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396531543,
+          "__handled": true
+        }
+      ],
+      "B": [
+        {
+          "type": "Event",
+          "event_id": "e2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000600000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757394764072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m2",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757394824072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000600000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757395302453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m2",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757395362453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757395642696,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000600000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h4",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001800000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000600000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h4",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001800000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000600000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h4",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001800000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396516551,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396518715,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396471065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m2",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396531065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396472543,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m2",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396532543,
+          "__handled": true
+        }
+      ],
+      "C": [
+        {
+          "type": "Event",
+          "event_id": "m3",
+          "event_type": "split",
+          "athlete_id": "C",
+          "turf_id": "NA",
+          "timestamp": 1757394825072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m3",
+          "event_type": "split",
+          "athlete_id": "C",
+          "turf_id": "NA",
+          "timestamp": 1757395363453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m3",
+          "event_type": "split",
+          "athlete_id": "C",
+          "turf_id": "NA",
+          "timestamp": 1757396532066,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m3",
+          "event_type": "split",
+          "athlete_id": "C",
+          "turf_id": "NA",
+          "timestamp": 1757396533543,
+          "__handled": true
+        }
+      ]
+    },
+    "byTurf": {
+      "K2": [
+        {
+          "type": "Event",
+          "event_id": "e1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000000000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000600000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001200000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001800000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757394763072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757394764072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757394765072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757394766072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m1",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757394823072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m2",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757394824072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000000000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000600000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001200000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "e4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001800000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395301453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757395302453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395303453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395304453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m1",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395361453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m2",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757395362453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395641696,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757395642696,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757395643696,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000000000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000600000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h3",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001200000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h4",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001800000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h5",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700002400000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000000000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000600000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h3",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001200000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h4",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001800000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h5",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700002400000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000000000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700000600000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h3",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001200000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h4",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700001800000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "h5",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "crew": "SUC",
+          "turf_id": "K2",
+          "timestamp": 1700002400000,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396515551,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396516551,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396517551,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396517715,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396518715,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "d3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396519715,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396470065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396471065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396472065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396473065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m1",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396530065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m2",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396531065,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s1",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396471543,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s2",
+          "event_type": "capture",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396472543,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s3",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396473543,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "s4",
+          "event_type": "capture",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396474543,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m1",
+          "event_type": "beam_flip",
+          "athlete_id": "A",
+          "turf_id": "K2",
+          "timestamp": 1757396531543,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m2",
+          "event_type": "defense",
+          "athlete_id": "B",
+          "turf_id": "K2",
+          "timestamp": 1757396532543,
+          "__handled": true
+        }
+      ],
+      "NA": [
+        {
+          "type": "Event",
+          "event_id": "m3",
+          "event_type": "split",
+          "athlete_id": "C",
+          "turf_id": "NA",
+          "timestamp": 1757394825072,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m3",
+          "event_type": "split",
+          "athlete_id": "C",
+          "turf_id": "NA",
+          "timestamp": 1757395363453,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m3",
+          "event_type": "split",
+          "athlete_id": "C",
+          "turf_id": "NA",
+          "timestamp": 1757396532066,
+          "__handled": true
+        },
+        {
+          "type": "Event",
+          "event_id": "m3",
+          "event_type": "split",
+          "athlete_id": "C",
+          "turf_id": "NA",
+          "timestamp": 1757396533543,
+          "__handled": true
+        }
+      ]
+    }
+  },
+  "rivalries": {
+    "type": "RivalryIndex",
+    "A|B|K2": 37
+  },
+  "streaks": {
+    "type": "StreakIndex",
+    "A": {
+      "K2": 3
+    },
+    "B": {
+      "K2": 1
+    },
+    "C": {
+      "NA": 4
+    }
+  }
+}

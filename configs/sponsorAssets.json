@@ -1,0 +1,13 @@
+{
+"slots": [
+{
+"id": "top_rivalry_banner",
+"trigger": "rivalry_high",
+"ttl": { "start": "2025-09-01T00:00:00Z", "end": "2025-10-01T00:00:00Z" },
+"creatives": [
+{ "id": "brandA", "uri": "/assets/sponsors/brandA.png", "frequency_cap": 100, "cooldown_ms": 30000 },
+{ "id": "brandB", "uri": "/assets/sponsors/brandB.png", "frequency_cap": 100, "cooldown_ms": 30000 }
+]
+}
+]
+}

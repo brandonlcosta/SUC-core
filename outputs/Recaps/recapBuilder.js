@@ -1,32 +1,42 @@
 /**************************************************
- * Recap Builder
- * Purpose: Build recap bundle from deterministic logs
+ * Recap Builder v1.0
+ * Purpose: Generate recap bundles from session logs
+ * Inputs: sessionId (string)
+ * Outputs: Recap JSON with highlights + summary
  **************************************************/
 
-import { readLog } from "../../utils/logWriter.js";
+import { readLog } from "../../engines/loggerEngine.js";
 
-export function buildRecap(sessionId, minPriority = 8) {
-  const signals = readLog(sessionId);
+/**
+ * Build a recap package for a session
+ * @param {string} sessionId - session identifier
+ * @returns {object} recap JSON
+ */
+export function buildRecap(sessionId) {
+  const logs = readLog(sessionId);
 
-  const highlights = signals
-    .filter(s => (s.highlight_priority ?? s.vibe_score) >= minPriority)
-    .sort((a, b) => a.timestamp - b.timestamp)
-    .map(s => ({
-      event_id: s.event_id,
-      vibe_score: s.vibe_score,
-      arc_ref: s.arc_ref,
-      timestamp: s.timestamp,
-      line: s.line || `Event ${s.event_id} (vibe ${s.vibe_score})`
+  if (!logs || logs.length === 0) {
+    return {
+      sessionId,
+      highlights: [],
+      summary: "No logs available for this session",
+    };
+  }
+
+  // Filter by type and package into highlights
+  const highlights = logs
+    .filter((entry) => entry.type === "commentary" || entry.type === "scoring")
+    .map((entry) => ({
+      timestamp: entry.timestamp,
+      type: entry.type,
+      detail: entry.payload,
     }));
 
-  const recap = {
-    session: sessionId,
-    total_signals: signals.length,
-    highlights
+  return {
+    sessionId,
+    totalEntries: logs.length,
+    highlightCount: highlights.length,
+    highlights,
+    summary: `Session ${sessionId} recap with ${highlights.length} highlights.`,
   };
-
-  console.log("\n[Recap Builder] Recap generated:");
-  console.dir(recap, { depth: null });
-
-  return recap;
 }

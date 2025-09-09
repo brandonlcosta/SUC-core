@@ -1,0 +1,4 @@
+{
+"persist_path": "./outputs/logs/graph.jsonl",
+"arc_keys": ["rivalry:{crewA}:{crewB}:{turf}", "streak:{athlete}:{metric}"]
+}

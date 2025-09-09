@@ -1,0 +1,13 @@
+{
+  "name": "csv-preset",
+  "source": "csv",
+  "transform": { "defaults": {} },
+  "mappings": {
+    "id":        { "path": "id",        "fn": "string" },
+    "ts":        { "path": "time",      "fn": "dateIso" },
+    "type":      { "path": "kind",      "fn": "string" },
+    "athleteId": { "path": "athlete",   "fn": "string" },
+    "score":     { "path": "score",     "fn": "number" },
+    "payload":   { "path": "payload" }
+  }
+}

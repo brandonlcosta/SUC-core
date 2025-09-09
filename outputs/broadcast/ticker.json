@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 10,
+    "role": "sponsor",
+    "text": "[SPONSOR] Bug active",
+    "ts": 1757391916
+  },
+  {
+    "priority": 12,
+    "role": "play_by_play",
+    "text": "Lap 12 split for ath_1 at 3175s.",
+    "ts": 16905
+  },
+  {
+    "priority": 9,
+    "role": "analyst",
+    "text": "ath_1 projected 11 min/mi.",
+    "ts": 16905
+  },
+  {
+    "priority": 6,
+    "role": "color",
+    "text": "Crowd lifts the leaders.",
+    "ts": 1757391916
+  },
+  {
+    "priority": 6,
+    "role": "wildcard",
+    "text": "Local club out in force.",
+    "ts": 1757391916
+  }
+]

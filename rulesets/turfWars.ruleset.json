@@ -1,0 +1,77 @@
+// rulesets/turfWars.ruleset.json
+{
+  "id": "turfWars_v1",
+  "sport": "arena",
+  "mode": "turfWars",
+  "version": "1.0.0",
+  "meta": {
+    "name": "Turf Wars",
+    "description": "Team territory-control. Capture zones, earn tick points over time, first to target wins or highest score at time cap.",
+    "createdBy": "TWGM",
+    "createdAt": "2025-09-08"
+  },
+  "parameters": {
+    "teams": ["RED", "BLUE"],
+    "zones": [
+      { "id": "A", "weight": 1 },
+      { "id": "B", "weight": 1 },
+      { "id": "C", "weight": 2 }
+    ],
+    "tickMs": 1000,
+    "pointsPerWeightedZonePerTick": 1,
+    "scoreToWin": 500,
+    "timeCapSeconds": 900,
+    "overtime": { "enabled": true, "condition": "scores_tied_at_timecap" }
+  },
+  "scoring": {
+    "units": "points",
+    "rankBy": [{ "key": "score", "dir": "desc" }, { "key": "lastLeadChangeAt", "dir": "asc", "nulls": "last" }],
+    "derived": {
+      "score": "sum over ticks of (controlledZoneWeight * pointsPerWeightedZonePerTick)",
+      "controlPercent": "time-weighted zone control share per team"
+    },
+    "winnerCondition": "first_to_scoreToWin OR leading_at_timecap (overtime if tied)"
+  },
+  "events": {
+    "capture": {
+      "schema": ["at", "zoneId", "team"],
+      "effect": "set controller(zoneId)=team; start/continue scoring on tick"
+    },
+    "decapture": {
+      "schema": ["at", "zoneId"],
+      "effect": "set controller(zoneId)=null; no scoring from zone"
+    }
+  },
+  "overlays": {
+    "hud": {
+      "theme": "suc_esports",
+      "scoreBar": { "bind": "teams[].score" },
+      "zoneStatus": { "bind": "zones[].controller" },
+      "ticker": {
+        "slots": [
+          { "id": "clock", "bind": "match.clock | mm:ss" },
+          { "id": "lead", "bind": "derived.leadText" },
+          { "id": "sponsor", "bind": "sponsorRotator.currentAsset" }
+        ]
+      }
+    }
+  },
+  "commentary": {
+    "tone": "esports_hype",
+    "templates": {
+      "matchStart": ["Engines hot — Turf Wars begins! Three zones live."],
+      "capture": ["{team} seize {zoneId}!", "{team} flip {zoneId} — momentum shift!"],
+      "leadChange": ["Lead change — {leader} now ahead by {lead}!"],
+      "matchPoint": ["{team} at match point — {remaining} to win!"],
+      "winner": ["{team} claim the arena with {score} points!"]
+    },
+    "placeholders": {
+      "team": "event.team",
+      "zoneId": "event.zoneId",
+      "leader": "derived.leader",
+      "lead": "derived.lead",
+      "remaining": "parameters.scoreToWin - team.score",
+      "score": "team.score"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+// adapterFactory/mappingSchema.json
+{
+  "$id": "https://hype.os/schemas/adapter-mapping.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Adapter Mapping",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "source", "mappings"],
+  "properties": {
+    "name": { "type": "string" },
+    "source": { "type": "string", "enum": ["strava", "rfid", "csv"] },
+    "transform": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "defaults": { "type": "object" }
+      }
+    },
+    "mappings": {
+      "type": "object",
+      "description": "map normalized fields -> source path",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["path"],
+        "properties": {
+          "path": { "type": "string", "description": "dot.path in source item" },
+          "fn": { "type": "string", "enum": ["string", "number", "dateIso"] }
+        }
+      }
+    }
+  }
+}

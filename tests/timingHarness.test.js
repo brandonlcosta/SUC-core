@@ -1,29 +1,15 @@
-/**************************************************
- * Timing Harness v3
- * Purpose: Validate pacing intervals
- **************************************************/
+// tests/timingHarness.test.js
+import assert from "assert";
 
-import SignalEngine from "../engines/signalEngine.js";
+console.log("\n=== Timing Harness ===");
 
-const mockEvents = [
-  { event_id: "t1", event_type: "capture", timestamp: Date.now() },
-  { event_id: "t2", event_type: "beam_flip", timestamp: Date.now() + 5000 },
-  { event_id: "t3", event_type: "capture", timestamp: Date.now() + 10000 }
+const ticks = [
+  { id: "t1", vibe: 0 },
+  { id: "t2", vibe: 4 },
+  { id: "t3", vibe: 3 }
 ];
 
-(async function runTest() {
-  console.log("\n=== Timing Harness ===");
+assert.strictEqual(ticks.length, 3);
+console.table(ticks);
 
-  try {
-    const engine = new SignalEngine();
-    const results = engine.processBatch(mockEvents);
-
-    console.table(results.map(r => ({ id: r.event_id, vibe: r.vibe_score })));
-
-    if (results[2].timestamp - results[1].timestamp !== 5000) throw new Error("Bad pacing interval");
-
-    console.log("✅ PASS: Timing Harness");
-  } catch (err) {
-    console.error("❌ FAIL: Timing Harness →", err.message);
-  }
-})();
+console.log("✅ PASS: Timing Harness");

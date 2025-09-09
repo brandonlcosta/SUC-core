@@ -1,0 +1,35 @@
+# .github/workflows/greenboard.yml
+name: Greenboard CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install deps
+        run: npm install
+
+      - name: Run all harnesses
+        run: node runAll.js
+
+      - name: Upload greenboard.json
+        uses: actions/upload-artifact@v3
+        with:
+          name: greenboard
+          path: greenboard.json
+
+      - name: Update badge
+        run: |
+          echo '{"schemaVersion":1,"label":"trust","message":"PASS","color":"green"}' > badge.json

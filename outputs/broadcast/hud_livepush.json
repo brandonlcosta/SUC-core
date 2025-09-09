@@ -1,0 +1,50 @@
+{
+  "ok": true,
+  "hud": {
+    "leaderboard": [
+      {
+        "athlete_id": "ath_1",
+        "laps": 12,
+        "rank": 1,
+        "streak": 3
+      },
+      {
+        "athlete_id": "ath_2",
+        "laps": 12,
+        "rank": 2,
+        "streak": 1
+      },
+      {
+        "athlete_id": "ath_9",
+        "laps": 11,
+        "rank": 15,
+        "streak": 0
+      }
+    ],
+    "status": {
+      "remaining_runners": 2,
+      "last_elimination": {
+        "athlete_id": "ath_9",
+        "lap": 11,
+        "ts": 16850
+      }
+    },
+    "sponsor": {
+      "active_slots": [
+        "hud_logo"
+      ],
+      "meta": {
+        "ticker_bug": {
+          "duration_s": 10,
+          "active_from_ts": 1757391916,
+          "active_until_ts": 1757391926
+        },
+        "recap_bumper": {
+          "duration_s": 5,
+          "active_from_ts": 1757391916,
+          "active_until_ts": 1757391921
+        }
+      }
+    }
+  }
+}

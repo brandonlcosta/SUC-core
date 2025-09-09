@@ -1,0 +1,33 @@
+{
+  "name": "backyard_csv_v1",
+  "source": "csv",
+  "id_column": "id",
+  "timestamp_column": "ts_unix",
+  "event_type_column": "src_type",
+  "event_type_rules": {
+    "lap": "lap_split",
+    "eliminated": "elimination",
+    "finished": "finish"
+  },
+  "columns": {
+    "id": "event_id",
+    "athlete": "athlete_id",
+    "crew": "crew",
+    "ts_unix": "timestamp",
+    "lap": "metadata.lap",
+    "split_sec": "metadata.split_time_sec",
+    "total_sec": "metadata.total_time_sec",
+    "rank": "metadata.rank",
+    "laps_completed": "metadata.laps_completed",
+    "seconds_to_cutoff": "metadata.seconds_to_cutoff"
+  },
+  "transforms": {
+    "timestamp": "int",
+    "metadata.lap": "int",
+    "metadata.split_time_sec": "int",
+    "metadata.total_time_sec": "int",
+    "metadata.rank": "int",
+    "metadata.laps_completed": "int",
+    "metadata.seconds_to_cutoff": "int"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "feedId": "glitch",
+  "safeMode": false,
+  "allowMemes": true,
+  "sponsorSafe": false,
+  "maxMessagesPerTick": 10,
+  "chaosLevel": 8
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "eventType": "sprint",
+    "athlete": { "id": "S777" },
+    "activity": { "id": 999001, "start_date": "2025-01-08T18:00:00Z", "distance": 1200 },
+    "metrics": { "watts": 850 }
+  },
+  {
+    "eventType": "sprint",
+    "athlete": { "id": "S888" },
+    "activity": { "id": 999002, "start_date": "2025-01-08T18:02:00Z", "distance": 800 },
+    "metrics": { "watts": 910 }
+  }
+]

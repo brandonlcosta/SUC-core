@@ -1,0 +1,60 @@
+{
+  "results": [
+    {
+      "file": "arcHarness.test.js",
+      "status": "PASS"
+    },
+    {
+      "file": "broadcastEngine.test.js",
+      "status": "PASS"
+    },
+    {
+      "file": "broadcastHarness.test.js",
+      "status": "PASS"
+    },
+    {
+      "file": "eventEngine.test.js",
+      "status": "PASS"
+    },
+    {
+      "file": "loggerEngine.test.js",
+      "status": "FAIL",
+      "error": "The requested module '../engines/loggerEngine.js' does not provide an export named 'default'"
+    },
+    {
+      "file": "modeEngine.test.js",
+      "status": "PASS"
+    },
+    {
+      "file": "recapBuilder.test.js",
+      "status": "PASS"
+    },
+    {
+      "file": "replayHarness.test.js",
+      "status": "PASS"
+    },
+    {
+      "file": "shrinkingCircleHarness.test.js",
+      "status": "PASS"
+    },
+    {
+      "file": "studioRouterHarness.test.js",
+      "status": "PASS"
+    },
+    {
+      "file": "timingHarness.test.js",
+      "status": "PASS"
+    },
+    {
+      "file": "vibeHarness.test.js",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "timestamp": "2025-09-09T00:53:47.601Z",
+    "passed": 11,
+    "failed": 1,
+    "total": 12,
+    "trustScore": 0.9166666666666666
+  }
+}

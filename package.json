@@ -1,21 +1,10 @@
 {
-  "name": "suc-core",
-  "version": "1.0.0",
-  "description": "SUC Ultra Core Engines + Harness Suite",
+  "name": "suc-backend",
   "type": "module",
   "scripts": {
-    "test": "node tests/runAll.js",
-    "test:vibe": "node tests/vibeHarness.test.js",
-    "test:timing": "node tests/timingHarness.test.js",
-    "test:broadcast": "node tests/broadcastHarness.test.js",
-    "test:arc": "node tests/arcHarness.test.js",
-    "test:replay": "node tests/replayHarness.test.js",
-    "test:shrinking": "node tests/shrinkingCircleHarness.test.js",
-    "test:studio": "node tests/studioRouterHarness.test.js"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "author": "Brandon",
-  "license": "ISC"
+    "test:graph": "node backend/tests/test_recognitionGraph.js",
+    "test:meta": "node backend/tests/test_metaPriority.js",
+    "test:sponsor": "node backend/tests/test_sponsorTTL.js",
+    "test": "npm run test:graph && npm run test:meta && npm run test:sponsor"
+  }
 }

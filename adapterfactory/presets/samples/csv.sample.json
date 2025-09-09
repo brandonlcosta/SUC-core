@@ -1,0 +1,4 @@
+[
+  { "id": "e1", "time": 1736380000000, "kind": "checkpoint", "athlete": "A42", "score": 5, "payload": { "split": 420 } },
+  { "id": "e2", "time": 1736380050000, "kind": "sprint",     "athlete": "A17", "score": 9, "payload": { "watts": 900 } }
+]

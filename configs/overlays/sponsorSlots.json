@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schema.suc/overlays/sponsorSlots.v1.json",
+  "version": 1,
+  "updated_at": "2025-09-08T00:00:00Z",
+  "slots": [
+    {
+      "id": "ticker_bug",
+      "position": "ticker.left_bug",
+      "on": ["always", "rivalry", "comeback", "pr"],
+      "duration_s": 20,
+      "cooldown_s": 10,
+      "max_concurrent": 1,
+      "frequency_caps": { "per_minute": 6, "per_hour": 60, "per_day": 300 },
+      "rotation": {
+        "strategy": "round_robin",
+        "brands": [
+          { "id": "brand_alpha", "weight": 1 },
+          { "id": "brand_beta", "weight": 1 },
+          { "id": "brand_gamma", "weight": 1 }
+        ]
+      },
+      "guardrails": { "categories_allow": ["general"], "fail_closed": true }
+    },
+    {
+      "id": "hud_logo",
+      "position": "hud.upper_right",
+      "on": ["rivalry", "dominance"],
+      "duration_s": 15,
+      "cooldown_s": 8,
+      "max_concurrent": 1,
+      "frequency_caps": { "per_minute": 4, "per_hour": 40, "per_day": 200 },
+      "rotation": {
+        "strategy": "round_robin",
+        "brands": [
+          { "id": "brand_alpha", "weight": 2 },
+          { "id": "brand_delta", "weight": 1 }
+        ]
+      },
+      "guardrails": { "categories_allow": ["general"], "fail_closed": true }
+    },
+    {
+      "id": "recap_bumper",
+      "position": "recap.pre_roll",
+      "on": ["recap_start"],
+      "duration_s": 5,
+      "cooldown_s": 0,
+      "max_concurrent": 1,
+      "frequency_caps": { "per_minute": 2, "per_hour": 10, "per_day": 30 },
+      "rotation": {
+        "strategy": "round_robin",
+        "brands": [
+          { "id": "brand_gamma", "weight": 1 },
+          { "id": "brand_beta", "weight": 1 }
+        ]
+      },
+      "guardrails": { "categories_allow": ["general"], "fail_closed": true }
+    }
+  ]
+}
