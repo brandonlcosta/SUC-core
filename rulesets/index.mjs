@@ -1,6 +1,3 @@
-// rulesets/index.mjs
-// Auto-discovers *.ruleset.json, validates minimal contract, exposes getters by id/mode.
-// ESM, Node 18+. ≤300 LOC.
 
 import fs from 'node:fs/promises';
 import path from 'node:path';

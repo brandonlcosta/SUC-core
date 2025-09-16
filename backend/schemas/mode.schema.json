@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Mode Schema",
+  "type": "object",
+  "properties": {
+    "modeId": { "type": "string" },
+    "ruleset": { "type": "object" },
+    "loaded_at": { "type": "integer" }
+  },
+  "required": ["modeId", "ruleset", "loaded_at"]
+}

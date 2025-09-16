@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ruleset",
+  "type": "object",
+  "required": ["id", "name", "version"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "templates": { "type": "object" },
+    "scoring": { "type": "object" }
+  },
+  "additionalProperties": true
+}

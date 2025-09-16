@@ -1,0 +1,29 @@
+{
+  "lap": 8,
+  "laps": [
+    {
+      "athleteId": "ath2"
+    },
+    {
+      "athleteId": "ath4"
+    }
+  ],
+  "dnfs": [
+    {
+      "athleteId": "ath4",
+      "name": "James"
+    }
+  ],
+  "rivalries": [],
+  "recap": {},
+  "ticker": [
+    "Lap 8 complete"
+  ],
+  "hud": {
+    "overlays": [
+      {
+        "leaderboard": true
+      }
+    ]
+  }
+}

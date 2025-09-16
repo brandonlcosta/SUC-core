@@ -1,0 +1,33 @@
+{
+  "recap": {
+    "laps_summary": [
+      {
+        "athleteId": "ath1",
+        "laps": 7
+      },
+      {
+        "athleteId": "ath2",
+        "laps": 4
+      },
+      {
+        "athleteId": "ath3",
+        "laps": 3
+      },
+      {
+        "athleteId": "ath4",
+        "laps": 7
+      }
+    ],
+    "dnf_log": [
+      "Sophia out at Lap 3",
+      "Emily out at Lap 4",
+      "Liam out at Lap 7"
+    ],
+    "highlight_reel": [
+      "Sophia vs James rivalry through Lap 1",
+      "Emily vs Liam rivalry through Lap 3",
+      "ath1 dominant streak until Lap 7",
+      "ath4 dominant streak until Lap 7"
+    ]
+  }
+}

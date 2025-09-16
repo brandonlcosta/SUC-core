@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sponsor State Schema",
+  "type": "object",
+  "properties": {
+    "sponsors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "sponsorId": { "type": "string" },
+          "slotId": { "type": "string" },
+          "ttl": { "type": "integer", "minimum": 1 },
+          "lastServed": { "type": "integer" }
+        },
+        "required": ["sponsorId", "slotId", "ttl", "lastServed"]
+      }
+    }
+  },
+  "required": ["sponsors"]
+}

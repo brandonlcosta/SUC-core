@@ -1,5 +1,0 @@
-[
-  { "id": "ticker-bug",   "size": "320x50",   "durationMs": 6000, "trigger": "panel:ticker:render" },
-  { "id": "hud-overlay",  "size": "1280x200", "durationMs": 5000, "trigger": "broadcast:highlight" },
-  { "id": "recap-bumper", "size": "1920x1080","durationMs": 3000, "trigger": "recap:start" }
-]

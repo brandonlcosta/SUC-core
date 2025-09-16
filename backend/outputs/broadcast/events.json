@@ -1,0 +1,887 @@
+[
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:28.835Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 1
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:31.838Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 2
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:34.842Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 3
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:37.846Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 1
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:40.850Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 1
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:43.853Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 2
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:46.856Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 3
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:49.953Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 4
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:52.962Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 4
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:55.962Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 2
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:35:58.965Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 3
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:01.972Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 5
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:04.974Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 5
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:07.980Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 6
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:10.980Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 4
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:13.981Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 7
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:16.988Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 5
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:20.004Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 8
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:23.007Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 9
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:26.008Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 6
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:29.013Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 7
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:32.017Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 10
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:35.022Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 11
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:38.024Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 8
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:41.036Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 6
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:44.048Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 12
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:47.050Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 9
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:50.067Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 7
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:53.071Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 8
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:56.075Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 13
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:36:59.078Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 10
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:02.081Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 11
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:05.083Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 9
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:08.087Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 10
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:11.089Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 12
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:14.093Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 14
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:17.109Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 13
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:20.114Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 11
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:23.117Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 14
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:26.121Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 15
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:29.125Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 15
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:32.128Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 12
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:35.130Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 16
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:38.133Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 17
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:41.136Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 13
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:44.137Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 18
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:47.142Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 14
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:50.146Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 15
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:53.147Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 16
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:56.151Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 17
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:37:59.156Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 18
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:38:02.158Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 19
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:38:05.161Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 16
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:38:08.164Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 19
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:38:11.167Z",
+    "details": {
+      "athlete": {
+        "id": "r123",
+        "name": "Alice",
+        "laps": 20,
+        "lat": 39.11817383228783,
+        "lon": -120.55938143075234
+      },
+      "lap": 20
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:38:14.170Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 20
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:38:17.173Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 17
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:38:20.181Z",
+    "details": {
+      "athlete": {
+        "id": "r789",
+        "name": "Charlie",
+        "laps": 18,
+        "lat": 39.13610093718105,
+        "lon": -120.58172881844851
+      },
+      "lap": 18
+    }
+  },
+  {
+    "event_type": "lap_complete",
+    "source": "demo_sim",
+    "timestamp": "2025-09-16T05:38:23.198Z",
+    "details": {
+      "athlete": {
+        "id": "r456",
+        "name": "Bob",
+        "laps": 21,
+        "lat": 39.13168516171371,
+        "lon": -120.57049807329462
+      },
+      "lap": 21
+    }
+  }
+]

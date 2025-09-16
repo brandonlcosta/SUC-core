@@ -1,0 +1,16 @@
+{
+  "brand": "SUC",
+  "colors": {
+    "primary": "#10B981",
+    "accent": "#34D399",
+    "bg": "#001A12"
+  },
+  "typography": {
+    "display": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "overlays": {
+    "bumper": { "duration_ms": 2000 },
+    "bug": { "position": "bottom-left" }
+  }
+}

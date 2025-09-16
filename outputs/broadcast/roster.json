@@ -1,0 +1,88 @@
+{
+  "athletes": [
+    {
+      "athleteId": "athlete_1",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_2",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_3",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_4",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_5",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_6",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_7",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_8",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_9",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_10",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_11",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    },
+    {
+      "athleteId": "athlete_12",
+      "crew": null,
+      "laps": 0,
+      "status": "active",
+      "lastSeen": 1757658528165
+    }
+  ]
+}

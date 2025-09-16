@@ -1,10 +1,5 @@
 {
-  "brand": "Hype OS",
-  "defaultMode": "basic",
-  "modes": {
-    "basic": {
-      "allowedEventTypes": ["checkpoint", "sprint", "finish", "unknown"],
-      "scoreDefault": 0
-    }
-  }
+  "turfWars": "../rulesets/turfWars.ruleset.json",
+  "backyardUltra": "../rulesets/backyardUltra.ruleset.json",
+  "roadRace": "../rulesets/roadRace.ruleset.json"
 }

@@ -1,0 +1,27 @@
+{
+  "lap": 31,
+  "laps": [
+    {
+      "athleteId": "ath1"
+    },
+    {
+      "athleteId": "ath2"
+    },
+    {
+      "athleteId": "ath4"
+    }
+  ],
+  "dnfs": [],
+  "rivalries": [],
+  "recap": {},
+  "ticker": [
+    "Lap 31 complete"
+  ],
+  "hud": {
+    "overlays": [
+      {
+        "leaderboard": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "lap": 4,
+  "laps": [
+    {
+      "athleteId": "ath1"
+    },
+    {
+      "athleteId": "ath2"
+    },
+    {
+      "athleteId": "ath4"
+    }
+  ],
+  "dnfs": [
+    {
+      "athleteId": "ath2",
+      "name": "Emily"
+    }
+  ],
+  "rivalries": [],
+  "recap": {},
+  "ticker": [
+    "Lap 4 complete"
+  ],
+  "hud": {
+    "overlays": [
+      {
+        "leaderboard": true
+      }
+    ]
+  }
+}

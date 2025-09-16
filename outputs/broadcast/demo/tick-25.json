@@ -1,0 +1,36 @@
+{
+  "lap": 25,
+  "laps": [
+    {
+      "athleteId": "ath1"
+    },
+    {
+      "athleteId": "ath2"
+    },
+    {
+      "athleteId": "ath3"
+    },
+    {
+      "athleteId": "ath4"
+    }
+  ],
+  "dnfs": [],
+  "rivalries": [
+    {
+      "a": "ath2",
+      "b": "ath3",
+      "label": "Emily vs Sophia"
+    }
+  ],
+  "recap": {},
+  "ticker": [
+    "Lap 25 complete"
+  ],
+  "hud": {
+    "overlays": [
+      {
+        "leaderboard": true
+      }
+    ]
+  }
+}

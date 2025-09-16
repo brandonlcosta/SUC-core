@@ -1,0 +1,24 @@
+{
+  "ts": 1757486486601,
+  "branding": {
+    "title": "SUC Weekly Recap",
+    "colors": {
+      "primary": "#10B981",
+      "accent": "#34D399",
+      "bg": "#001A12"
+    }
+  },
+  "highlights": [
+    {
+      "id": "h1",
+      "desc": "Runner A takes the lead on Lap 1"
+    },
+    {
+      "id": "h2",
+      "desc": "Photo finish at the halfway mark"
+    }
+  ],
+  "recap": {
+    "summary": "An electrifying head-to-head with nonstop action."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hype.os/schemas/commentary.schema.json",
+  "title": "Commentary Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["event_id", "role", "line", "highlight_priority", "feed"],
+    "properties": {
+      "event_id": { "type": "string" },
+      "role": { "type": "string", "enum": ["commentator", "analyst", "host"] },
+      "line": { "type": "string" },
+      "highlight_priority": { "type": "integer", "minimum": 0 },
+      "feed": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}

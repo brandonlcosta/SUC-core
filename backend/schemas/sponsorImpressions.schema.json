@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sponsor Impressions",
+  "type": "object",
+  "required": ["ts", "sponsorId", "slot", "durationMs", "impressionCount"],
+  "properties": {
+    "ts": { "type": "number" },
+    "sponsorId": { "type": "string" },
+    "slot": { "type": "string" },
+    "durationMs": { "type": "number" },
+    "impressionCount": { "type": "number" }
+  },
+  "additionalProperties": false
+}

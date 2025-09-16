@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Spatial Event Schema",
+  "type": "object",
+  "properties": {
+    "type": { "type": "string", "enum": ["FeatureCollection"] },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string", "enum": ["Feature"] },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "athleteId": { "type": "string" }
+            },
+            "required": ["athleteId"]
+          },
+          "geometry": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["LineString"] },
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": [
+                    { "type": "number" },
+                    { "type": "number" },
+                    { "type": "number" }
+                  ]
+                }
+              }
+            },
+            "required": ["type", "coordinates"]
+          }
+        },
+        "required": ["type", "properties", "geometry"]
+      }
+    }
+  },
+  "required": ["type", "features"]
+}

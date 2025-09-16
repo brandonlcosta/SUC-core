@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Daily Recap Schema",
+  "type": "object",
+  "properties": {
+    "anchor_stat": { "type": ["object", "null"] },
+    "weekly_trend": { "type": ["object", "null"] },
+    "projection": { "type": ["object", "null"] },
+    "culture_clip": { "type": ["object", "null"] },
+    "generated_at": { "type": "integer" }
+  },
+  "required": ["anchor_stat", "weekly_trend", "projection", "culture_clip", "generated_at"]
+}

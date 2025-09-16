@@ -1,6 +1,0 @@
-[
-  { "event_id":"e1","event_type":"capture","athlete_id":"A","crew":"SUC","turf_id":"K2","timestamp": 1700000000000 },
-  { "event_id":"e2","event_type":"capture","athlete_id":"B","crew":"SUC","turf_id":"K2","timestamp": 1700000600000 },
-  { "event_id":"e3","event_type":"capture","athlete_id":"A","crew":"SUC","turf_id":"K2","timestamp": 1700001200000 },
-  { "event_id":"e4","event_type":"capture","athlete_id":"A","crew":"SUC","turf_id":"K2","timestamp": 1700001800000 }
-]

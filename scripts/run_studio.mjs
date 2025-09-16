@@ -1,5 +1,5 @@
 // scripts/run_studio.mjs
-import { createWorld } from "../ecs/world.js";
+import { createWorld } from "../../ecs/world.js";
 import { recognitionGraphSystem, makeEvent } from "../engines/recognitionGraph.system.js";
 import { metaPrioritySystem } from "../engines/metaPriority.system.js";
 import { storyArcSystem } from "../engines/storyArc.system.js";

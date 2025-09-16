@@ -1,0 +1,29 @@
+{
+  "lap": 40,
+  "laps": [
+    {
+      "athleteId": "ath1"
+    },
+    {
+      "athleteId": "ath2"
+    }
+  ],
+  "dnfs": [
+    {
+      "athleteId": "ath1",
+      "name": "Liam"
+    }
+  ],
+  "rivalries": [],
+  "recap": {},
+  "ticker": [
+    "Lap 40 complete"
+  ],
+  "hud": {
+    "overlays": [
+      {
+        "leaderboard": true
+      }
+    ]
+  }
+}

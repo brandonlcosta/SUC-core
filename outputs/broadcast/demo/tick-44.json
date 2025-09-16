@@ -1,0 +1,143 @@
+{
+  "ts": "2025-09-11T14:52:27.217Z",
+  "ticker": [
+    "Sophia drops at Lap 44 (voluntary)."
+  ],
+  "leaderboard": [
+    {
+      "athleteId": "ath3",
+      "laps": 43
+    },
+    {
+      "athleteId": "ath2",
+      "laps": 42
+    },
+    {
+      "athleteId": "ath1",
+      "laps": 8
+    },
+    {
+      "athleteId": "ath4",
+      "laps": 8
+    }
+  ],
+  "highlights": [
+    {
+      "type": "rivalry",
+      "msg": "Emily battling hard on Lap 1"
+    },
+    {
+      "type": "rivalry",
+      "msg": "Liam battling hard on Lap 2"
+    },
+    {
+      "type": "rivalry",
+      "msg": "Emily battling hard on Lap 4"
+    },
+    {
+      "type": "rivalry",
+      "msg": "Sophia battling hard on Lap 4"
+    },
+    {
+      "type": "rivalry",
+      "msg": "Emily battling hard on Lap 6"
+    },
+    {
+      "type": "rivalry",
+      "msg": "Liam battling hard on Lap 6"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 7"
+    },
+    {
+      "type": "rivalry",
+      "msg": "Sophia battling hard on Lap 8"
+    },
+    {
+      "type": "dnf",
+      "msg": "Emily is out (voluntary)."
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 9"
+    },
+    {
+      "type": "dnf",
+      "msg": "Liam is out (voluntary)."
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 11"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 12"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 16"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 18"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 19"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 22"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 28"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 29"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 30"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 33"
+    },
+    {
+      "type": "rivalry",
+      "msg": "Sophia battling hard on Lap 34"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 38"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 39"
+    },
+    {
+      "type": "rivalry",
+      "msg": "James battling hard on Lap 40"
+    },
+    {
+      "type": "rivalry",
+      "msg": "Sophia battling hard on Lap 41"
+    },
+    {
+      "type": "dnf",
+      "msg": "James is out (voluntary)."
+    },
+    {
+      "type": "rivalry",
+      "msg": "Sophia battling hard on Lap 43"
+    },
+    {
+      "type": "dnf",
+      "msg": "Sophia is out (voluntary)."
+    }
+  ],
+  "recap": null
+}

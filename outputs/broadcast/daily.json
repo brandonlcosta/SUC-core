@@ -1,0 +1,68 @@
+{
+  "anchor_stat": {
+    "id": "evt_0",
+    "ts": 1757658528039,
+    "type": "synthetic",
+    "athleteId": "athlete_1",
+    "payload": {
+      "feed": "turfWars",
+      "event_id": "evt_0",
+      "distance": 400,
+      "elapsed_time": 0,
+      "timestamp": 1757658528039,
+      "lat": 40.008877629988675,
+      "lon": -69.99745774743513,
+      "alt": 14.957162960475333,
+      "laps": [
+        {
+          "athleteId": "athlete_1",
+          "lapTime": 378.19872394673985
+        },
+        {
+          "athleteId": "athlete_3",
+          "lapTime": 307.1915844255304
+        },
+        {
+          "athleteId": "athlete_4",
+          "lapTime": 371.41874623860724
+        },
+        {
+          "athleteId": "athlete_5",
+          "lapTime": 392.5033373129975
+        },
+        {
+          "athleteId": "athlete_7",
+          "lapTime": 313.61595961085237
+        },
+        {
+          "athleteId": "athlete_8",
+          "lapTime": 363.3386009894807
+        },
+        {
+          "athleteId": "athlete_9",
+          "lapTime": 350.22005499516445
+        },
+        {
+          "athleteId": "athlete_10",
+          "lapTime": 330.39835688192596
+        },
+        {
+          "athleteId": "athlete_11",
+          "lapTime": 354.80726633560204
+        }
+      ],
+      "dnfs": [],
+      "rivalries": []
+    }
+  },
+  "weekly_trend": {
+    "note": "No weekly trend"
+  },
+  "projection": {
+    "note": "No projection"
+  },
+  "culture_clip": {
+    "note": "No culture clip"
+  },
+  "generated_at": 1757658528213
+}

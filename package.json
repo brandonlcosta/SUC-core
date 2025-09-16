@@ -1,10 +1,19 @@
 {
-  "name": "suc-backend",
+  "name": "suc-core",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test:graph": "node backend/tests/test_recognitionGraph.js",
-    "test:meta": "node backend/tests/test_metaPriority.js",
-    "test:sponsor": "node backend/tests/test_sponsorTTL.js",
-    "test": "npm run test:graph && npm run test:meta && npm run test:sponsor"
+    "start": "node backend/scripts/demoRun.mjs",
+    "test": "node --test tests"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
+    "express": "^5.1.0",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.2",
+    "vite": "^7.1.5"
   }
 }

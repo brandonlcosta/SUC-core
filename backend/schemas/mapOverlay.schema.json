@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Map Overlay Schema",
+  "type": "object",
+  "properties": {
+    "overlays": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["zone", "heatmap"] },
+          "polygon": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "array",
+              "items": [
+                { "type": "number" },
+                { "type": "number" }
+              ]
+            }
+          },
+          "points": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "array",
+              "items": [
+                { "type": "number" },
+                { "type": "number" }
+              ]
+            }
+          },
+          "properties": { "type": "object" }
+        },
+        "required": ["id", "type"]
+      }
+    }
+  },
+  "required": ["overlays"]
+}

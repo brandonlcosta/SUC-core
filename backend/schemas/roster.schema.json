@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Roster Schema",
+  "type": "object",
+  "properties": {
+    "athletes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "athleteId": { "type": "string" },
+          "crew": { "type": ["string", "null"] },
+          "laps": { "type": "integer", "minimum": 0 },
+          "status": { "type": "string", "enum": ["active", "dnf"] },
+          "lastSeen": { "type": "integer" }
+        },
+        "required": ["athleteId", "laps", "status", "lastSeen"]
+      }
+    }
+  },
+  "required": ["athletes"]
+}

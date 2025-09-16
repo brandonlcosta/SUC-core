@@ -1,32 +1,102 @@
 [
   {
-    "priority": 10,
-    "role": "sponsor",
-    "text": "[SPONSOR] Bug active",
-    "ts": 1757391916
+    "timestamp": "2025-09-16T04:58:52.776Z",
+    "runner_id": "r456",
+    "text": "Bob completes a lap!"
   },
   {
-    "priority": 12,
-    "role": "play_by_play",
-    "text": "Lap 12 split for ath_1 at 3175s.",
-    "ts": 16905
+    "timestamp": "2025-09-16T04:58:54.794Z",
+    "runner_id": "r123",
+    "text": "Alice completes a lap!"
   },
   {
-    "priority": 9,
-    "role": "analyst",
-    "text": "ath_1 projected 11 min/mi.",
-    "ts": 16905
+    "timestamp": "2025-09-16T04:58:55.794Z",
+    "runner_id": "r123",
+    "text": "Alice passes Far Loop"
   },
   {
-    "priority": 6,
-    "role": "color",
-    "text": "Crowd lifts the leaders.",
-    "ts": 1757391916
+    "timestamp": "2025-09-16T04:58:55.794Z",
+    "runner_id": "r456",
+    "text": "Bob passes Far Loop"
   },
   {
-    "priority": 6,
-    "role": "wildcard",
-    "text": "Local club out in force.",
-    "ts": 1757391916
+    "timestamp": "2025-09-16T04:58:56.798Z",
+    "runner_id": "r456",
+    "text": "Bob passes Far Loop"
+  },
+  {
+    "timestamp": "2025-09-16T04:58:57.800Z",
+    "runner_id": "r123",
+    "text": "Alice projected on Start"
+  },
+  {
+    "timestamp": "2025-09-16T04:58:57.800Z",
+    "runner_id": "r456",
+    "text": "Bob projected on Start"
+  },
+  {
+    "timestamp": "2025-09-16T04:58:58.824Z",
+    "runner_id": "r123",
+    "text": "Alice passes Far Loop"
+  },
+  {
+    "timestamp": "2025-09-16T04:58:59.844Z",
+    "runner_id": "r123",
+    "text": "Alice passes Far Loop"
+  },
+  {
+    "timestamp": "2025-09-16T04:58:59.844Z",
+    "runner_id": "r456",
+    "text": "Bob completes a lap!"
+  },
+  {
+    "timestamp": "2025-09-16T04:59:00.848Z",
+    "runner_id": "r456",
+    "text": "Bob completes a lap!"
+  },
+  {
+    "timestamp": "2025-09-16T04:59:01.852Z",
+    "runner_id": "r456",
+    "text": "Bob passes Far Loop"
+  },
+  {
+    "timestamp": "2025-09-16T04:59:02.853Z",
+    "runner_id": "r123",
+    "text": "Alice passes Far Loop"
+  },
+  {
+    "timestamp": "2025-09-16T04:59:02.854Z",
+    "runner_id": "r456",
+    "text": "Bob passes Far Loop"
+  },
+  {
+    "timestamp": "2025-09-16T04:59:03.855Z",
+    "runner_id": "r123",
+    "text": "Alice passes Far Loop"
+  },
+  {
+    "timestamp": "2025-09-16T04:59:05.884Z",
+    "runner_id": "r456",
+    "text": "Bob passes Far Loop"
+  },
+  {
+    "timestamp": "2025-09-16T04:59:07.906Z",
+    "runner_id": "r123",
+    "text": "Alice passes Far Loop"
+  },
+  {
+    "timestamp": "2025-09-16T04:59:07.906Z",
+    "runner_id": "r456",
+    "text": "Bob passes Far Loop"
+  },
+  {
+    "timestamp": "2025-09-16T04:59:07.906Z",
+    "runner_id": "r123",
+    "text": "Alice projected on Start"
+  },
+  {
+    "timestamp": "2025-09-16T04:59:07.906Z",
+    "runner_id": "r456",
+    "text": "Bob projected on Start"
   }
 ]

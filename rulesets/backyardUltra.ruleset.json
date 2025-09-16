@@ -1,55 +1,13 @@
 {
-  "name": "Backyard Ultra",
-  "type": "endurance_ultra_loop",
-  "description": "Backyard Ultra ruleset: runners complete 4.167-mile loops each hour until one remains.",
-  "event_types": ["lap_split", "elimination", "finish"],
-  "metrics": ["laps_completed", "time_on_course", "rank"],
+  "name": "backyardUltra.demo",
+  "description": "Demo ruleset for Backyard Ultra simulation",
+  "eventTypes": ["lap_complete", "dnf"],
   "scoring": {
-    "lap_split": 1,
-    "elimination": 0,
-    "finish": 0
+    "lap_complete": { "points": 1 },
+    "dnf": { "points": 0 }
   },
-  "context": {
-    "course": "SUC Backyard Loop",
-    "loop_distance_mi": 4.167,
-    "cutoff_minutes": 60,
-    "cultural_notes": "When the bell rings, you must be at the start corral. Last runner to complete a solo loop wins."
-  },
-  "commentary_templates": {
-    "play_by_play": [
-      "Lap {metadata.lap} split for {athlete_id} at {metadata.split_time_sec}s.",
-      "{athlete_id} hits the corral with {metadata.seconds_to_cutoff}s to spare."
-    ],
-    "analyst": [
-      "{athlete_id} has {metadata.laps_completed} laps; projected pace: {metadata.projected_pace_min_per_mi} min/mi.",
-      "Rank update: {athlete_id} sits at {metadata.rank} with {metadata.time_on_course_h}h on course."
-    ],
-    "color": [
-      "The crowd pops as {athlete_id} cruises in—cool breeze and neon SUC flags snapping.",
-      "Crews scramble—thermoses, headlamps, and a hundred-yard stare."
-    ],
-    "wildcard": [
-      "Rumor: {athlete_id} switches shoes at lap {metadata.lap}.",
-      "Radio chatter says a late surge brewing from {athlete_id}."
-    ]
-  },
-  "broadcast_hints": {
-    "hud_overlays": [
-      {
-        "id": "lap_counter",
-        "fields": ["athlete_id", "metadata.lap", "metrics.laps_completed"],
-        "placement": "hud.bottom_right"
-      },
-      {
-        "id": "cutoff_clock",
-        "fields": ["context.cutoff_minutes", "metadata.seconds_to_cutoff"],
-        "placement": "hud.top_center"
-      }
-    ],
-    "highlight_triggers": [
-      { "on": "lap_split", "min_priority": 1, "window_s": 120 },
-      { "on": "elimination", "min_priority": 0, "window_s": 600 },
-      { "on": "finish", "min_priority": 0, "window_s": 1800 }
-    ]
+  "winner": "last_athlete_standing",
+  "thresholds": {
+    "lapTimeMaxMinutes": 60
   }
 }

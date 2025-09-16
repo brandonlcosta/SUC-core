@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Operator Controls Schema",
+  "type": "object",
+  "properties": {
+    "skip_bumper": { "type": ["boolean", "null"] },
+    "pinned_arc": { "type": ["string", "null"] },
+    "replay": { "type": ["object", "null"] },
+    "muted_roles": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    }
+  },
+  "required": ["skip_bumper", "pinned_arc", "replay", "muted_roles"]
+}

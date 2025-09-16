@@ -1,0 +1,1874 @@
+[
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:08.418Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.120225060654676,
+      "lon": -120.5597738842495
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:08.419Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:08.496Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.13004680178834,
+      "lon": -120.5700610518466
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:08.496Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:10.435Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12971228550951,
+      "lon": -120.57038368003472
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:10.435Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:12.455Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12033747117889,
+      "lon": -120.56006841416928
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:12.455Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:13.456Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.119960526078636,
+      "lon": -120.5595757317108
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:13.456Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:15.479Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.11992148670107,
+      "lon": -120.56036877494806
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:15.479Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:17.503Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.12022071050792,
+      "lon": -120.5604424371107
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:17.503Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:17.503Z",
+    "location": {
+      "lat": 39.120003031386204,
+      "lon": -120.5601912376443,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:58:17.503Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:17.503Z",
+    "location": {
+      "lat": 39.129704388139594,
+      "lon": -120.57012744854202,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:58:17.503Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:18.512Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.119940324996875,
+      "lon": -120.55955311952837
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:18.512Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:18.512Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12988790654893,
+      "lon": -120.57031707160175
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:18.512Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:19.529Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12982768325811,
+      "lon": -120.56958831133184
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:19.529Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:21.531Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.11955646194638,
+      "lon": -120.55955919136157
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:21.531Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:22.544Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.130278610139825,
+      "lon": -120.56976838343903
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:22.544Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:23.554Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.13014792606868,
+      "lon": -120.56959508726078
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:23.554Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:24.567Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12041983679389,
+      "lon": -120.5600893915309
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:24.567Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:25.568Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.11978694288512,
+      "lon": -120.56015905713497
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:25.568Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:25.568Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12994533678177,
+      "lon": -120.56969529801877
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:25.568Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:26.571Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.1197593725126,
+      "lon": -120.5596340313118
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:26.571Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:26.572Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.13029056860113,
+      "lon": -120.57047685654705
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:26.572Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:27.585Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.11983572676576,
+      "lon": -120.55994098963487
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:27.585Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:27.585Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12996225748311,
+      "lon": -120.57012118532357
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:27.585Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:27.585Z",
+    "location": {
+      "lat": 39.119935153302634,
+      "lon": -120.56031138047584,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:58:27.585Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:27.585Z",
+    "location": {
+      "lat": 39.12988606598879,
+      "lon": -120.56957672002969,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:58:27.585Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:28.598Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.11954289300575,
+      "lon": -120.55964879365493
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:28.598Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:29.603Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.13018313859212,
+      "lon": -120.57036075129199
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:29.603Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:30.605Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.13041853385067,
+      "lon": -120.5701078977483
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:30.605Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:31.605Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.11987722001114,
+      "lon": -120.55950184543732
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:31.605Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:32.617Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.119955379807145,
+      "lon": -120.55952311967359
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:32.617Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:32.617Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.129620602005346,
+      "lon": -120.57000432004648
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:32.617Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:33.647Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12003016433726,
+      "lon": -120.55996670433814
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:33.647Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:33.648Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.13000205196087,
+      "lon": -120.5697974830095
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:33.648Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:34.659Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.11962920660751,
+      "lon": -120.55999408636713
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:34.659Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:35.661Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.12986623993959,
+      "lon": -120.57015607809902
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:35.661Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:36.662Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.11972999492818,
+      "lon": -120.55989770174327
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:36.662Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:36.662Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.129926030683265,
+      "lon": -120.5698220401154
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:36.662Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:37.663Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.1303388061004,
+      "lon": -120.57021801402067
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:37.663Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:37.663Z",
+    "location": {
+      "lat": 39.11992953431024,
+      "lon": -120.56013037806966,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:58:37.663Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:37.664Z",
+    "location": {
+      "lat": 39.130136407085466,
+      "lon": -120.57036912490521,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:58:37.664Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:38.664Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.119887975754395,
+      "lon": -120.56000459935031
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:38.664Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:39.678Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12016161433749,
+      "lon": -120.55957840506417
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:39.678Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:41.698Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.12042887722397,
+      "lon": -120.55956242987644
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:41.698Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:41.698Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.13047235860053,
+      "lon": -120.56984537125773
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:41.698Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:42.700Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.120433481316496,
+      "lon": -120.55973636845145
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:42.700Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:43.701Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12002920037461,
+      "lon": -120.55960343613307
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:43.701Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:44.704Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.119647090644385,
+      "lon": -120.56034933918498
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:44.705Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:45.718Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.12049601625656,
+      "lon": -120.55990078634741
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:45.718Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:45.718Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.13013326081431,
+      "lon": -120.57042858458753
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:45.718Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:46.723Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12953414667958,
+      "lon": -120.56950144890851
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:46.723Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:47.724Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.13039863872986,
+      "lon": -120.56973361899631
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:47.724Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:47.725Z",
+    "location": {
+      "lat": 39.11964225101766,
+      "lon": -120.5595758709848,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:58:47.725Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:47.725Z",
+    "location": {
+      "lat": 39.13021576350917,
+      "lon": -120.56986643183528,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:58:47.725Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:49.726Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.119545674684595,
+      "lon": -120.55987030449232
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:49.726Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:49.726Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12984812496006,
+      "lon": -120.57032922390788
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:49.726Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:50.740Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.1204125201471,
+      "lon": -120.55993954164856
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:50.740Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:51.762Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.120354718414205,
+      "lon": -120.55975376601552
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:51.762Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:51.762Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.13047335486207,
+      "lon": -120.56964807670418
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:51.762Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:52.775Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.119527860190125,
+      "lon": -120.55968010117121
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:52.775Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:52.776Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.12985131127738,
+      "lon": -120.57009851252052
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:52.776Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:54.794Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.11970267511802,
+      "lon": -120.55986134365625
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:54.794Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:55.794Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.11979873593993,
+      "lon": -120.5597668583124
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:55.794Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:55.794Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.1295157092303,
+      "lon": -120.56981280358178
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:55.794Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:56.798Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.130118534484744,
+      "lon": -120.56953709042931
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:56.798Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:57.800Z",
+    "location": {
+      "lat": 39.12005979140885,
+      "lon": -120.5597180895008,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:58:57.800Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:57.800Z",
+    "location": {
+      "lat": 39.13036143226731,
+      "lon": -120.57007954245849,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:58:57.800Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:58.824Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12010249926775,
+      "lon": -120.55957448172866
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:58.824Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:58:59.844Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.119763229795254,
+      "lon": -120.55952088271827
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:59.844Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:58:59.844Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.13023645935958,
+      "lon": -120.57044921236434
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:58:59.844Z"
+    }
+  },
+  {
+    "event_type": "lap_completed",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:59:00.848Z",
+    "location": {
+      "checkpoint_id": "start_finish",
+      "sector_name": "Lap Start/Finish",
+      "lat": 39.12985089235841,
+      "lon": -120.57012376473334
+    },
+    "source": {
+      "system": "timing_mat",
+      "device_id": "mat_01",
+      "method": "RFID_read"
+    },
+    "quality": {
+      "confidence": 1,
+      "priority": 1,
+      "trust_level": "truth"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:59:00.848Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:59:01.852Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.13017360347677,
+      "lon": -120.5699934172326
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:59:01.852Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:59:02.853Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.1198167654211,
+      "lon": -120.56026492732384
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:59:02.854Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:59:02.854Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.129548201716574,
+      "lon": -120.57015007828065
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:59:02.854Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:59:03.855Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.120193360697826,
+      "lon": -120.55986717133254
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:59:03.855Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:59:05.884Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.129722973841886,
+      "lon": -120.56979526401727
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:59:05.884Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:59:07.906Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.11956918161999,
+      "lon": -120.55965166859362
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:59:07.906Z"
+    }
+  },
+  {
+    "event_type": "sector_ping",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:59:07.906Z",
+    "location": {
+      "checkpoint_id": "cp01",
+      "sector_name": "Far Loop",
+      "lat": 39.12953700086769,
+      "lon": -120.57021272483959
+    },
+    "source": {
+      "system": "lora_beacon",
+      "device_id": "node_07",
+      "method": "BLE_scan"
+    },
+    "quality": {
+      "confidence": 0.7,
+      "priority": 0.5,
+      "trust_level": "soft"
+    },
+    "meta": {
+      "ingested_at": "2025-09-16T04:59:07.906Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r123",
+    "timestamp": "2025-09-16T04:59:07.906Z",
+    "location": {
+      "lat": 39.120348525357336,
+      "lon": -120.55989044987564,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:59:07.906Z"
+    }
+  },
+  {
+    "event_type": "projected_position",
+    "runner_id": "r456",
+    "timestamp": "2025-09-16T04:59:07.906Z",
+    "location": {
+      "lat": 39.129875607865436,
+      "lon": -120.56958595858988,
+      "sector_name": "Start"
+    },
+    "source": {
+      "system": "projection_engine",
+      "device_id": "proj_01",
+      "method": "pace_interpolation"
+    },
+    "quality": {
+      "confidence": 0.6,
+      "priority": 0.25,
+      "trust_level": "projection"
+    },
+    "meta": {
+      "note": "synthetic projection",
+      "ingested_at": "2025-09-16T04:59:07.906Z"
+    }
+  }
+]

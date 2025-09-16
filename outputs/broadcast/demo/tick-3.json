@@ -1,0 +1,41 @@
+{
+  "lap": 3,
+  "laps": [
+    {
+      "athleteId": "ath1"
+    },
+    {
+      "athleteId": "ath2"
+    },
+    {
+      "athleteId": "ath3"
+    },
+    {
+      "athleteId": "ath4"
+    }
+  ],
+  "dnfs": [
+    {
+      "athleteId": "ath3",
+      "name": "Sophia"
+    }
+  ],
+  "rivalries": [
+    {
+      "a": "ath2",
+      "b": "ath1",
+      "label": "Emily vs Liam"
+    }
+  ],
+  "recap": {},
+  "ticker": [
+    "Lap 3 complete"
+  ],
+  "hud": {
+    "overlays": [
+      {
+        "leaderboard": true
+      }
+    ]
+  }
+}
