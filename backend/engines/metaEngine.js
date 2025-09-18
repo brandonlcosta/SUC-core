@@ -2,36 +2,40 @@
 
 import * as schemaGate from "../services/schemaGate.js";
 import * as ledgerService from "../services/ledgerService.js";
-import * as operatorService from "../services/operatorService.js";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const configPath = path.resolve("./backend/configs/metaConfig.json");
-const metaConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const configPath = path.resolve(__dirname, "../configs/metaConfig.json");
+
+let metaConfig = { rivalry_threshold: 2, max_rivalries: 5 };
+if (fs.existsSync(configPath)) {
+  metaConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
+}
 
 export function runMetaEngine(events, state, ctx) {
-  const rivalries = detectRivalries(state);
-  const projections = calculateProjections(state);
-  const highlights = prioritizeHighlights(events, rivalries, projections);
+  const rivalries = [];
 
-  let metaData = { rivalries, projections, highlights };
+  for (const [athlete, laps] of Object.entries(state.scoring?.laps || {})) {
+    if (laps >= metaConfig.rivalry_threshold) {
+      rivalries.push({ athlete_ids: [athlete], priority: 1 });
+    }
+  }
 
-  metaData = operatorService.applyMetaOverrides(metaData);
+  const meta = { rivalries: rivalries.slice(0, metaConfig.max_rivalries) };
 
-  schemaGate.validate("meta", metaData);
+  schemaGate.validate("meta", meta);
 
   ledgerService.event({
     engine: "meta",
     type: "summary",
-    payload: {
-      rivalries: rivalries.length,
-      projections: projections.length,
-      highlights: highlights.length
-    }
+    payload: { rivalries: meta.rivalries.length }
   });
 
-  ctx.meta = metaData;
-  return metaData;
+  ctx.meta = meta;
+  return meta;
 }
 
 export class MetaEngine {
@@ -42,50 +46,3 @@ export class MetaEngine {
 
 const metaEngine = new MetaEngine();
 export default metaEngine;
-
-/* --------------------------
-   Internal Helpers
---------------------------- */
-
-function detectRivalries(state) {
-  const detected = [];
-  const threshold = metaConfig.rivalry.threshold_seconds;
-
-  state.runners.forEach((runnerA, i) => {
-    state.runners.slice(i + 1).forEach(runnerB => {
-      const gap = Math.abs(runnerA.time - runnerB.time);
-      if (gap <= threshold) {
-        detected.push({
-          type: "rivalry",
-          athlete_ids: [runnerA.id, runnerB.id],
-          gap_seconds: gap,
-          priority: metaConfig.rivalry.priority
-        });
-      }
-    });
-  });
-
-  return detected;
-}
-
-function calculateProjections(state) {
-  return state.runners.map(runner => ({
-    athlete_id: runner.id,
-    projected_finish: runner.laps * metaConfig.projection.lap_factor,
-    confidence: "medium"
-  }));
-}
-
-function prioritizeHighlights(events, rivalries, projections) {
-  const highlights = [];
-
-  rivalries.forEach(r => highlights.push({ type: "rivalry", data: r, priority: r.priority }));
-  projections.forEach(p => highlights.push({ type: "projection", data: p, priority: metaConfig.projection.priority }));
-  events.forEach(e => {
-    if (e.type === "lap_complete") {
-      highlights.push({ type: "lap", data: e, priority: metaConfig.lap.priority });
-    }
-  });
-
-  return highlights.sort((a, b) => b.priority - a.priority);
-}

@@ -5,53 +5,54 @@ import * as ledgerService from "../services/ledgerService.js";
 import * as operatorService from "../services/operatorService.js";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const configPath = path.resolve("./backend/configs/scoringConfig.json");
-const scoringConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const configPath = path.resolve(__dirname, "../configs/scoringConfig.json");
+
+let scoringConfig = {
+  lap_points: 1,
+  streak_bonus: 5,
+  capture_bonus: 10,
+  max_streak: 10
+};
+if (fs.existsSync(configPath)) {
+  scoringConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
+}
 
 export function runScoringEngine(events, state, ctx) {
-  let scoring = { laps: {}, streaks: {}, captures: [] };
+  const laps = {};
+  const streaks = {};
 
-  events.forEach(e => {
-    switch (e.type) {
-      case "lap_complete":
-        scoring.laps[e.athlete_id] = (scoring.laps[e.athlete_id] || 0) + 1;
-        break;
-      case "streak":
-        scoring.streaks[e.athlete_id] = e.value;
-        break;
-      case "capture":
-        scoring.captures.push({
-          athlete_id: e.athlete_id,
-          zone: e.zone,
-          timestamp: e.timestamp
-        });
-        break;
+  for (const event of events) {
+    if (event.type === "lap") {
+      const athleteId = event.athlete_id;
+      laps[athleteId] = (laps[athleteId] || 0) + 1;
+      streaks[athleteId] = (streaks[athleteId] || 0) + 1;
     }
-  });
+  }
 
-  state.scoring = {
-    laps: { ...state.scoring?.laps, ...scoring.laps },
-    streaks: { ...state.scoring?.streaks, ...scoring.streaks },
-    captures: [...(state.scoring?.captures || []), ...scoring.captures]
+  const scoring = {
+    laps,
+    streaks,
+    points: Object.fromEntries(
+      Object.entries(laps).map(([athlete, lapCount]) => {
+        return [athlete, lapCount * scoringConfig.lap_points + (streaks[athlete] || 0) * scoringConfig.streak_bonus];
+      })
+    )
   };
 
-  state.scoring = operatorService.applyScoringOverrides(state.scoring);
-
-  schemaGate.validate("scoring", state.scoring);
+  schemaGate.validate("scoring", scoring);
 
   ledgerService.event({
     engine: "scoring",
     type: "summary",
-    payload: {
-      laps: Object.keys(state.scoring.laps).length,
-      streaks: Object.keys(state.scoring.streaks).length,
-      captures: state.scoring.captures.length
-    }
+    payload: { athletes: Object.keys(laps).length, laps: Object.values(laps).reduce((a, b) => a + b, 0) }
   });
 
-  ctx.scoring = state.scoring;
-  return state.scoring;
+  ctx.scoring = scoring;
+  return scoring;
 }
 
 export class ScoringEngine {

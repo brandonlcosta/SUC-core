@@ -1,90 +1,68 @@
 // File: backend/engines/spatialEngine.js
 
-import schemaGate from "../services/schemaGate.js";
-import ledgerService from "../services/ledgerService.js";
-import operatorService from "../services/operatorService.js";
-import assets from "../../frontend/assets/assets.json" assert { type: "json" };
+import * as schemaGate from "../services/schemaGate.js";
+import * as ledgerService from "../services/ledgerService.js";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-/**
- * Named export for pipelineService
- * Maps events + geo state to environment/prop overlays
- */
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const configPath = path.resolve(__dirname, "../configs/spatialConfig.json");
+
+let spatialConfig = {
+  update_interval_ms: 1000,
+  trail_length: 10,
+  checkpoint_radius_m: 25,
+  default_region: "stadium"
+};
+if (fs.existsSync(configPath)) {
+  spatialConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
+}
+
 export function runSpatialEngine(events, state, ctx) {
-  let spatial = {
-    environments: [],
-    checkpoints: [],
-    props: []
-  };
+  const positions = {};
+  const trails = {};
 
-  // Map environment (active race environment from assets.json)
-  if (state.mode?.environment_id) {
-    const env = assets.find(a => a.id === state.mode.environment_id);
-    if (env) {
-      spatial.environments.push({
-        id: env.id,
-        mesh_url: env.mesh_url,
-        style: env.style
-      });
+  for (const event of events) {
+    if (event.type === "position") {
+      const { athlete_id, lat, lon, ts } = event;
+
+      positions[athlete_id] = { lat, lon, ts };
+
+      if (!trails[athlete_id]) trails[athlete_id] = [];
+      trails[athlete_id].push({ lat, lon, ts });
+
+      if (trails[athlete_id].length > spatialConfig.trail_length) {
+        trails[athlete_id].shift(); // keep only last N points
+      }
     }
   }
 
-  // Add checkpoints (from scoring state)
-  if (state.scoring?.laps) {
-    spatial.checkpoints = Object.keys(state.scoring.laps).map(runnerId => ({
-      runner_id: runnerId,
-      checkpoint_id: `cp_${state.scoring.laps[runnerId]}`,
-      timestamp: Date.now()
-    }));
-  }
+  const spatial = {
+    region: spatialConfig.default_region,
+    positions,
+    trails,
+    checkpoints: [] // placeholder, can be filled from assets or events
+  };
 
-  // Add sponsor props (aid station coolers, flags, etc.)
-  events
-    .filter(e => e.type === "prop_spawn")
-    .forEach(e => {
-      const prop = assets.find(a => a.id === e.asset_id);
-      if (prop) {
-        spatial.props.push({
-          id: prop.id,
-          mesh_url: prop.mesh_url || null,
-          sponsor: prop.sponsor || null
-        });
-      }
-    });
-
-  // Operator overrides (force environment, add/remove props)
-  spatial = operatorService.applySpatialOverrides(spatial);
-
-  // Validate schema
   schemaGate.validate("spatial", spatial);
 
-  // Ledger logging
   ledgerService.event({
     engine: "spatial",
     type: "summary",
-    payload: {
-      environments: spatial.environments.length,
-      checkpoints: spatial.checkpoints.length,
-      props: spatial.props.length
-    }
+    payload: { athletes: Object.keys(positions).length }
   });
 
-  // Enrich pipeline context
   ctx.spatial = spatial;
-
   return spatial;
 }
 
-/**
- * Optional class for extendability
- */
 export class SpatialEngine {
   run(events, state, ctx) {
     return runSpatialEngine(events, state, ctx);
   }
 }
 
-/**
- * Default singleton export
- */
 const spatialEngine = new SpatialEngine();
 export default spatialEngine;

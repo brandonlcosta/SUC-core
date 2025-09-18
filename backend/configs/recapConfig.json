@@ -1,3 +1,4 @@
 {
-  "top_n": 3
+  "top_highlights": 5,
+  "include_laps_summary": true
 }

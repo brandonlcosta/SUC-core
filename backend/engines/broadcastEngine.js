@@ -5,21 +5,20 @@ import * as ledgerService from "../services/ledgerService.js";
 import * as sponsorService from "../services/sponsorService.js";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const configPath = path.resolve("./backend/configs/broadcastConfig.json");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const configPath = path.resolve(__dirname, "../configs/broadcastConfig.json");
+
 let broadcastConfig = { overlay_priority: [] };
 if (fs.existsSync(configPath)) {
   broadcastConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
 }
 
-/**
- * Core Broadcast Engine
- * Turns scoring/meta/story → broadcastTick object
- */
 export function runBroadcastEngine(events, state, ctx) {
   const overlays = [];
 
-  // Rivalry cards
   ctx.meta?.rivalries?.forEach(r => {
     overlays.push({
       event_id: `rivalry_${r.athlete_ids.join("_")}`,
@@ -31,19 +30,17 @@ export function runBroadcastEngine(events, state, ctx) {
     });
   });
 
-  // Story arcs
   ctx.story?.arcs?.forEach(arc => {
     overlays.push({
       event_id: `${arc.type}_${Date.now()}`,
       overlay_type: arc.type,
-      athlete_ids: arc.athlete_ids || [arc.athlete_id],
+      athlete_ids: arc.athlete_ids || [],
       sponsor_slot: null,
       priority: arc.priority,
       timestamp: Date.now()
     });
   });
 
-  // Sponsor banner
   const sponsor = sponsorService.pickSlot();
   if (sponsor) {
     overlays.push({
@@ -56,13 +53,10 @@ export function runBroadcastEngine(events, state, ctx) {
     });
   }
 
-  // Wrap into schema object
   const broadcastTick = { overlays };
 
-  // Validate against schema
   schemaGate.validate("broadcastTick", broadcastTick);
 
-  // Ledger summary
   ledgerService.event({
     engine: "broadcast",
     type: "summary",

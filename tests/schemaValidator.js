@@ -2,40 +2,41 @@
 
 import fs from "fs";
 import path from "path";
-import { validateAll } from "../backend/services/schemaGate.js";
+import * as schemaGate from "../backend/services/schemaGate.js";
 
-/**
- * Load context outputs from /backend/outputs/broadcast
- * Validate against schemas
- */
-async function main() {
-  const outputsDir = path.resolve("./backend/outputs/broadcast");
+const outputsDir = path.resolve("./backend/outputs/broadcast");
 
-  const ctx = {};
+console.log("🔍 Running schema validation on outputs...");
 
-  // Load known outputs if they exist
-  const files = {
-    broadcast: "overlays.json",
-    recap: "recap.json",
-    daily: "daily.json",
-    roster: "roster.json"
-  };
+let allValid = true;
 
-  for (const [key, file] of Object.entries(files)) {
-    const filePath = path.join(outputsDir, file);
-    if (fs.existsSync(filePath)) {
-      ctx[key] = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    }
+for (const schemaName of ["scoring", "meta", "story", "broadcastTick", "recap", "daily"]) {
+  const filePath =
+    schemaName === "broadcastTick"
+      ? path.join(outputsDir, "overlays.json")
+      : path.join(outputsDir, `${schemaName}.json`);
+
+  if (!fs.existsSync(filePath)) {
+    console.error(`❌ Missing output file for ${schemaName}: ${filePath}`);
+    allValid = false;
+    continue;
   }
 
-  console.log("🔍 Running schema validation on outputs...");
+  const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
   try {
-    validateAll(ctx);
-    console.log("✅ All outputs passed schema validation.");
+    schemaGate.validate(schemaName, data);
   } catch (err) {
-    console.error("❌ Schema validation failed:", err.message);
-    process.exit(1);
+    console.error(`[schemaGate] Validation failed for ${schemaName}:`);
+    console.error(err.errors || err.message);
+    console.error("⚠️ File contents:", JSON.stringify(data, null, 2));
+    allValid = false;
   }
 }
 
-main();
+if (allValid) {
+  console.log("✅ All outputs passed schema validation.");
+} else {
+  console.error("❌ Schema validation failed for one or more outputs.");
+  process.exit(1);
+}

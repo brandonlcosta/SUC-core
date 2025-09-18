@@ -4,39 +4,37 @@ import * as schemaGate from "../services/schemaGate.js";
 import * as ledgerService from "../services/ledgerService.js";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const configPath = path.resolve("./backend/configs/recapConfig.json");
-let recapConfig = { top_n: 3 };
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const configPath = path.resolve(__dirname, "../configs/recapConfig.json");
+
+let recapConfig = { top_highlights: 5 };
 if (fs.existsSync(configPath)) {
   recapConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
 }
 
 export function runRecapEngine(events, state, ctx) {
-  // Always return required properties
-  const laps_summary = Object.entries(state.scoring?.laps || {})
-    .sort(([, a], [, b]) => b - a)
-    .map(([athlete_id, laps]) => ({ athlete_id, laps }));
+  const laps_summary = state.scoring?.laps || {};
 
   const highlight_reel = (ctx.story?.arcs || [])
-    .sort((a, b) => b.priority - a.priority)
-    .slice(0, recapConfig.top_n);
+    .slice(0, recapConfig.top_highlights)
+    .map((arc, i) => ({
+      id: `highlight_${i + 1}`,
+      type: arc.type,
+      athlete_ids: arc.athlete_ids,
+      timestamp: Date.now()
+    }));
 
-  const recap = {
-    laps_summary,
-    highlight_reel
-  };
+  const recap = { laps_summary, highlight_reel };
 
-  // Validate against schema
   schemaGate.validate("recap", recap);
 
-  // Log to ledger
   ledgerService.event({
     engine: "recap",
     type: "summary",
-    payload: {
-      laps_summary_count: laps_summary.length,
-      highlight_count: highlight_reel.length
-    }
+    payload: { highlights: highlight_reel.length }
   });
 
   ctx.recap = recap;

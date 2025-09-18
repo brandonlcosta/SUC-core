@@ -5,9 +5,13 @@ import * as ledgerService from "../services/ledgerService.js";
 import * as sponsorService from "../services/sponsorService.js";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const configPath = path.resolve("./backend/configs/dailyConfig.json");
-let dailyConfig = { top_n: 5 };
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const configPath = path.resolve(__dirname, "../configs/dailyConfig.json");
+
+let dailyConfig = { top_n: 5, anchors_limit: 2, default_sponsor: "default_sponsor" };
 if (fs.existsSync(configPath)) {
   dailyConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
 }
@@ -15,25 +19,22 @@ if (fs.existsSync(configPath)) {
 export function runDailyEngine(events, state, ctx) {
   const today = new Date().toISOString().split("T")[0];
 
-  // Anchors = at least empty array
   const anchors = (ctx.story?.arcs || [])
     .sort((a, b) => b.priority - a.priority)
-    .slice(0, 2);
+    .slice(0, dailyConfig.anchors_limit);
 
-  // Sponsor = always at least a placeholder
-  const sponsor = sponsorService.pickSlot() || { id: "default_sponsor", priority: 0 };
+  const sponsor = sponsorService.pickSlot()?.id || dailyConfig.default_sponsor;
 
-  // Clips = at least empty array
   const clips = (ctx.recap?.highlight_reel || [])
     .slice(0, dailyConfig.top_n)
     .map((arc, i) => ({
       clip_id: `clip_${i + 1}`,
       type: arc.type || "generic",
-      athlete_ids: arc.athlete_ids || (arc.athlete_id ? [arc.athlete_id] : []),
+      athlete_ids: arc.athlete_ids || [],
       timestamp: arc.timestamp || Date.now()
     }));
 
-  // Build schema-compliant object
+  // ✅ Schema-compliant daily object
   const daily = {
     date: today,
     anchors,
@@ -41,18 +42,12 @@ export function runDailyEngine(events, state, ctx) {
     clips
   };
 
-  // Validate against schema
   schemaGate.validate("daily", daily);
 
-  // Ledger summary
   ledgerService.event({
     engine: "daily",
     type: "summary",
-    payload: {
-      anchor_count: anchors.length,
-      clip_count: clips.length,
-      sponsor_id: sponsor.id
-    }
+    payload: { anchors: anchors.length, clips: clips.length, sponsor }
   });
 
   ctx.daily = daily;

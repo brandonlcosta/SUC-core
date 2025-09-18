@@ -1,0 +1,6 @@
+{
+  "update_interval_ms": 1000,
+  "trail_length": 10,
+  "checkpoint_radius_m": 25,
+  "default_region": "stadium"
+}

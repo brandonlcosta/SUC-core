@@ -1,13 +1,4 @@
 {
-  "rivalry": {
-    "threshold_seconds": 30,
-    "priority": 5
-  },
-  "projection": {
-    "lap_factor": 1.2,
-    "priority": 4
-  },
-  "lap": {
-    "priority": 2
-  }
+  "rivalry_threshold": 2,
+  "max_rivalries": 5
 }

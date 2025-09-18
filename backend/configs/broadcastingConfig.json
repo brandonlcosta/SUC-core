@@ -1,3 +1,9 @@
 {
-  "overlay_priority": ["rivalry_card", "sponsor_banner", "comeback_arc", "dominance_arc"]
+  "overlay_priority": [
+    "rivalry_card",
+    "sponsor_banner",
+    "highlight",
+    "announcement"
+  ],
+  "max_overlays": 5
 }
