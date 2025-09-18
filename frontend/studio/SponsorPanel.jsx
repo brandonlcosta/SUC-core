@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import sponsorSlots from "../configs/sponsorSlots.json";
+import sponsorSlots from "@configs/sponsorSlots.json";
 
 export default function SponsorPanel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -10,7 +10,7 @@ export default function SponsorPanel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % sponsorSlots.length);
-    }, Math.floor(Math.random() * (30000) + 30000)); // rotate every 30–60s
+    }, Math.floor(Math.random() * 30000) + 30000); // rotate every 30–60s
     return () => clearInterval(interval);
   }, []);
 

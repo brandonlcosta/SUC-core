@@ -1,7 +1,7 @@
 // File: frontend/studio/ReplayOverlay.jsx
 
 import { motion, AnimatePresence } from "framer-motion";
-import sponsorSlots from "../configs/sponsorSlots.json";
+import sponsorSlots from "@configs/sponsorSlots.json";
 
 export default function ReplayOverlay({ isActive }) {
   const activeSponsor = sponsorSlots[0]; // default rotation or backend injection
@@ -16,7 +16,6 @@ export default function ReplayOverlay({ isActive }) {
           exit={{ opacity: 0 }}
         >
           <div className="relative w-full h-full">
-            {/* Replay video stream container */}
             <div className="absolute bottom-8 right-8 bg-black/70 p-3 rounded-lg border border-neon">
               <img
                 src={activeSponsor.image}

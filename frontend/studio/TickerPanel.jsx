@@ -1,7 +1,7 @@
 // File: frontend/studio/TickerPanel.jsx
 
 import { useEffect, useState } from "react";
-import sponsorSlots from "../configs/sponsorSlots.json";
+import sponsorSlots from "@configs/sponsorSlots.json";
 
 export default function TickerPanel({ baseTicker = [] }) {
   const sponsorLines = sponsorSlots.map((s) => s.ticker);
