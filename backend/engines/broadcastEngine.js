@@ -14,7 +14,7 @@ if (fs.existsSync(configPath)) {
 
 /**
  * Core Broadcast Engine
- * Turns scoring/meta/story → broadcastTick objects
+ * Turns scoring/meta/story → broadcastTick object
  */
 export function runBroadcastEngine(events, state, ctx) {
   const overlays = [];
@@ -43,7 +43,7 @@ export function runBroadcastEngine(events, state, ctx) {
     });
   });
 
-  // Inject sponsor slot (if available)
+  // Sponsor banner
   const sponsor = sponsorService.pickSlot();
   if (sponsor) {
     overlays.push({
@@ -56,17 +56,21 @@ export function runBroadcastEngine(events, state, ctx) {
     });
   }
 
-  // Validate each overlay
-  overlays.forEach(o => schemaGate.validate("broadcastTick", o));
+  // Wrap into schema object
+  const broadcastTick = { overlays };
 
+  // Validate against schema
+  schemaGate.validate("broadcastTick", broadcastTick);
+
+  // Ledger summary
   ledgerService.event({
     engine: "broadcast",
     type: "summary",
     payload: { overlays: overlays.length }
   });
 
-  ctx.broadcast = overlays;
-  return overlays;
+  ctx.broadcast = broadcastTick;
+  return broadcastTick;
 }
 
 export class BroadcastEngine {

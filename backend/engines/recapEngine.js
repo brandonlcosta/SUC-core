@@ -1,51 +1,53 @@
 // File: backend/engines/recapEngine.js
 
-import schemaGate from "../services/schemaGate.js";
-import ledgerService from "../services/ledgerService.js";
-import recapService from "../services/recapService.js";
-import operatorService from "../services/operatorService.js";
+import * as schemaGate from "../services/schemaGate.js";
+import * as ledgerService from "../services/ledgerService.js";
+import fs from "fs";
+import path from "path";
 
-/**
- * Named export for pipelineService
- * Summarizes state + story → recap.json
- */
+const configPath = path.resolve("./backend/configs/recapConfig.json");
+let recapConfig = { top_n: 3 };
+if (fs.existsSync(configPath)) {
+  recapConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
+}
+
 export function runRecapEngine(events, state, ctx) {
-  // Build recap data from recapService (laps, highlights, arcs)
-  let recap = recapService.buildRecap(state, ctx);
+  // Always return required properties
+  const laps_summary = Object.entries(state.scoring?.laps || {})
+    .sort(([, a], [, b]) => b - a)
+    .map(([athlete_id, laps]) => ({ athlete_id, laps }));
 
-  // Apply operator overrides (pin highlight, skip clip, etc.)
-  recap = operatorService.applyRecapOverrides(recap);
+  const highlight_reel = (ctx.story?.arcs || [])
+    .sort((a, b) => b.priority - a.priority)
+    .slice(0, recapConfig.top_n);
 
-  // Validate schema
+  const recap = {
+    laps_summary,
+    highlight_reel
+  };
+
+  // Validate against schema
   schemaGate.validate("recap", recap);
 
-  // Ledger logging
+  // Log to ledger
   ledgerService.event({
     engine: "recap",
     type: "summary",
     payload: {
-      laps_summary: recap.laps_summary?.length || 0,
-      highlight_reel: recap.highlight_reel?.length || 0
+      laps_summary_count: laps_summary.length,
+      highlight_count: highlight_reel.length
     }
   });
 
-  // Enrich pipeline context
   ctx.recap = recap;
-
   return recap;
 }
 
-/**
- * Optional class for extendability
- */
 export class RecapEngine {
   run(events, state, ctx) {
     return runRecapEngine(events, state, ctx);
   }
 }
 
-/**
- * Default singleton export
- */
 const recapEngine = new RecapEngine();
 export default recapEngine;
