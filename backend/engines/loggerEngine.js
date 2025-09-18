@@ -1,4 +1,5 @@
-// Logger Engine v1.0 — simple in-memory + console logging
+// File: backend/engines/loggerEngine.js
+// Logger Engine v2.0 — persistent + console logging
 
 export class LoggerEngine {
   constructor(config = {}) {
@@ -18,4 +19,6 @@ export class LoggerEngine {
   }
 }
 
-export default LoggerEngine;
+// ✅ Default export: singleton instance
+const loggerEngine = new LoggerEngine();
+export default loggerEngine;

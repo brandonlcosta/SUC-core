@@ -1,34 +1,17 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "SUC-core Broadcast Tick",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BroadcastTick",
   "type": "object",
   "properties": {
-    "ts": { "type": "number" },
-    "mode": {
-      "type": "object",
-      "properties": {
-        "current": { "type": "string" }
-      },
-      "additionalProperties": true
-    },
-    "ticker": { "type": "string" },
-    "hud": { "type": "object", "additionalProperties": true },
-    "highlights": {
+    "event_id": { "type": "string" },
+    "overlay_type": { "type": "string" },
+    "athlete_ids": {
       "type": "array",
-      "items": { "type": "object", "additionalProperties": true }
+      "items": { "type": "string" }
     },
-    "recap": { "type": "object", "additionalProperties": true },
-    "operator_overrides": {
-      "type": "object",
-      "properties": {
-        "skip_bumper": { "type": ["boolean", "null"] },
-        "pinned_arc": { "type": ["string", "null"] },
-        "replay": { "type": ["object", "null"], "additionalProperties": true },
-        "muted_roles": { "type": "array", "items": { "type": "string" } }
-      },
-      "additionalProperties": true
-    }
+    "sponsor_slot": { "type": ["string", "null"] },
+    "priority": { "type": "integer" },
+    "timestamp": { "type": "integer" }
   },
-  "required": ["ts", "ticker", "hud", "highlights", "recap"],
-  "additionalProperties": true
+  "required": ["event_id", "overlay_type", "priority", "timestamp"]
 }

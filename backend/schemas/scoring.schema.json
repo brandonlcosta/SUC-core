@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scoring",
+  "type": "object",
+  "properties": {
+    "laps": {
+      "type": "object",
+      "additionalProperties": { "type": "integer" }
+    },
+    "streaks": {
+      "type": "object",
+      "additionalProperties": { "type": "integer" }
+    },
+    "captures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "athlete_id": { "type": "string" },
+          "zone": { "type": "string" },
+          "timestamp": { "type": "integer" }
+        },
+        "required": ["athlete_id", "zone", "timestamp"]
+      }
+    }
+  },
+  "required": ["laps", "streaks", "captures"]
+}

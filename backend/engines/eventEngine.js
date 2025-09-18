@@ -1,67 +1,40 @@
 // File: backend/engines/eventEngine.js
-
-import fs from "fs";
-import path from "path";
-
-const OUTPUT_PATH = path.resolve("backend/outputs/broadcast/events.json");
+// Normalizes raw events and runs the event engine pipeline
 
 /**
- * EventEngine
- * Detects key race milestones and emits events for overlays.
+ * Normalize a single raw event into a consistent schema
+ * @param {Object} ev
+ * @returns {Object} normalized event
  */
+export function normalizeEvent(ev) {
+  return {
+    id: ev.id || `evt_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+    type: ev.type || "unknown",
+    ts: ev.ts || Date.now(),
+    source: ev.source || "ingest",
+    payload: ev.payload || {},
+  };
+}
+
+/**
+ * Run the event engine: normalize all raw events
+ * @param {Array<Object>} events
+ * @returns {Array<Object>} normalized events
+ */
+export function runEventEngine(events = []) {
+  return events.map(normalizeEvent);
+}
+
+// Wrapper class for default export
 export class EventEngine {
-  constructor() {
-    this.lastLeader = null;
-    this.completedSplits = new Set();
+  normalize(ev) {
+    return normalizeEvent(ev);
   }
-
-  /**
-   * Process an athlete tick and detect milestone events
-   * @param {Object} tick - { athlete_id, lap, distance_km, rank, timestamp }
-   * @returns {Array} events - array of event objects
-   */
-  processTick(tick) {
-    const events = [];
-
-    // Marathon: split milestones
-    if (tick.distance_km && [5, 10, 21, 42].includes(tick.distance_km)) {
-      const key = `${tick.athlete_id}_${tick.distance_km}`;
-      if (!this.completedSplits.has(key)) {
-        this.completedSplits.add(key);
-        events.push({
-          event_id: `split_${tick.distance_km}k`,
-          athlete_id: tick.athlete_id,
-          distance_km: tick.distance_km,
-          timestamp: tick.timestamp,
-        });
-      }
-    }
-
-    // Backyard Ultra: lap completed
-    if (tick.lap && tick.lap > 0) {
-      events.push({
-        event_id: "lap_completed",
-        athlete_id: tick.athlete_id,
-        lap: tick.lap,
-        timestamp: tick.timestamp,
-      });
-    }
-
-    // Leader change
-    if (tick.rank === 1 && this.lastLeader !== tick.athlete_id) {
-      this.lastLeader = tick.athlete_id;
-      events.push({
-        event_id: "new_leader",
-        athlete_id: tick.athlete_id,
-        lap: tick.lap,
-        timestamp: tick.timestamp,
-      });
-    }
-
-    if (events.length > 0) {
-      fs.writeFileSync(OUTPUT_PATH, JSON.stringify(events, null, 2));
-    }
-
-    return events;
+  run(events) {
+    return runEventEngine(events);
   }
 }
+
+// Default singleton instance
+const eventEngine = new EventEngine();
+export default eventEngine;

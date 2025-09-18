@@ -1,64 +1,90 @@
-// /backend/engines/spatialEngine.js
-// Reducer: transforms normalized events with GPS into geoJSON paths
+// File: backend/engines/spatialEngine.js
 
-import fs from "fs";
-import path from "path";
-import { validateAgainstSchema } from "../utils/schemaValidator.js";
-
-const OUTPUT_PATH = path.resolve("./outputs/broadcast/spatial.json");
-const SCHEMA_PATH = path.resolve("./backend/schemas/spatialEvent.schema.json");
+import schemaGate from "../services/schemaGate.js";
+import ledgerService from "../services/ledgerService.js";
+import operatorService from "../services/operatorService.js";
+import assets from "../../frontend/assets/assets.json" assert { type: "json" };
 
 /**
- * Build geoJSON FeatureCollection from GPS events
- * @param {Array<Object>} events - normalized events with GPS { athleteId, lat, lon, alt, timestamp }
- * @returns {Object} geoJSON FeatureCollection
+ * Named export for pipelineService
+ * Maps events + geo state to environment/prop overlays
  */
-export function spatialReducer(events = []) {
-  const features = [];
-  const athletePaths = new Map();
+export function runSpatialEngine(events, state, ctx) {
+  let spatial = {
+    environments: [],
+    checkpoints: [],
+    props: []
+  };
 
-  events.forEach((evt) => {
-    if (!evt.athleteId || evt.lat === undefined || evt.lon === undefined) return;
-
-    if (!athletePaths.has(evt.athleteId)) {
-      athletePaths.set(evt.athleteId, []);
+  // Map environment (active race environment from assets.json)
+  if (state.mode?.environment_id) {
+    const env = assets.find(a => a.id === state.mode.environment_id);
+    if (env) {
+      spatial.environments.push({
+        id: env.id,
+        mesh_url: env.mesh_url,
+        style: env.style
+      });
     }
-    athletePaths.get(evt.athleteId).push([evt.lon, evt.lat, evt.alt || 0]);
-  });
-
-  athletePaths.forEach((coords, athleteId) => {
-    features.push({
-      type: "Feature",
-      properties: { athleteId },
-      geometry: {
-        type: "LineString",
-        coordinates: coords,
-      },
-    });
-  });
-
-  return { type: "FeatureCollection", features };
-}
-
-/**
- * Run spatial engine and persist output
- * @param {Array<Object>} events
- * @returns {Object} geoJSON FeatureCollection
- */
-export function runSpatialEngine(events) {
-  const spatial = spatialReducer(events);
-
-  const valid = validateAgainstSchema(SCHEMA_PATH, spatial);
-  if (!valid) {
-    console.error("❌ SpatialEngine schema validation failed");
-    return null;
   }
 
-  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(spatial, null, 2));
-  console.log(`✅ SpatialEngine wrote ${OUTPUT_PATH}`);
+  // Add checkpoints (from scoring state)
+  if (state.scoring?.laps) {
+    spatial.checkpoints = Object.keys(state.scoring.laps).map(runnerId => ({
+      runner_id: runnerId,
+      checkpoint_id: `cp_${state.scoring.laps[runnerId]}`,
+      timestamp: Date.now()
+    }));
+  }
+
+  // Add sponsor props (aid station coolers, flags, etc.)
+  events
+    .filter(e => e.type === "prop_spawn")
+    .forEach(e => {
+      const prop = assets.find(a => a.id === e.asset_id);
+      if (prop) {
+        spatial.props.push({
+          id: prop.id,
+          mesh_url: prop.mesh_url || null,
+          sponsor: prop.sponsor || null
+        });
+      }
+    });
+
+  // Operator overrides (force environment, add/remove props)
+  spatial = operatorService.applySpatialOverrides(spatial);
+
+  // Validate schema
+  schemaGate.validate("spatial", spatial);
+
+  // Ledger logging
+  ledgerService.event({
+    engine: "spatial",
+    type: "summary",
+    payload: {
+      environments: spatial.environments.length,
+      checkpoints: spatial.checkpoints.length,
+      props: spatial.props.length
+    }
+  });
+
+  // Enrich pipeline context
+  ctx.spatial = spatial;
 
   return spatial;
 }
 
-export default runSpatialEngine;
+/**
+ * Optional class for extendability
+ */
+export class SpatialEngine {
+  run(events, state, ctx) {
+    return runSpatialEngine(events, state, ctx);
+  }
+}
+
+/**
+ * Default singleton export
+ */
+const spatialEngine = new SpatialEngine();
+export default spatialEngine;

@@ -1,5 +1,6 @@
 // File: backend/services/ledger/backends/sqlite.js
 // SQLite backend (optional). Requires 'better-sqlite3' to be installed.
+
 import path from "path";
 import fs from "fs";
 
@@ -35,34 +36,45 @@ export async function createSqliteBackend(cfg) {
       action_type TEXT NOT NULL,
       payload_json TEXT NOT NULL
     );
+    CREATE INDEX IF NOT EXISTS idx_operator_actions_ts ON operator_actions(ts);
   `);
 
-  const insertEvent = db.prepare(`INSERT INTO engine_events (ts, engine, event_type, payload_json) VALUES (@ts,@engine,@event_type,@payload_json)`);
-  const insertTick  = db.prepare(`INSERT INTO ticks (ts, payload_json) VALUES (@ts,@payload_json)`);
-  const insertOp    = db.prepare(`INSERT INTO operator_actions (ts, action_type, payload_json) VALUES (@ts,@action_type,@payload_json)`);
-
-  const tail = [];
-  const tailCap = cfg.tail_size ?? 500;
-
   return {
-    writeEvent({ engine, event_type, payload }) {
-      insertEvent.run({ ts: Date.now(), engine, event_type, payload_json: JSON.stringify(payload ?? {}) });
+    async event(e) {
+      db.prepare(
+        `INSERT INTO engine_events (ts, engine, event_type, payload_json) VALUES (?, ?, ?, ?)`
+      ).run(Date.now(), e.engine || "unknown", e.type || "generic", JSON.stringify(e));
     },
-    writeTick(tick) {
-      const ts = Date.now();
-      insertTick.run({ ts, payload_json: JSON.stringify(tick ?? {}) });
-      tail.push({ ts, tick });
-      while (tail.length > tailCap) tail.shift();
+    async tick(t) {
+      db.prepare(`INSERT INTO ticks (ts, payload_json) VALUES (?, ?)`).run(
+        Date.now(),
+        JSON.stringify(t)
+      );
     },
-    writeOperatorAction({ action_type, payload }) {
-      insertOp.run({ ts: Date.now(), action_type, payload_json: JSON.stringify(payload ?? {}) });
+    async operator(op) {
+      db.prepare(
+        `INSERT INTO operator_actions (ts, action_type, payload_json) VALUES (?, ?, ?)`
+      ).run(Date.now(), op.type || "generic", JSON.stringify(op));
     },
-    lastNTicks(n = 50) {
-      if (n <= tail.length) return tail.slice(-n).reverse();
-      return db.prepare(`SELECT ts, payload_json FROM ticks ORDER BY ts DESC LIMIT ?`)
+    async lastTicks(n = 10) {
+      return db
+        .prepare(`SELECT payload_json FROM ticks ORDER BY ts DESC LIMIT ?`)
         .all(n)
-        .map(r => ({ ts: r.ts, tick: JSON.parse(r.payload_json) }));
+        .map((row) => JSON.parse(row.payload_json));
     },
-    close() {}
+    async close() {
+      db.close();
+    },
   };
 }
+
+// Wrapper class for default export
+export class SqliteBackend {
+  async create(cfg) {
+    return await createSqliteBackend(cfg);
+  }
+}
+
+// Default singleton instance (lazy, not auto-created)
+const sqliteBackend = new SqliteBackend();
+export default sqliteBackend;

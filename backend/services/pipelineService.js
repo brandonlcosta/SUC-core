@@ -1,4 +1,4 @@
-// /backend/services/pipelineService.js
+// File: backend/services/pipelineService.js
 // Orchestrates the full reducer pipeline and writes outputs
 
 import { runEventEngine } from "../engines/eventEngine.js";
@@ -16,6 +16,13 @@ import { runSponsorEngine } from "../engines/sponsorEngine.js";
 import { runSpatialEngine } from "../engines/spatialEngine.js";
 import { runOverlayEngine } from "../engines/overlayEngine.js";
 
+/**
+ * Main pipeline function.
+ * @param {Array<Object>} rawEvents
+ * @param {Array<Object>} overrides
+ * @param {Array<Object>} sponsorActions
+ * @returns {Object} pipeline outputs (broadcastTick, recap, daily, commentary, etc.)
+ */
 export async function runPipeline(rawEvents, overrides = [], sponsorActions = []) {
   // Event normalization
   const events = runEventEngine(rawEvents);
@@ -23,61 +30,61 @@ export async function runPipeline(rawEvents, overrides = [], sponsorActions = []
   // Active mode / ruleset
   const mode = runModeEngine(events);
 
-  // Scoring
-  const leaderboard = runScoringEngine(events, mode);
+  // Scoring updates
+  const scoring = runScoringEngine(events, mode);
 
-  // Roster tracking
+  // Roster updates
   const roster = runRosterEngine(events);
 
-  // Meta analysis
-  const meta = runMetaEngine(events, roster);
+  // Meta: rivalries, projections, highlight priority
+  const meta = runMetaEngine(events, scoring);
 
   // Story arcs
-  const stories = runStoryEngine(meta);
+  const stories = runStoryEngine(events, meta);
 
-  // Commentary
-  const commentary = runCommentaryEngine(stories);
-
-  // Broadcast bundle
-  const broadcast = runBroadcastEngine({ leaderboard, stories, commentary });
-
-  // Recap reel
-  const recap = runRecapEngine(events);
-
-  // Daily recap
-  const daily = runDailyEngine(events, meta);
+  // Commentary (persona-driven)
+  const commentary = runCommentaryEngine(events, stories);
 
   // Operator overrides
-  let broadcastWithOverrides = broadcast;
-  overrides.forEach((action) => {
-    broadcastWithOverrides = runOperatorControls(broadcastWithOverrides, action);
-  });
+  const ops = runOperatorControls(overrides);
 
-  // Sponsor integration
-  let sponsorState = {};
-  sponsorActions.forEach((action) => {
-    sponsorState = runSponsorEngine(sponsorState, action);
-  });
+  // Sponsor slot updates
+  const sponsors = runSponsorEngine(sponsorActions);
 
-  // Spatial + overlays
+  // Spatial/geo analysis
   const spatial = runSpatialEngine(events);
-  const overlays = runOverlayEngine(events);
 
-  return {
+  // Overlay composition
+  const overlays = runOverlayEngine(events, meta, stories, sponsors);
+
+  // Broadcast schema package
+  const broadcast = runBroadcastEngine({
     events,
-    mode,
-    leaderboard,
+    scoring,
     roster,
     meta,
     stories,
     commentary,
-    broadcast: broadcastWithOverrides,
-    recap,
-    daily,
-    sponsorState,
-    spatial,
     overlays,
-  };
+    sponsors,
+    spatial,
+    ops,
+  });
+
+  // Recap + Daily summaries
+  const recap = runRecapEngine(events, scoring, stories);
+  const daily = runDailyEngine(events, stories, sponsors);
+
+  return { broadcast, recap, daily, commentary, roster };
 }
 
-export default runPipeline;
+// Service wrapper class
+export class PipelineService {
+  async run(rawEvents, overrides = [], sponsorActions = []) {
+    return await runPipeline(rawEvents, overrides, sponsorActions);
+  }
+}
+
+// Default singleton instance
+const pipelineService = new PipelineService();
+export default pipelineService;

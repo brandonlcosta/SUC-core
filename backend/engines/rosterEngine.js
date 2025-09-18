@@ -1,70 +1,48 @@
-// /backend/engines/rosterEngine.js
-// Reducer: tracks athlete + crew context across events
+// File: backend/engines/rosterEngine.js
 
-import fs from "fs";
-import path from "path";
-import { validateAgainstSchema } from "../utils/schemaValidator.js";
-
-const OUTPUT_PATH = path.resolve("./outputs/broadcast/roster.json");
-const SCHEMA_PATH = path.resolve("./backend/schemas/roster.schema.json");
+import schemaGate from "../services/schemaGate.js";
+import ledgerService from "../services/ledgerService.js";
+import operatorService from "../services/operatorService.js";
+import rosterService from "../services/rosterService.js";
 
 /**
- * Reducer: build roster state from events
- * @param {Array<Object>} events - normalized events
- * @returns {Object} roster
+ * Named export for pipelineService
+ * Builds schema-compliant roster.json from source roster service
  */
-export function rosterReducer(events = []) {
-  const roster = {};
+export function runRosterEngine(events, state, ctx) {
+  // Base roster pulled from rosterService
+  let roster = rosterService.getRoster();
 
-  events.forEach((evt) => {
-    if (!evt.athleteId) return;
+  // Apply operator overrides (rename athlete, change crew, etc.)
+  roster = operatorService.applyRosterOverrides(roster);
 
-    if (!roster[evt.athleteId]) {
-      roster[evt.athleteId] = {
-        athleteId: evt.athleteId,
-        crew: evt.crew || null,
-        laps: 0,
-        status: "active",
-        lastSeen: evt.timestamp || Date.now(),
-      };
-    }
+  // Validate against schema
+  schemaGate.validate("roster", { athletes: roster });
 
-    // Update laps if event has laps
-    if (evt.type === "lap") {
-      roster[evt.athleteId].laps += 1;
-    }
-
-    // Update DNF if marked
-    if (evt.type === "dnf") {
-      roster[evt.athleteId].status = "dnf";
-    }
-
-    // Always update lastSeen
-    roster[evt.athleteId].lastSeen = evt.timestamp || Date.now();
+  // Ledger logging
+  ledgerService.event({
+    engine: "roster",
+    type: "summary",
+    payload: { athletes: roster.length }
   });
 
-  return { athletes: Object.values(roster) };
+  // Enrich pipeline context
+  ctx.roster = roster;
+
+  return { athletes: roster };
 }
 
 /**
- * Run roster engine and persist output
- * @param {Array<Object>} events
- * @returns {Object} roster
+ * Optional class for extendability
  */
-export function runRosterEngine(events) {
-  const roster = rosterReducer(events);
-
-  const valid = validateAgainstSchema(SCHEMA_PATH, roster);
-  if (!valid) {
-    console.error("❌ RosterEngine schema validation failed");
-    return null;
+export class RosterEngine {
+  run(events, state, ctx) {
+    return runRosterEngine(events, state, ctx);
   }
-
-  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(roster, null, 2));
-  console.log(`✅ RosterEngine wrote ${OUTPUT_PATH}`);
-
-  return roster;
 }
 
-export default runRosterEngine;
+/**
+ * Default singleton export
+ */
+const rosterEngine = new RosterEngine();
+export default rosterEngine;

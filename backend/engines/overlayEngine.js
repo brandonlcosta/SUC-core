@@ -1,4 +1,4 @@
-// /backend/engines/overlayEngine.js
+// File: backend/engines/overlayEngine.js
 // Reducer: builds polygons and heatmaps for map overlays
 
 import fs from "fs";
@@ -40,9 +40,9 @@ export function overlayReducer(events = []) {
 /**
  * Run overlay engine and persist output
  * @param {Array<Object>} events
- * @returns {Object} overlays JSON
+ * @returns {Object|null} overlays
  */
-export function runOverlayEngine(events) {
+export function runOverlayEngine(events = []) {
   const overlays = overlayReducer(events);
 
   const valid = validateAgainstSchema(SCHEMA_PATH, overlays);
@@ -53,9 +53,13 @@ export function runOverlayEngine(events) {
 
   fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(overlays, null, 2));
-  console.log(`✅ OverlayEngine wrote ${OUTPUT_PATH}`);
+  console.log(`🗺️ OverlayEngine wrote ${OUTPUT_PATH}`);
 
   return overlays;
 }
 
-export default runOverlayEngine;
+// ✅ Default export for server.js clean imports
+export default {
+  overlayReducer,
+  runOverlayEngine,
+};

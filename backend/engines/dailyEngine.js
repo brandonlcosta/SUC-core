@@ -1,55 +1,84 @@
-// /backend/engines/dailyEngine.js
-// Reducer: generates daily recap (SportsCenter-style)
+// File: backend/engines/dailyEngine.js
 
-import fs from "fs";
-import path from "path";
-import { validateAgainstSchema } from "../utils/schemaValidator.js";
-
-const OUTPUT_PATH = path.resolve("./outputs/broadcast/daily.json");
-const SCHEMA_PATH = path.resolve("./backend/schemas/daily.schema.json");
+import schemaGate from "../services/schemaGate.js";
+import ledgerService from "../services/ledgerService.js";
+import operatorService from "../services/operatorService.js";
 
 /**
- * Build daily recap from events + meta data
- * @param {Array<Object>} events - normalized events
- * @param {Object} meta - meta analysis (streaks, rivalries, projections)
- * @returns {Object} daily recap JSON
+ * Named export for pipelineService
+ * Produces daily.json (anchors, trends, sponsor, clips)
  */
-export function dailyReducer(events = [], meta = {}) {
-  const anchorStat = events.length > 0 ? events[0] : { note: "No events" };
-  const weeklyTrend = meta.streaks?.[0] || { note: "No weekly trend" };
-  const projection = meta.projections?.[0] || { note: "No projection" };
-  const cultureClip = meta.highlights?.[0] || { note: "No culture clip" };
-
-  return {
-    anchor_stat: anchorStat,
-    weekly_trend: weeklyTrend,
-    projection,
-    culture_clip: cultureClip,
-    generated_at: Date.now()
+export function runDailyEngine(events, state, ctx) {
+  let daily = {
+    date: new Date().toISOString().split("T")[0],
+    anchors: buildAnchors(ctx),
+    sponsor: pickSponsor(ctx),
+    clips: buildClips(ctx)
   };
-}
 
-/**
- * Run daily engine and persist output
- * @param {Array<Object>} events
- * @param {Object} meta
- * @returns {Object} daily recap JSON
- */
-export function runDailyEngine(events, meta) {
-  const daily = dailyReducer(events, meta);
+  // Apply operator overrides (replace sponsor, pin anchor, remove clip, etc.)
+  daily = operatorService.applyDailyOverrides(daily);
 
-  const valid = validateAgainstSchema(SCHEMA_PATH, daily);
-  if (!valid) {
-    console.error("❌ DailyEngine schema validation failed");
-    return null;
-  }
+  // Validate schema
+  schemaGate.validate("daily", daily);
 
-  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(daily, null, 2));
-  console.log(`✅ DailyEngine wrote ${OUTPUT_PATH}`);
+  // Ledger logging
+  ledgerService.event({
+    engine: "daily",
+    type: "summary",
+    payload: {
+      anchors: daily.anchors?.length || 0,
+      clips: daily.clips?.length || 0,
+      sponsor: daily.sponsor || "none"
+    }
+  });
+
+  // Enrich pipeline context
+  ctx.daily = daily;
 
   return daily;
 }
 
-// Export both named + default
-export default runDailyEngine;
+/**
+ * Optional class for extendability
+ */
+export class DailyEngine {
+  run(events, state, ctx) {
+    return runDailyEngine(events, state, ctx);
+  }
+}
+
+/**
+ * Default singleton export
+ */
+const dailyEngine = new DailyEngine();
+export default dailyEngine;
+
+/* --------------------------
+   Internal Helpers
+--------------------------- */
+
+function buildAnchors(ctx) {
+  const anchors = [];
+
+  if (ctx.story?.arcs?.length) {
+    anchors.push("today’s rivalry");
+  }
+  if (ctx.meta?.highlights?.some(h => h.type === "comeback")) {
+    anchors.push("comeback story");
+  }
+  if (ctx.scoring?.laps) {
+    anchors.push("lap leaders");
+  }
+
+  return anchors.slice(0, 3); // top 3 anchors max
+}
+
+function pickSponsor(ctx) {
+  // Sponsor selection could come from ctx.sponsor or operatorService
+  return ctx.sponsor?.active || "Red Bull";
+}
+
+function buildClips(ctx) {
+  return (ctx.recap?.highlight_reel || []).map(h => `clip_${h}.mp4`);
+}

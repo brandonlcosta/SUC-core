@@ -1,13 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Daily Recap Schema",
+  "title": "Daily",
   "type": "object",
   "properties": {
-    "anchor_stat": { "type": ["object", "null"] },
-    "weekly_trend": { "type": ["object", "null"] },
-    "projection": { "type": ["object", "null"] },
-    "culture_clip": { "type": ["object", "null"] },
-    "generated_at": { "type": "integer" }
+    "date": { "type": "string" },
+    "anchors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "sponsor": { "type": "string" },
+    "clips": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
   },
-  "required": ["anchor_stat", "weekly_trend", "projection", "culture_clip", "generated_at"]
+  "required": ["date", "anchors", "sponsor", "clips"]
 }

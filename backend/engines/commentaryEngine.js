@@ -1,48 +1,59 @@
-// /backend/engines/commentaryEngine.js
+// File: backend/engines/commentaryEngine.js
+// Commentary Engine: generates commentary lines from events + story arcs
+
 import { normalizeEvent } from "./eventEngine.js";
 
-// Simple runner name resolver (could use rosterEngine later)
-function getRunnerName(runnerId) {
-  const roster = {
-    r123: "Alice",
-    r456: "Bob"
-  };
-  return roster[runnerId] || runnerId;
-}
-
 /**
- * Generate commentary line for a given event
- * @param {Object} rawEvent
- * @returns {Object} commentary entry
+ * Generate commentary lines from normalized events and optional story arcs.
+ * @param {Array<Object>} events
+ * @param {Array<Object>} stories
+ * @returns {Array<Object>} commentary lines
  */
-export function generateCommentary(rawEvent) {
-  const event = normalizeEvent(rawEvent);
-  const name = getRunnerName(event.runner_id);
-  let text = "";
+export function runCommentaryEngine(events = [], stories = []) {
+  const lines = [];
 
-  switch (event.event_type) {
-    case "lap_completed":
-      text = `${name} completes a lap!`;
-      break;
-    case "sector_ping":
-      text = `${name} passes ${event.location?.sector_name || "a checkpoint"}`;
-      break;
-    case "projected_position":
-      text = `${name} projected on ${event.location?.sector_name || "course route"}`;
-      break;
-    case "highlight_reel":
-      text = `${name} featured in highlight reel`;
-      break;
-    case "health_ping":
-      text = `Health ping received from ${event.source.device_id}`;
-      break;
-    default:
-      text = `${name || "Unknown"} event: ${event.event_type}`;
+  for (const ev of events) {
+    const norm = normalizeEvent(ev);
+
+    if (norm.type === "lap_completed") {
+      lines.push({
+        ts: norm.ts,
+        type: "commentary",
+        text: `Runner ${norm.payload?.athlete_id} completed lap ${norm.payload?.lap}`,
+        priority: 7,
+      });
+    }
+
+    if (norm.type === "pr_achieved") {
+      lines.push({
+        ts: norm.ts,
+        type: "commentary",
+        text: `🔥 Personal record for ${norm.payload?.athlete_id}!`,
+        priority: 9,
+      });
+    }
   }
 
-  return {
-    timestamp: event.timestamp,
-    runner_id: event.runner_id,
-    text
-  };
+  // Story-driven commentary
+  for (const arc of stories) {
+    lines.push({
+      ts: arc.ts || Date.now(),
+      type: "commentary",
+      text: `📖 Story update: ${arc.summary}`,
+      priority: 6,
+    });
+  }
+
+  return lines;
 }
+
+// Wrapper class for default export
+export class CommentaryEngine {
+  run(events, stories) {
+    return runCommentaryEngine(events, stories);
+  }
+}
+
+// Default singleton instance
+const commentaryEngine = new CommentaryEngine();
+export default commentaryEngine;

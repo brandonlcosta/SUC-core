@@ -1,41 +1,79 @@
-// /backend/engines/broadcastEngine.js
+// File: backend/engines/broadcastEngine.js
 
+import * as schemaGate from "../services/schemaGate.js";
+import * as ledgerService from "../services/ledgerService.js";
+import * as sponsorService from "../services/sponsorService.js";
 import fs from "fs";
 import path from "path";
-import { validateAgainstSchema } from "../utils/schemaValidator.js";
 
-const OUTPUT_PATH = path.resolve("./outputs/broadcast/broadcast.json");
-const SCHEMA_PATH = path.resolve("./backend/schemas/broadcastSchema.json");
-
-/**
- * Reducer: builds a unified broadcast bundle
- */
-export function broadcastReducer(leaderboard, stories, commentary) {
-  return {
-    leaderboard: leaderboard || null,
-    stories: Array.isArray(stories) ? stories : stories?.stories || [],
-    commentary: Array.isArray(commentary) ? commentary : [],
-    timestamp: Date.now()
-  };
+const configPath = path.resolve("./backend/configs/broadcastConfig.json");
+let broadcastConfig = { overlay_priority: [] };
+if (fs.existsSync(configPath)) {
+  broadcastConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
 }
 
 /**
- * Run broadcast engine and persist output
+ * Core Broadcast Engine
+ * Turns scoring/meta/story → broadcastTick objects
  */
-export function runBroadcastEngine(leaderboard, stories, commentary) {
-  const broadcast = broadcastReducer(leaderboard, stories, commentary);
+export function runBroadcastEngine(events, state, ctx) {
+  const overlays = [];
 
-  const valid = validateAgainstSchema(SCHEMA_PATH, broadcast);
-  if (!valid) {
-    console.error("❌ BroadcastEngine schema validation failed");
-    return null;
+  // Rivalry cards
+  ctx.meta?.rivalries?.forEach(r => {
+    overlays.push({
+      event_id: `rivalry_${r.athlete_ids.join("_")}`,
+      overlay_type: "rivalry_card",
+      athlete_ids: r.athlete_ids,
+      sponsor_slot: null,
+      priority: r.priority,
+      timestamp: Date.now()
+    });
+  });
+
+  // Story arcs
+  ctx.story?.arcs?.forEach(arc => {
+    overlays.push({
+      event_id: `${arc.type}_${Date.now()}`,
+      overlay_type: arc.type,
+      athlete_ids: arc.athlete_ids || [arc.athlete_id],
+      sponsor_slot: null,
+      priority: arc.priority,
+      timestamp: Date.now()
+    });
+  });
+
+  // Inject sponsor slot (if available)
+  const sponsor = sponsorService.pickSlot();
+  if (sponsor) {
+    overlays.push({
+      event_id: `sponsor_${sponsor.id}_${Date.now()}`,
+      overlay_type: "sponsor_banner",
+      athlete_ids: [],
+      sponsor_slot: sponsor.id,
+      priority: sponsor.priority,
+      timestamp: Date.now()
+    });
   }
 
-  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(broadcast, null, 2));
-  console.log(`✅ BroadcastEngine wrote ${OUTPUT_PATH}`);
+  // Validate each overlay
+  overlays.forEach(o => schemaGate.validate("broadcastTick", o));
 
-  return broadcast;
+  ledgerService.event({
+    engine: "broadcast",
+    type: "summary",
+    payload: { overlays: overlays.length }
+  });
+
+  ctx.broadcast = overlays;
+  return overlays;
 }
 
-export default runBroadcastEngine;
+export class BroadcastEngine {
+  run(events, state, ctx) {
+    return runBroadcastEngine(events, state, ctx);
+  }
+}
+
+const broadcastEngine = new BroadcastEngine();
+export default broadcastEngine;

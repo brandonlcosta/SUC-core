@@ -8,14 +8,21 @@
     "dev": "vite --config vite.config.js",
     "build": "vite build --config vite.config.js",
     "preview": "vite preview --config vite.config.js",
+
     "ws:ticks": "node backend/server/demoServer.js",
     "demo:map": "node tests/demoMapEvents.js",
+
     "dev:all": "concurrently \"npm run ws:ticks\" \"npm run dev\"",
-    "dev:all:demo": "concurrently \"npm run ws:ticks\" \"npm run demo:map\" \"npm run dev\""
+    "dev:all:demo": "concurrently \"npm run ws:ticks\" \"npm run demo:map\" \"npm run dev\"",
+
+    "dev:harness": "node tests/harnessRunner.js",
+    "validate": "node tests/schemaValidator.js",
+
+    "clean": "rimraf backend/outputs/*"
   },
   "dependencies": {
     "@turf/helpers": "^7.2.0",
-    "ajv": "^8.12.0",
+    "ajv": "^8.17.1",
     "ajv-formats": "^2.1.1",
     "cors": "^2.8.5",
     "express": "^5.1.0",
@@ -24,6 +31,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.22.3",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
     "ws": "^8.18.3"
   },
   "devDependencies": {

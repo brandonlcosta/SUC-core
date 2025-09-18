@@ -1,15 +1,16 @@
+// File: backend/engines/recognitionGraph.system.js
 // Recognition Graph System — maintains rivalries, streaks, event history
 
-import { c } from '../../ecs/world.js';
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { dirname } from 'node:path';
-import { appendMetric } from './_metrics.js';
+import { c } from "../../ecs/world.js";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { dirname } from "node:path";
+import { appendMetric } from "./_metrics.js";
 
-const GRAPH_FILE = 'backend/outputs/logs/recognitionGraph.json';
-const EVENT_HISTORY = 'EventHistory';
-const RIVALRY_INDEX = 'RivalryIndex';
-const STREAK_INDEX = 'StreakIndex';
-const EVENT = 'Event';
+const GRAPH_FILE = "backend/outputs/logs/recognitionGraph.json";
+const EVENT_HISTORY = "EventHistory";
+const RIVALRY_INDEX = "RivalryIndex";
+const STREAK_INDEX = "StreakIndex";
+const EVENT = "Event";
 
 export function recognitionGraphSystem() {
   let loaded = false;
@@ -30,7 +31,7 @@ export function recognitionGraphSystem() {
 
   function rivalryKey(a, b, turf) {
     const [x, y] = [a, b].sort();
-    return `${x}|${y}|${turf ?? 'NA'}`;
+    return `${x}|${y}|${turf ?? "NA"}`;
   }
 
   function applyEvent(cmaps, ev) {
@@ -38,90 +39,47 @@ export function recognitionGraphSystem() {
     const riv = cmaps.get(RIVALRY_INDEX);
     const strk = cmaps.get(STREAK_INDEX);
 
-    hist.events.push(ev);
-    (hist.byAthlete[ev.athlete_id] ||= []).push(ev);
-    (hist.byTurf[ev.turf_id ?? 'NA'] ||= []).push(ev);
+    // Track event in history
+    hist.push(ev);
 
-    const turfEvents = hist.byTurf[ev.turf_id ?? 'NA'];
-    const last = turfEvents[turfEvents.length - 2];
-
-    if (last && last.athlete_id !== ev.athlete_id) {
-      const key = rivalryKey(last.athlete_id, ev.athlete_id, ev.turf_id);
+    // Rivalries
+    if (ev.type === "head_to_head") {
+      const key = rivalryKey(ev.a, ev.b, ev.turf);
       riv[key] = (riv[key] || 0) + 1;
     }
 
-    const byAth = (strk[ev.athlete_id] ||= {});
-    const prevHolder = last?.athlete_id;
-    byAth[ev.turf_id] =
-      !prevHolder || prevHolder === ev.athlete_id
-        ? (byAth[ev.turf_id] || 0) + 1
-        : 1;
+    // Streaks
+    if (ev.type === "streak") {
+      strk[ev.athleteId] = (strk[ev.athleteId] || 0) + ev.laps;
+    }
+
+    appendMetric("recognition_event", { type: ev.type });
+  }
+
+  async function loadGraphFile() {
+    try {
+      const raw = await readFile(GRAPH_FILE, "utf8");
+      return JSON.parse(raw);
+    } catch {
+      return { history: [], rivalries: {}, streaks: {} };
+    }
+  }
+
+  async function saveGraphFile(data) {
+    await mkdir(dirname(GRAPH_FILE), { recursive: true });
+    await writeFile(GRAPH_FILE, JSON.stringify(data, null, 2));
   }
 
   return {
-    name: 'recognitionGraphSystem',
-    async update(world) {
-      const t0 = Date.now();
-      await ensureGraph(world);
-
-      const incoming = world.query([EVENT]);
-      if (incoming.length) {
-        const g = graphEntity(world);
-        for (const { components } of incoming) {
-          const ev = components.get(EVENT);
-          if (ev.__handled) continue;
-          applyEvent(g.components, ev);
-          ev.__handled = true;
-        }
-        await saveGraphFile(
-          g.components.get(EVENT_HISTORY),
-          g.components.get(RIVALRY_INDEX),
-          g.components.get(STREAK_INDEX)
-        );
-      }
-
-      await appendMetric('recognitionGraph.update', Date.now() - t0);
-    }
+    ensureGraph,
+    graphEntity,
+    applyEvent,
+    loadGraphFile,
+    saveGraphFile,
   };
 }
 
-export function makeEvent({
-  event_id,
-  event_type,
-  athlete_id,
-  crew,
-  turf_id,
-  timestamp,
-  metadata
-}) {
-  return c('Event', {
-    event_id,
-    event_type,
-    athlete_id,
-    crew,
-    turf_id,
-    timestamp,
-    metadata
-  });
-}
-
-async function loadGraphFile() {
-  try {
-    const raw = await readFile(GRAPH_FILE, 'utf8');
-    return JSON.parse(raw);
-  } catch {
-    return {
-      history: { events: [], byAthlete: {}, byTurf: {} },
-      rivalries: {},
-      streaks: {}
-    };
-  }
-}
-
-async function saveGraphFile(history, rivalries, streaks) {
-  const payload = JSON.stringify({ history, rivalries, streaks }, null, 2);
-  await mkdir(dirname(GRAPH_FILE), { recursive: true });
-  await writeFile(GRAPH_FILE, payload, 'utf8');
-}
-
-export default { recognitionGraphSystem, makeEvent };
+// ✅ Default export: factory wrapper
+export default {
+  recognitionGraphSystem,
+};

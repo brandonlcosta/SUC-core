@@ -1,3 +1,5 @@
+// File: backend/services/sponsorMetrics.js
+
 import fs from "fs";
 import path from "path";
 import schemaGate from "../utils/schemaGate.js";
@@ -12,13 +14,20 @@ export class SponsorMetrics {
     this.logPath = path.join(OUTPUT_DIR, "sponsorImpressions.jsonl");
   }
 
+  /**
+   * Record a sponsor impression
+   * @param {string} sponsorId
+   * @param {string} slot
+   * @param {number} durationMs
+   * @returns {Object} impression record
+   */
   record(sponsorId, slot, durationMs) {
     const record = {
       ts: Date.now(),
       sponsorId,
       slot,
       durationMs,
-      impressionCount: 1
+      impressionCount: 1,
     };
 
     schemaGate.validate("sponsorImpressions", record);
@@ -26,6 +35,10 @@ export class SponsorMetrics {
     return record;
   }
 
+  /**
+   * Aggregate sponsor impressions
+   * @returns {Object} aggregated summary
+   */
   aggregate() {
     if (!fs.existsSync(this.logPath)) return {};
 
@@ -33,7 +46,7 @@ export class SponsorMetrics {
       .readFileSync(this.logPath, "utf-8")
       .split("\n")
       .filter(Boolean)
-      .map(line => JSON.parse(line));
+      .map((line) => JSON.parse(line));
 
     const summary = {};
     for (const rec of lines) {
@@ -43,15 +56,26 @@ export class SponsorMetrics {
           sponsorId: rec.sponsorId,
           slot: rec.slot,
           totalImpressions: 0,
-          totalDuration: 0
+          totalDuration: 0,
         };
       }
       summary[key].totalImpressions += rec.impressionCount;
       summary[key].totalDuration += rec.durationMs;
     }
 
-    return Object.values(summary);
+    return summary;
   }
 }
 
-export default new SponsorMetrics();
+// Named helper functions
+export function recordSponsorImpression(sponsorId, slot, durationMs) {
+  return sponsorMetrics.record(sponsorId, slot, durationMs);
+}
+
+export function aggregateSponsorMetrics() {
+  return sponsorMetrics.aggregate();
+}
+
+// Default singleton instance
+const sponsorMetrics = new SponsorMetrics();
+export default sponsorMetrics;

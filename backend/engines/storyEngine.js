@@ -1,71 +1,79 @@
-// /backend/engines/storyEngine.js
-// Reducer: converts meta into arcs → stories.json
+// File: backend/engines/storyEngine.js
 
+import * as schemaGate from "../services/schemaGate.js";
+import * as ledgerService from "../services/ledgerService.js";
+import * as operatorService from "../services/operatorService.js";
 import fs from "fs";
 import path from "path";
-import { validateAgainstSchema } from "../utils/schemaValidator.js";
 
-const OUTPUT_PATH = path.resolve("./outputs/broadcast/stories.json");
-const SCHEMA_PATH = path.resolve("./backend/schemas/story.schema.json");
+const configPath = path.resolve("./backend/configs/storyConfig.json");
+const storyConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
 
-/**
- * Reducer: build story arcs from meta data
- * @param {Object} meta
- * @returns {Object} stories
- */
-export function storyReducer(meta = {}) {
-  const stories = [];
+export function runStoryEngine(events, state, ctx) {
+  const arcs = buildArcs(events, ctx.meta);
 
-  // Rivalries → story arcs
-  meta.rivalries?.forEach((r) => {
-    stories.push({
-      type: "rivalry",
-      summary: `${r.athletes[0]} vs ${r.athletes[1]}`,
-      timestamp: r.timestamp,
-    });
+  const finalArcs = operatorService.applyStoryOverrides(arcs);
+
+  schemaGate.validate("story", { arcs: finalArcs });
+
+  ledgerService.event({
+    engine: "story",
+    type: "summary",
+    payload: { arcs: finalArcs.length }
   });
 
-  // Streaks → endurance stories
-  meta.streaks?.forEach((s) => {
-    stories.push({
-      type: "streak",
-      summary: `${s.athleteId} on a ${s.laps}-lap streak!`,
-      timestamp: s.timestamp,
-    });
-  });
-
-  // Projections → future story arcs
-  meta.projections?.forEach((p) => {
-    stories.push({
-      type: "projection",
-      summary: `${p.athleteId} expected next at ${new Date(p.expected_next).toLocaleTimeString()}`,
-      timestamp: Date.now(),
-    });
-  });
-
-  return { stories };
+  ctx.story = { arcs: finalArcs };
+  return { arcs: finalArcs };
 }
 
-/**
- * Run story engine and persist output
- * @param {Object} meta
- * @returns {Object} stories
- */
-export function runStoryEngine(meta) {
-  const stories = storyReducer(meta);
-
-  const valid = validateAgainstSchema(SCHEMA_PATH, stories);
-  if (!valid) {
-    console.error("❌ StoryEngine schema validation failed");
-    return null;
+export class StoryEngine {
+  run(events, state, ctx) {
+    return runStoryEngine(events, state, ctx);
   }
-
-  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(stories, null, 2));
-  console.log(`✅ StoryEngine wrote ${OUTPUT_PATH}`);
-
-  return stories;
 }
 
-// Export both named + default for compatibility
-export default runStoryEngine;
+const storyEngine = new StoryEngine();
+export default storyEngine;
+
+/* --------------------------
+   Internal Helpers
+--------------------------- */
+
+function buildArcs(events, meta) {
+  const arcs = [];
+
+  meta?.rivalries?.forEach(r => {
+    arcs.push({
+      type: "rivalry_arc",
+      athlete_ids: r.athlete_ids,
+      gap_seconds: r.gap_seconds,
+      priority: storyConfig.rivalry.priority
+    });
+  });
+
+  const comebackThreshold = storyConfig.comeback.lap_gain;
+  events.forEach(e => {
+    if (e.type === "lap_gain" && e.value >= comebackThreshold) {
+      arcs.push({
+        type: "comeback_arc",
+        athlete_id: e.athlete_id,
+        gain: e.value,
+        priority: storyConfig.comeback.priority
+      });
+    }
+  });
+
+  const streakThreshold = storyConfig.dominance.streak;
+  events.forEach(e => {
+    if (e.type === "streak" && e.value >= streakThreshold) {
+      arcs.push({
+        type: "dominance_arc",
+        athlete_id: e.athlete_id,
+        streak: e.value,
+        priority: storyConfig.dominance.priority
+      });
+    }
+  });
+
+  return arcs.sort((a, b) => b.priority - a.priority);
+}

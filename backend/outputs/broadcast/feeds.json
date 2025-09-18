@@ -6,14 +6,14 @@
       "name": "Brandon",
       "crew": "SUC",
       "tier": "vip",
-      "laps": 2032
+      "laps": 164
     },
     {
       "athlete_id": "runner_emily",
       "name": "Emily",
       "crew": "Trail Blazers",
       "tier": "standard",
-      "laps": 2033
+      "laps": 165
     }
   ],
   "events": [
@@ -37987,6 +37987,2967 @@
       ],
       "priority": 5,
       "timestamp": 1758201428682
+    },
+    {
+      "event_id": "evt_1758226137190",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226137190
+    },
+    {
+      "event_id": "evt_1758226142198",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226142198
+    },
+    {
+      "event_id": "evt_1758226147198",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226147198
+    },
+    {
+      "event_id": "evt_1758226152207",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226152207
+    },
+    {
+      "event_id": "evt_1758226157214",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226157214
+    },
+    {
+      "event_id": "evt_1758226162217",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226162217
+    },
+    {
+      "event_id": "evt_1758226167221",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226167221
+    },
+    {
+      "event_id": "evt_1758226172228",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226172228
+    },
+    {
+      "event_id": "evt_1758226177232",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226177232
+    },
+    {
+      "event_id": "evt_1758226182237",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226182237
+    },
+    {
+      "event_id": "evt_1758226187242",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226187242
+    },
+    {
+      "event_id": "evt_1758226192242",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226192242
+    },
+    {
+      "event_id": "evt_1758226197262",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226197262
+    },
+    {
+      "event_id": "evt_1758226202272",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226202272
+    },
+    {
+      "event_id": "evt_1758226207282",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226207282
+    },
+    {
+      "event_id": "evt_1758226212292",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226212292
+    },
+    {
+      "event_id": "evt_1758226217298",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226217298
+    },
+    {
+      "event_id": "evt_1758226222303",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226222303
+    },
+    {
+      "event_id": "evt_1758226227312",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226227312
+    },
+    {
+      "event_id": "evt_1758226232312",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226232312
+    },
+    {
+      "event_id": "evt_1758226237322",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226237322
+    },
+    {
+      "event_id": "evt_1758226242337",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226242337
+    },
+    {
+      "event_id": "evt_1758226247342",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226247342
+    },
+    {
+      "event_id": "evt_1758226252347",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226252347
+    },
+    {
+      "event_id": "evt_1758226257350",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226257350
+    },
+    {
+      "event_id": "evt_1758226262365",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226262365
+    },
+    {
+      "event_id": "evt_1758226267374",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226267374
+    },
+    {
+      "event_id": "evt_1758226272377",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226272377
+    },
+    {
+      "event_id": "evt_1758226277384",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226277384
+    },
+    {
+      "event_id": "evt_1758226282387",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226282387
+    },
+    {
+      "event_id": "evt_1758226287392",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226287392
+    },
+    {
+      "event_id": "evt_1758226292392",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226292392
+    },
+    {
+      "event_id": "evt_1758226297402",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226297402
+    },
+    {
+      "event_id": "evt_1758226302412",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226302412
+    },
+    {
+      "event_id": "evt_1758226307419",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226307419
+    },
+    {
+      "event_id": "evt_1758226312422",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226312422
+    },
+    {
+      "event_id": "evt_1758226317422",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226317422
+    },
+    {
+      "event_id": "evt_1758226322427",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226322427
+    },
+    {
+      "event_id": "evt_1758226327432",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226327432
+    },
+    {
+      "event_id": "evt_1758226332447",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226332447
+    },
+    {
+      "event_id": "evt_1758226337452",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226337452
+    },
+    {
+      "event_id": "evt_1758226342462",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226342462
+    },
+    {
+      "event_id": "evt_1758226347470",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226347470
+    },
+    {
+      "event_id": "evt_1758226352473",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226352473
+    },
+    {
+      "event_id": "evt_1758226357478",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226357478
+    },
+    {
+      "event_id": "evt_1758226362485",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226362485
+    },
+    {
+      "event_id": "evt_1758226367500",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226367500
+    },
+    {
+      "event_id": "evt_1758226372505",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226372505
+    },
+    {
+      "event_id": "evt_1758226377514",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226377514
+    },
+    {
+      "event_id": "evt_1758226382521",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226382521
+    },
+    {
+      "event_id": "evt_1758226387524",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226387524
+    },
+    {
+      "event_id": "evt_1758226392537",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226392537
+    },
+    {
+      "event_id": "evt_1758226397538",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226397538
+    },
+    {
+      "event_id": "evt_1758226402541",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226402541
+    },
+    {
+      "event_id": "evt_1758226407547",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226407547
+    },
+    {
+      "event_id": "evt_1758226412550",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226412550
+    },
+    {
+      "event_id": "evt_1758226417556",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226417556
+    },
+    {
+      "event_id": "evt_1758226422558",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226422558
+    },
+    {
+      "event_id": "evt_1758226427566",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226427566
+    },
+    {
+      "event_id": "evt_1758226432572",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226432572
+    },
+    {
+      "event_id": "evt_1758226437577",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226437577
+    },
+    {
+      "event_id": "evt_1758226442578",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226442578
+    },
+    {
+      "event_id": "evt_1758226447592",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226447592
+    },
+    {
+      "event_id": "evt_1758226452614",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226452614
+    },
+    {
+      "event_id": "evt_1758226457624",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226457624
+    },
+    {
+      "event_id": "evt_1758226462642",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226462642
+    },
+    {
+      "event_id": "evt_1758226467646",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226467646
+    },
+    {
+      "event_id": "evt_1758226472652",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226472652
+    },
+    {
+      "event_id": "evt_1758226477652",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226477652
+    },
+    {
+      "event_id": "evt_1758226482653",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226482653
+    },
+    {
+      "event_id": "evt_1758226487653",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226487653
+    },
+    {
+      "event_id": "evt_1758226492654",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226492654
+    },
+    {
+      "event_id": "evt_1758226497655",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226497655
+    },
+    {
+      "event_id": "evt_1758226502659",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226502659
+    },
+    {
+      "event_id": "evt_1758226507664",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226507664
+    },
+    {
+      "event_id": "evt_1758226512671",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226512671
+    },
+    {
+      "event_id": "evt_1758226517673",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226517673
+    },
+    {
+      "event_id": "evt_1758226522683",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226522683
+    },
+    {
+      "event_id": "evt_1758226527702",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226527702
+    },
+    {
+      "event_id": "evt_1758226532712",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226532712
+    },
+    {
+      "event_id": "evt_1758226537722",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226537722
+    },
+    {
+      "event_id": "evt_1758226542727",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226542727
+    },
+    {
+      "event_id": "evt_1758226547732",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226547732
+    },
+    {
+      "event_id": "evt_1758226552732",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226552732
+    },
+    {
+      "event_id": "evt_1758226557737",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226557737
+    },
+    {
+      "event_id": "evt_1758226562739",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226562739
+    },
+    {
+      "event_id": "evt_1758226567742",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226567742
+    },
+    {
+      "event_id": "evt_1758226572743",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226572743
+    },
+    {
+      "event_id": "evt_1758226577762",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226577762
+    },
+    {
+      "event_id": "evt_1758226582762",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226582762
+    },
+    {
+      "event_id": "evt_1758226587782",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226587782
+    },
+    {
+      "event_id": "evt_1758226592802",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226592802
+    },
+    {
+      "event_id": "evt_1758226597812",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226597812
+    },
+    {
+      "event_id": "evt_1758226602818",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226602818
+    },
+    {
+      "event_id": "evt_1758226607823",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226607823
+    },
+    {
+      "event_id": "evt_1758226612832",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226612832
+    },
+    {
+      "event_id": "evt_1758226617842",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226617842
+    },
+    {
+      "event_id": "evt_1758226622852",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226622852
+    },
+    {
+      "event_id": "evt_1758226627862",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226627862
+    },
+    {
+      "event_id": "evt_1758226632862",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226632862
+    },
+    {
+      "event_id": "evt_1758226637864",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226637864
+    },
+    {
+      "event_id": "evt_1758226642872",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226642872
+    },
+    {
+      "event_id": "evt_1758226647892",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226647892
+    },
+    {
+      "event_id": "evt_1758226652892",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226652892
+    },
+    {
+      "event_id": "evt_1758226657892",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226657892
+    },
+    {
+      "event_id": "evt_1758226662900",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226662900
+    },
+    {
+      "event_id": "evt_1758226667902",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226667902
+    },
+    {
+      "event_id": "evt_1758226672907",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226672907
+    },
+    {
+      "event_id": "evt_1758226677918",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226677918
+    },
+    {
+      "event_id": "evt_1758226682917",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226682917
+    },
+    {
+      "event_id": "evt_1758226687922",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226687922
+    },
+    {
+      "event_id": "evt_1758226692922",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226692922
+    },
+    {
+      "event_id": "evt_1758226697942",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226697942
+    },
+    {
+      "event_id": "evt_1758226702942",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226702942
+    },
+    {
+      "event_id": "evt_1758226707942",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226707942
+    },
+    {
+      "event_id": "evt_1758226712952",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226712952
+    },
+    {
+      "event_id": "evt_1758226717959",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226717959
+    },
+    {
+      "event_id": "evt_1758226722972",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226722972
+    },
+    {
+      "event_id": "evt_1758226727977",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226727977
+    },
+    {
+      "event_id": "evt_1758226732982",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226732982
+    },
+    {
+      "event_id": "evt_1758226737995",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226737995
+    },
+    {
+      "event_id": "evt_1758226742998",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226742998
+    },
+    {
+      "event_id": "evt_1758226748012",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226748012
+    },
+    {
+      "event_id": "evt_1758226753032",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226753032
+    },
+    {
+      "event_id": "evt_1758226758050",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226758050
+    },
+    {
+      "event_id": "evt_1758226763053",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226763053
+    },
+    {
+      "event_id": "evt_1758226768057",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226768057
+    },
+    {
+      "event_id": "evt_1758226773070",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226773070
+    },
+    {
+      "event_id": "evt_1758226778077",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226778077
+    },
+    {
+      "event_id": "evt_1758226783086",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226783086
+    },
+    {
+      "event_id": "evt_1758226788092",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226788092
+    },
+    {
+      "event_id": "evt_1758226793107",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226793107
+    },
+    {
+      "event_id": "evt_1758226798112",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226798112
+    },
+    {
+      "event_id": "evt_1758226803132",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226803132
+    },
+    {
+      "event_id": "evt_1758226808145",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226808145
+    },
+    {
+      "event_id": "evt_1758226813182",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226813182
+    },
+    {
+      "event_id": "evt_1758226818200",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226818200
+    },
+    {
+      "event_id": "evt_1758226823215",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226823215
+    },
+    {
+      "event_id": "evt_1758226828226",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226828226
+    },
+    {
+      "event_id": "evt_1758226833240",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226833240
+    },
+    {
+      "event_id": "evt_1758226838250",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226838251
+    },
+    {
+      "event_id": "evt_1758226843261",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226843261
+    },
+    {
+      "event_id": "evt_1758226848261",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226848261
+    },
+    {
+      "event_id": "evt_1758226853262",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226853262
+    },
+    {
+      "event_id": "evt_1758226858265",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226858265
+    },
+    {
+      "event_id": "evt_1758226863273",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226863273
+    },
+    {
+      "event_id": "evt_1758226868288",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226868288
+    },
+    {
+      "event_id": "evt_1758226873299",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226873299
+    },
+    {
+      "event_id": "evt_1758226878309",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226878309
+    },
+    {
+      "event_id": "evt_1758226883309",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226883309
+    },
+    {
+      "event_id": "evt_1758226888320",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226888320
+    },
+    {
+      "event_id": "evt_1758226893326",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226893326
+    },
+    {
+      "event_id": "evt_1758226898334",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226898334
+    },
+    {
+      "event_id": "evt_1758226903336",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226903336
+    },
+    {
+      "event_id": "evt_1758226908351",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226908351
+    },
+    {
+      "event_id": "evt_1758226913359",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226913359
+    },
+    {
+      "event_id": "evt_1758226918362",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226918362
+    },
+    {
+      "event_id": "evt_1758226923368",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226923368
+    },
+    {
+      "event_id": "evt_1758226928370",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226928370
+    },
+    {
+      "event_id": "evt_1758226933381",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226933381
+    },
+    {
+      "event_id": "evt_1758226938396",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226938396
+    },
+    {
+      "event_id": "evt_1758226943409",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226943409
+    },
+    {
+      "event_id": "evt_1758226948417",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226948417
+    },
+    {
+      "event_id": "evt_1758226953418",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226953418
+    },
+    {
+      "event_id": "evt_1758226958427",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226958427
+    },
+    {
+      "event_id": "evt_1758226963429",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226963429
+    },
+    {
+      "event_id": "evt_1758226968436",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226968436
+    },
+    {
+      "event_id": "evt_1758226973448",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226973448
+    },
+    {
+      "event_id": "evt_1758226978459",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226978459
+    },
+    {
+      "event_id": "evt_1758226983461",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226983461
+    },
+    {
+      "event_id": "evt_1758226988476",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226988476
+    },
+    {
+      "event_id": "evt_1758226993485",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758226993485
+    },
+    {
+      "event_id": "evt_1758226998490",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758226998490
+    },
+    {
+      "event_id": "evt_1758227003490",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227003490
+    },
+    {
+      "event_id": "evt_1758227008491",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227008491
+    },
+    {
+      "event_id": "evt_1758227013504",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227013504
+    },
+    {
+      "event_id": "evt_1758227018517",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227018517
+    },
+    {
+      "event_id": "evt_1758227023525",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227023525
+    },
+    {
+      "event_id": "evt_1758227028531",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227028531
+    },
+    {
+      "event_id": "evt_1758227033536",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227033536
+    },
+    {
+      "event_id": "evt_1758227038551",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227038551
+    },
+    {
+      "event_id": "evt_1758227043551",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227043551
+    },
+    {
+      "event_id": "evt_1758227048565",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227048565
+    },
+    {
+      "event_id": "evt_1758227053570",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227053570
+    },
+    {
+      "event_id": "evt_1758227058578",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227058578
+    },
+    {
+      "event_id": "evt_1758227063584",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227063584
+    },
+    {
+      "event_id": "evt_1758227068585",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227068585
+    },
+    {
+      "event_id": "evt_1758227073597",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227073597
+    },
+    {
+      "event_id": "evt_1758227078601",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227078601
+    },
+    {
+      "event_id": "evt_1758227083615",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227083615
+    },
+    {
+      "event_id": "evt_1758227088630",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227088630
+    },
+    {
+      "event_id": "evt_1758227093641",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227093641
+    },
+    {
+      "event_id": "evt_1758227098651",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227098651
+    },
+    {
+      "event_id": "evt_1758227103663",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227103663
+    },
+    {
+      "event_id": "evt_1758227108668",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227108668
+    },
+    {
+      "event_id": "evt_1758227113681",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227113681
+    },
+    {
+      "event_id": "evt_1758227118693",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227118693
+    },
+    {
+      "event_id": "evt_1758227123701",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227123701
+    },
+    {
+      "event_id": "evt_1758227128715",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227128715
+    },
+    {
+      "event_id": "evt_1758227133727",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227133727
+    },
+    {
+      "event_id": "evt_1758227138733",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227138733
+    },
+    {
+      "event_id": "evt_1758227143740",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227143740
+    },
+    {
+      "event_id": "evt_1758227148742",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227148742
+    },
+    {
+      "event_id": "evt_1758227153747",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227153747
+    },
+    {
+      "event_id": "evt_1758227158761",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227158761
+    },
+    {
+      "event_id": "evt_1758227163766",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227163766
+    },
+    {
+      "event_id": "evt_1758227168767",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227168767
+    },
+    {
+      "event_id": "evt_1758227173772",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227173772
+    },
+    {
+      "event_id": "evt_1758227178775",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227178775
+    },
+    {
+      "event_id": "evt_1758227183778",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227183778
+    },
+    {
+      "event_id": "evt_1758227188780",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227188780
+    },
+    {
+      "event_id": "evt_1758227193789",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227193789
+    },
+    {
+      "event_id": "evt_1758227198801",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227198802
+    },
+    {
+      "event_id": "evt_1758227203810",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227203810
+    },
+    {
+      "event_id": "evt_1758227208823",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227208823
+    },
+    {
+      "event_id": "evt_1758227213823",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227213823
+    },
+    {
+      "event_id": "evt_1758227218826",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227218826
+    },
+    {
+      "event_id": "evt_1758227223829",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227223829
+    },
+    {
+      "event_id": "evt_1758227228847",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227228847
+    },
+    {
+      "event_id": "evt_1758227233858",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227233858
+    },
+    {
+      "event_id": "evt_1758227238867",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227238867
+    },
+    {
+      "event_id": "evt_1758227243869",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227243869
+    },
+    {
+      "event_id": "evt_1758227248875",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227248875
+    },
+    {
+      "event_id": "evt_1758227253886",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227253886
+    },
+    {
+      "event_id": "evt_1758227258900",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227258900
+    },
+    {
+      "event_id": "evt_1758227263899",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227263900
+    },
+    {
+      "event_id": "evt_1758227268913",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227268914
+    },
+    {
+      "event_id": "evt_1758227273927",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227273927
+    },
+    {
+      "event_id": "evt_1758227278958",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227278958
+    },
+    {
+      "event_id": "evt_1758227283961",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227283961
+    },
+    {
+      "event_id": "evt_1758227288973",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227288973
+    },
+    {
+      "event_id": "evt_1758227294019",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227294019
+    },
+    {
+      "event_id": "evt_1758227299044",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227299044
+    },
+    {
+      "event_id": "evt_1758227304050",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227304050
+    },
+    {
+      "event_id": "evt_1758227309071",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227309071
+    },
+    {
+      "event_id": "evt_1758227314080",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227314080
+    },
+    {
+      "event_id": "evt_1758227319085",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227319085
+    },
+    {
+      "event_id": "evt_1758227324096",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227324096
+    },
+    {
+      "event_id": "evt_1758227329113",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227329113
+    },
+    {
+      "event_id": "evt_1758227334120",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227334120
+    },
+    {
+      "event_id": "evt_1758227339125",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227339125
+    },
+    {
+      "event_id": "evt_1758227344129",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227344129
+    },
+    {
+      "event_id": "evt_1758227349144",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227349144
+    },
+    {
+      "event_id": "evt_1758227354171",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227354171
+    },
+    {
+      "event_id": "evt_1758227359179",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227359179
+    },
+    {
+      "event_id": "evt_1758227364189",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227364189
+    },
+    {
+      "event_id": "evt_1758227369189",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227369189
+    },
+    {
+      "event_id": "evt_1758227374203",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227374203
+    },
+    {
+      "event_id": "evt_1758227379218",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227379218
+    },
+    {
+      "event_id": "evt_1758227384233",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227384233
+    },
+    {
+      "event_id": "evt_1758227389307",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227389307
+    },
+    {
+      "event_id": "evt_1758227394319",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227394319
+    },
+    {
+      "event_id": "evt_1758227399330",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227399330
+    },
+    {
+      "event_id": "evt_1758227404342",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227404343
+    },
+    {
+      "event_id": "evt_1758227409343",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227409343
+    },
+    {
+      "event_id": "evt_1758227414355",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227414355
+    },
+    {
+      "event_id": "evt_1758227419370",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227419370
+    },
+    {
+      "event_id": "evt_1758227424380",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227424380
+    },
+    {
+      "event_id": "evt_1758227429389",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227429389
+    },
+    {
+      "event_id": "evt_1758227434398",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227434398
+    },
+    {
+      "event_id": "evt_1758227439401",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227439401
+    },
+    {
+      "event_id": "evt_1758227444406",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227444407
+    },
+    {
+      "event_id": "evt_1758227449406",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227449406
+    },
+    {
+      "event_id": "evt_1758227454418",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227454418
+    },
+    {
+      "event_id": "evt_1758227459428",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227459428
+    },
+    {
+      "event_id": "evt_1758227464437",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227464437
+    },
+    {
+      "event_id": "evt_1758227469441",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227469441
+    },
+    {
+      "event_id": "evt_1758227474442",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227474442
+    },
+    {
+      "event_id": "evt_1758227479453",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227479453
+    },
+    {
+      "event_id": "evt_1758227484458",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227484458
+    },
+    {
+      "event_id": "evt_1758227489469",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227489469
+    },
+    {
+      "event_id": "evt_1758227494483",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227494483
+    },
+    {
+      "event_id": "evt_1758227499492",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227499492
+    },
+    {
+      "event_id": "evt_1758227504503",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227504503
+    },
+    {
+      "event_id": "evt_1758227509505",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227509505
+    },
+    {
+      "event_id": "evt_1758227514515",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227514515
+    },
+    {
+      "event_id": "evt_1758227519529",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227519529
+    },
+    {
+      "event_id": "evt_1758227524541",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227524541
+    },
+    {
+      "event_id": "evt_1758227529541",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227529541
+    },
+    {
+      "event_id": "evt_1758227534542",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227534542
+    },
+    {
+      "event_id": "evt_1758227539554",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227539554
+    },
+    {
+      "event_id": "evt_1758227544562",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227544562
+    },
+    {
+      "event_id": "evt_1758227549574",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227549574
+    },
+    {
+      "event_id": "evt_1758227554579",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227554579
+    },
+    {
+      "event_id": "evt_1758227559583",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227559583
+    },
+    {
+      "event_id": "evt_1758227564595",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227564595
+    },
+    {
+      "event_id": "evt_1758227569604",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227569604
+    },
+    {
+      "event_id": "evt_1758227574614",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227574614
+    },
+    {
+      "event_id": "evt_1758227579614",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227579614
+    },
+    {
+      "event_id": "evt_1758227584620",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227584620
+    },
+    {
+      "event_id": "evt_1758227589630",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227589630
+    },
+    {
+      "event_id": "evt_1758227594646",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227594646
+    },
+    {
+      "event_id": "evt_1758227599660",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227599660
+    },
+    {
+      "event_id": "evt_1758227604675",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227604675
+    },
+    {
+      "event_id": "evt_1758227609676",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227609676
+    },
+    {
+      "event_id": "evt_1758227614761",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227614761
+    },
+    {
+      "event_id": "evt_1758227619763",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227619763
+    },
+    {
+      "event_id": "evt_1758227624770",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227624770
+    },
+    {
+      "event_id": "evt_1758227629773",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227629773
+    },
+    {
+      "event_id": "evt_1758227634783",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227634783
+    },
+    {
+      "event_id": "evt_1758227639797",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227639797
+    },
+    {
+      "event_id": "evt_1758227644802",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227644802
+    },
+    {
+      "event_id": "evt_1758227649813",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227649813
+    },
+    {
+      "event_id": "evt_1758227654827",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227654827
+    },
+    {
+      "event_id": "evt_1758227659834",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227659834
+    },
+    {
+      "event_id": "evt_1758227664844",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227664844
+    },
+    {
+      "event_id": "evt_1758227669853",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227669853
+    },
+    {
+      "event_id": "evt_1758227674855",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227674855
+    },
+    {
+      "event_id": "evt_1758227679860",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227679860
+    },
+    {
+      "event_id": "evt_1758227684875",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227684875
+    },
+    {
+      "event_id": "evt_1758227689907",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227689907
+    },
+    {
+      "event_id": "evt_1758227694914",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227694914
+    },
+    {
+      "event_id": "evt_1758227699917",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227699917
+    },
+    {
+      "event_id": "evt_1758227704932",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227704932
+    },
+    {
+      "event_id": "evt_1758227709956",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227709956
+    },
+    {
+      "event_id": "evt_1758227714970",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227714970
+    },
+    {
+      "event_id": "evt_1758227719972",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227719972
+    },
+    {
+      "event_id": "evt_1758227724983",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227724983
+    },
+    {
+      "event_id": "evt_1758227729987",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227729987
+    },
+    {
+      "event_id": "evt_1758227734992",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227734992
+    },
+    {
+      "event_id": "evt_1758227740011",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227740011
+    },
+    {
+      "event_id": "evt_1758227745013",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227745013
+    },
+    {
+      "event_id": "evt_1758227750021",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227750021
+    },
+    {
+      "event_id": "evt_1758227755024",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227755024
+    },
+    {
+      "event_id": "evt_1758227760034",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227760034
+    },
+    {
+      "event_id": "evt_1758227765037",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227765037
+    },
+    {
+      "event_id": "evt_1758227770039",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227770039
+    },
+    {
+      "event_id": "evt_1758227775051",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_brandon"
+      ],
+      "priority": 5,
+      "timestamp": 1758227775052
+    },
+    {
+      "event_id": "evt_1758227780056",
+      "overlay_type": "lap_update",
+      "athlete_ids": [
+        "runner_emily"
+      ],
+      "priority": 5,
+      "timestamp": 1758227780056
     }
   ]
 }

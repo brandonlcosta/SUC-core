@@ -1,45 +1,24 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Recap Schema",
+  "title": "Recap",
   "type": "object",
   "properties": {
+    "session_id": { "type": "string" },
     "laps_summary": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "athleteId": { "type": "string" },
-          "laps": { "type": "integer", "minimum": 0 }
+          "runner": { "type": "string" },
+          "laps": { "type": "integer" }
         },
-        "required": ["athleteId", "laps"]
-      }
-    },
-    "dnf_log": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "athleteId": { "type": "string" },
-          "timestamp": { "type": "integer" }
-        },
-        "required": ["athleteId", "timestamp"]
+        "required": ["runner", "laps"]
       }
     },
     "highlight_reel": {
       "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "type": { "type": "string" },
-          "athletes": {
-            "type": "array",
-            "items": { "type": "string" }
-          },
-          "timestamp": { "type": "integer" }
-        },
-        "required": ["type", "timestamp"]
-      }
+      "items": { "type": "string" }
     }
   },
-  "required": ["laps_summary", "dnf_log", "highlight_reel"]
+  "required": ["laps_summary", "highlight_reel"]
 }

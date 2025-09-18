@@ -1,4 +1,5 @@
-// /backend/engines/sponsorEngine.js
+// File: backend/engines/sponsorEngine.js
+
 // Reducer: manages sponsor slots, TTL enforcement, and impression logging
 
 import fs from "fs";
@@ -40,36 +41,39 @@ export function sponsorReducer(state = {}, action = {}) {
       logImpression(updatedSlot);
       return updatedState;
     }
+
     default:
       return state;
   }
 }
 
 /**
- * Log sponsor impression to JSONL file
- * @param {Object} impression
+ * Logs sponsor impressions for reporting
  */
-function logImpression(impression) {
-  fs.mkdirSync(path.dirname(LOG_PATH), { recursive: true });
-  fs.appendFileSync(LOG_PATH, JSON.stringify({ ...impression, loggedAt: Date.now() }) + "\n");
-}
+export function logImpression(slot) {
+  try {
+    const entry = {
+      ...slot,
+      timestamp: Date.now(),
+    };
 
-/**
- * Run sponsor engine and persist state
- * @param {Object} state
- * @param {Object} action
- * @returns {Object} updated state
- */
-export function runSponsorEngine(state, action) {
-  const updated = sponsorReducer(state, action);
+    // Validate against schema
+    const valid = validateAgainstSchema(SCHEMA_PATH, entry);
+    if (!valid) {
+      console.error("❌ Invalid sponsor impression schema", entry);
+      return;
+    }
 
-  const valid = validateAgainstSchema(SCHEMA_PATH, updated);
-  if (!valid) {
-    console.error("❌ SponsorEngine schema validation failed");
-    return state;
+    fs.mkdirSync(path.dirname(LOG_PATH), { recursive: true });
+    fs.appendFileSync(LOG_PATH, JSON.stringify(entry) + "\n");
+    console.log("📊 Logged sponsor impression", entry);
+  } catch (err) {
+    console.error("❌ Failed to log sponsor impression", err);
   }
-
-  return updated;
 }
 
-export default runSponsorEngine;
+// ✅ Default export for server.js clean imports
+export default {
+  sponsorReducer,
+  logImpression,
+};

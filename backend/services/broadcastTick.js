@@ -1,44 +1,71 @@
 // File: backend/services/broadcastTick.js
+// Service for generating + persisting broadcast ticks according to schema
 
 import fs from "fs";
 import path from "path";
-import { GeoService } from "./geoService.js";
-import { EventEngine } from "../engines/eventEngine.js";
-import { MetaEngine } from "../engines/metaEngine.js";
+import { ensureOutputDir, OUTPUT_DIR } from "../utils/paths.js";
 
-const OUTPUT_PATH = path.resolve("backend/outputs/broadcast/broadcastTick.json");
+const BROADCAST_DIR = path.join(OUTPUT_DIR, "broadcast");
+const LOGS_DIR = path.join(OUTPUT_DIR, "logs");
+const TICK_FILE = path.join(BROADCAST_DIR, "broadcastTick.json");
+const TICK_LOG = path.join(LOGS_DIR, "broadcastTicks.jsonl");
 
-/**
- * BroadcastTick Service
- * Aggregates geo, events, and mode into the core broadcastTick.json
- */
 export class BroadcastTickService {
   constructor() {
-    this.geoService = new GeoService();
-    this.eventEngine = new EventEngine();
-    this.metaEngine = new MetaEngine();
+    ensureOutputDir();
+    fs.mkdirSync(BROADCAST_DIR, { recursive: true });
+    fs.mkdirSync(LOGS_DIR, { recursive: true });
   }
 
   /**
-   * Process incoming athlete tick and emit broadcastTick.json
-   * @param {Object} tick - { athlete_id, coordinates, lap, distance_km, rank, timestamp }
+   * Build a broadcast tick aligned with broadcastTick.schema.json
+   * @param {Object} params
+   * @param {string} params.event_id
+   * @param {string} params.overlay_type - e.g. "rivalry_card", "lap_update"
+   * @param {Array<string>} params.athlete_ids
+   * @param {string} [params.sponsor_slot]
+   * @param {number} [params.priority]
+   * @param {number} [params.timestamp]
    */
-  processTick(tick) {
-    // update geo + events
-    this.geoService.addPosition(tick);
-    const events = this.eventEngine.processTick(tick);
-    const meta = this.metaEngine.writeMeta();
-
-    // build broadcastTick.json
-    const tickPayload = {
-      timestamp: tick.timestamp,
-      geo_positions: this.geoService.positions,
-      events,
-      mode: meta.mode,
-      session_id: meta.session_id,
+  buildTick({ event_id, overlay_type, athlete_ids, sponsor_slot, priority = 5, timestamp = Date.now() }) {
+    return {
+      event_id,
+      overlay_type,
+      athlete_ids,
+      sponsor_slot,
+      priority,
+      timestamp,
     };
+  }
 
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(tickPayload, null, 2));
-    return tickPayload;
+  /**
+   * Write tick to JSON file + append to log
+   * @param {Object} tick
+   */
+  writeTick(tick) {
+    fs.writeFileSync(TICK_FILE, JSON.stringify(tick, null, 2));
+    fs.appendFileSync(TICK_LOG, JSON.stringify(tick) + "\n");
+    return tick;
+  }
+
+  /**
+   * Create + persist a tick from parameters
+   */
+  emitTick(params) {
+    const tick = this.buildTick(params);
+    return this.writeTick(tick);
   }
 }
+
+// Named helpers
+export function buildBroadcastTick(params) {
+  return broadcastTickService.buildTick(params);
+}
+
+export function emitBroadcastTick(params) {
+  return broadcastTickService.emitTick(params);
+}
+
+// Default singleton instance
+const broadcastTickService = new BroadcastTickService();
+export default broadcastTickService;

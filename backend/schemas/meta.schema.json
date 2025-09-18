@@ -1,34 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Meta Schema",
+  "title": "Meta",
   "type": "object",
   "properties": {
-    "streaks": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "athleteId": { "type": "string" },
-          "laps": { "type": "integer" },
-          "timestamp": { "type": "integer" }
-        },
-        "required": ["athleteId", "laps", "timestamp"]
-      }
-    },
     "rivalries": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "athletes": {
-            "type": "array",
-            "items": { "type": "string" },
-            "minItems": 2,
-            "maxItems": 2
-          },
-          "timestamp": { "type": "integer" }
+          "athlete_ids": { "type": "array", "items": { "type": "string" } },
+          "gap_seconds": { "type": "number" },
+          "priority": { "type": "integer" }
         },
-        "required": ["athletes", "timestamp"]
+        "required": ["athlete_ids", "gap_seconds"]
       }
     },
     "projections": {
@@ -36,12 +20,17 @@
       "items": {
         "type": "object",
         "properties": {
-          "athleteId": { "type": "string" },
-          "expected_next": { "type": "integer" }
+          "athlete_id": { "type": "string" },
+          "projected_finish": { "type": "number" },
+          "confidence": { "type": "string" }
         },
-        "required": ["athleteId", "expected_next"]
+        "required": ["athlete_id", "projected_finish"]
       }
+    },
+    "highlights": {
+      "type": "array",
+      "items": { "type": "object" }
     }
   },
-  "required": ["streaks", "rivalries", "projections"]
+  "required": ["rivalries", "projections", "highlights"]
 }

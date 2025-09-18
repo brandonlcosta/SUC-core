@@ -1,5 +1,6 @@
 // File: backend/utils/schemaValidator.js
 // AJV 2020 with formats, caching, and full meta-schema support.
+
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 import fs from "fs";
@@ -7,16 +8,21 @@ import fs from "fs";
 const _cache = new Map();
 
 function _getAjv() {
-  // validateSchema defaults to true here (meta-schema checked)
   const ajv = new Ajv2020({
     allErrors: true,
     strict: false,
-    allowUnionTypes: true
+    allowUnionTypes: true,
   });
   addFormats(ajv);
   return ajv;
 }
 
+/**
+ * Validate data against JSON schema
+ * @param {string} schemaPath
+ * @param {Object} data
+ * @returns {boolean} validation result
+ */
 export function validateAgainstSchema(schemaPath, data) {
   try {
     let compiled = _cache.get(schemaPath);
@@ -29,7 +35,7 @@ export function validateAgainstSchema(schemaPath, data) {
     const ok = compiled(data);
     if (!ok) {
       const errs = (compiled.errors || [])
-        .map(e => `${e.instancePath || "/"} ${e.message}`)
+        .map((e) => `${e.instancePath || "/"} ${e.message}`)
         .join("; ");
       console.error(`Schema validation failed (${schemaPath}): ${errs}`);
     }
@@ -39,3 +45,8 @@ export function validateAgainstSchema(schemaPath, data) {
     return false;
   }
 }
+
+// ✅ Default export for clean imports
+export default {
+  validateAgainstSchema,
+};

@@ -1,49 +1,64 @@
-/**
- * Scoring Engine
- * Applies trust priority: truth > soft > projection.
- * Updates lap counts based on events.
- */
+// File: backend/engines/scoringEngine.js
 
-const PRIORITY_ORDER = {
-  truth: 3,
-  soft: 2,
-  projection: 1
-};
+import * as schemaGate from "../services/schemaGate.js";
+import * as ledgerService from "../services/ledgerService.js";
+import * as operatorService from "../services/operatorService.js";
+import fs from "fs";
+import path from "path";
 
-const state = {
-  runners: {}
-};
+const configPath = path.resolve("./backend/configs/scoringConfig.json");
+const scoringConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
 
-export function updateScoring(event) {
-  const { runner_id, event_type, quality } = event;
-  if (!runner_id) return;
+export function runScoringEngine(events, state, ctx) {
+  let scoring = { laps: {}, streaks: {}, captures: [] };
 
-  if (!state.runners[runner_id]) {
-    state.runners[runner_id] = { laps: 0, last_event: null };
-  }
-
-  const runner = state.runners[runner_id];
-  const incomingPriority = PRIORITY_ORDER[quality.trust_level] || 0;
-  const currentPriority = runner.last_event
-    ? PRIORITY_ORDER[runner.last_event.quality.trust_level]
-    : 0;
-
-  // Only update if higher or equal priority
-  if (incomingPriority >= currentPriority) {
-    if (event_type === "lap_completed") {
-      runner.laps += 1;
+  events.forEach(e => {
+    switch (e.type) {
+      case "lap_complete":
+        scoring.laps[e.athlete_id] = (scoring.laps[e.athlete_id] || 0) + 1;
+        break;
+      case "streak":
+        scoring.streaks[e.athlete_id] = e.value;
+        break;
+      case "capture":
+        scoring.captures.push({
+          athlete_id: e.athlete_id,
+          zone: e.zone,
+          timestamp: e.timestamp
+        });
+        break;
     }
-    runner.last_event = event;
+  });
+
+  state.scoring = {
+    laps: { ...state.scoring?.laps, ...scoring.laps },
+    streaks: { ...state.scoring?.streaks, ...scoring.streaks },
+    captures: [...(state.scoring?.captures || []), ...scoring.captures]
+  };
+
+  state.scoring = operatorService.applyScoringOverrides(state.scoring);
+
+  schemaGate.validate("scoring", state.scoring);
+
+  ledgerService.event({
+    engine: "scoring",
+    type: "summary",
+    payload: {
+      laps: Object.keys(state.scoring.laps).length,
+      streaks: Object.keys(state.scoring.streaks).length,
+      captures: state.scoring.captures.length
+    }
+  });
+
+  ctx.scoring = state.scoring;
+  return state.scoring;
+}
+
+export class ScoringEngine {
+  run(events, state, ctx) {
+    return runScoringEngine(events, state, ctx);
   }
 }
 
-export function getLeaderboard() {
-  return Object.entries(state.runners).map(([id, data]) => ({
-    runner_id: id,
-    laps: data.laps
-  }));
-}
-
-export function resetScoring() {
-  Object.keys(state.runners).forEach((k) => delete state.runners[k]);
-}
+const scoringEngine = new ScoringEngine();
+export default scoringEngine;

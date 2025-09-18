@@ -10,7 +10,7 @@ const OUTPUT_PATH = path.join(OUTPUT_DIR, "geo.json");
  * GeoService
  * Converts athlete position ticks into GeoJSON trails
  */
-class GeoService {
+export class GeoService {
   constructor() {
     this.positions = {}; // athlete_id → trail of coordinates
   }
@@ -27,8 +27,10 @@ class GeoService {
     this.writeGeoJSON();
   }
 
+  /**
+   * Write current trails into GeoJSON file
+   */
   writeGeoJSON() {
-    // Ensure directory exists
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
     const features = Object.values(this.positions)
@@ -53,6 +55,24 @@ class GeoService {
 
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(geoJSON, null, 2));
   }
+
+  /**
+   * Get current in-memory geo state
+   */
+  getGeo() {
+    return this.positions;
+  }
 }
 
-export { GeoService };
+// Named helpers
+export function addGeoPosition(tick) {
+  return geoService.addPosition(tick);
+}
+
+export function getGeo() {
+  return geoService.getGeo();
+}
+
+// Default singleton instance
+const geoService = new GeoService();
+export default geoService;

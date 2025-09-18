@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Spatial",
+  "type": "object",
+  "properties": {
+    "environments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "mesh_url": { "type": "string" },
+          "style": { "type": "string" }
+        },
+        "required": ["id"]
+      }
+    },
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "runner_id": { "type": "string" },
+          "checkpoint_id": { "type": "string" },
+          "timestamp": { "type": "integer" }
+        },
+        "required": ["runner_id", "checkpoint_id"]
+      }
+    },
+    "props": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "mesh_url": { "type": ["string", "null"] },
+          "sponsor": { "type": ["string", "null"] }
+        },
+        "required": ["id"]
+      }
+    }
+  },
+  "required": ["environments", "checkpoints", "props"]
+}

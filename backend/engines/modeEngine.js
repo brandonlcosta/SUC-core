@@ -1,4 +1,4 @@
-// /backend/engines/modeEngine.js
+// File: backend/engines/modeEngine.js
 // Reducer: loads ruleset config → mode.json
 
 import fs from "fs";
@@ -29,9 +29,9 @@ export function modeReducer(events = []) {
 /**
  * Run mode engine and persist output
  * @param {Array<Object>} events
- * @returns {Object} mode config
+ * @returns {Object|null} mode config
  */
-export function runModeEngine(events) {
+export function runModeEngine(events = []) {
   const mode = modeReducer(events);
 
   const valid = validateAgainstSchema(SCHEMA_PATH, mode);
@@ -42,9 +42,13 @@ export function runModeEngine(events) {
 
   fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(mode, null, 2));
-  console.log(`✅ ModeEngine wrote ${OUTPUT_PATH}`);
+  console.log(`🎮 ModeEngine wrote ${OUTPUT_PATH}`);
 
   return mode;
 }
 
-export default runModeEngine;
+// ✅ Default export for clean imports
+export default {
+  modeReducer,
+  runModeEngine,
+};

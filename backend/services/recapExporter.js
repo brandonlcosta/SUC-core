@@ -1,3 +1,5 @@
+// File: backend/services/recapExporter.js
+
 import fs from "fs";
 import path from "path";
 import modeLoader from "../modeLoader.js";
@@ -24,21 +26,24 @@ export class RecapExporter {
       branding: {
         title: this.branding.labels?.recapTitle || "SUC Weekly Recap",
         colors: this.branding.colors,
-        fonts: this.branding.fonts
+        fonts: this.branding.fonts,
       },
       highlights: highlights || [],
-      recap: recap || {}
+      recap: recap || {},
     };
 
-    const filePath = path.join(
-      OUTPUT_DIR,
-      `suc_weekly_${pkg.ts}.json`
-    );
+    const filePath = path.join(OUTPUT_DIR, `suc_weekly_${pkg.ts}.json`);
     fs.writeFileSync(filePath, JSON.stringify(pkg, null, 2));
 
     return pkg;
   }
 }
 
-// Singleton export
-export default new RecapExporter();
+// Named helper function
+export function exportWeekly(highlights, recap) {
+  return recapExporter.exportWeekly(highlights, recap);
+}
+
+// Default singleton instance
+const recapExporter = new RecapExporter();
+export default recapExporter;

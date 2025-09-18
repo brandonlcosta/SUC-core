@@ -1,3 +1,4 @@
+// File: backend/engines/arcEngine.js
 /**************************************************
  * Arc Engine v1.0
  * Purpose: Build episodic arcs from enriched events
@@ -26,32 +27,36 @@ export class ArcEngine {
     if (!this.arcs[arcRef]) {
       this.arcs[arcRef] = {
         arc_ref: arcRef,
-        arc_type: event.metadata?.arc_type || 'misc',
+        arc_type: event.metadata?.arc_type || "misc",
         title: event.metadata?.title || `Arc: ${arcRef}`,
         beats: [],
         projection: event.projection || null,
-        priority: event.highlight_priority || 1,
-        last_updated: event.timestamp
+        priority: event.highlight_priority || 0,
       };
     }
 
-    this.arcs[arcRef].beats.push(event.base_statement || event.line);
-    this.arcs[arcRef].last_updated = event.timestamp;
-    this.arcs[arcRef].priority = Math.max(
-      this.arcs[arcRef].priority,
-      event.highlight_priority || 1
-    );
+    this.arcs[arcRef].beats.push({
+      statement: event.base_statement,
+      context: event.context || {},
+      timestamp: event.timestamp,
+    });
 
-    return this.arcs[arcRef];
+    // Update projection if higher priority
+    if (
+      event.projection &&
+      (!this.arcs[arcRef].projection ||
+        event.highlight_priority > this.arcs[arcRef].priority)
+    ) {
+      this.arcs[arcRef].projection = event.projection;
+      this.arcs[arcRef].priority = event.highlight_priority;
+    }
   }
 
-  processBatch(events) {
-    return events.map(e => this.processEvent(e));
-  }
-
-  getAllArcs() {
+  getArcs() {
     return Object.values(this.arcs);
   }
 }
 
-export default ArcEngine;
+// ✅ Default export: singleton instance
+const arcEngine = new ArcEngine();
+export default arcEngine;

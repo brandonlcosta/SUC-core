@@ -1,0 +1,8 @@
+{
+  "frequency_cap_ms": 30000,
+  "slots": [
+    { "id": "skratch", "priority": 6, "slot": "banner" },
+    { "id": "maurten", "priority": 5, "slot": "banner" },
+    { "id": "suunto", "priority": 4, "slot": "banner" }
+  ]
+}
