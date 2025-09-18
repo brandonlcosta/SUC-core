@@ -10,40 +10,70 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const configPath = path.resolve(__dirname, "../configs/spatialConfig.json");
 
+// ✅ Safe defaults
 let spatialConfig = {
-  update_interval_ms: 1000,
-  trail_length: 10,
-  checkpoint_radius_m: 25,
-  default_region: "stadium"
+  default_env: "stadium",
+  default_props: ["banner"],
+  default_checkpoints: ["start_line", "halfway", "finish_line"]
 };
+
+// ✅ Try loading config
 if (fs.existsSync(configPath)) {
-  spatialConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
+  try {
+    const raw = JSON.parse(fs.readFileSync(configPath, "utf8"));
+    spatialConfig = {
+      default_env: raw.default_env || "stadium",
+      default_props: Array.isArray(raw.default_props) ? raw.default_props : ["banner"],
+      default_checkpoints: Array.isArray(raw.default_checkpoints)
+        ? raw.default_checkpoints
+        : ["start_line", "halfway", "finish_line"]
+    };
+  } catch (err) {
+    console.error("[spatialEngine] Failed to load config, using defaults:", err);
+  }
 }
 
 export function runSpatialEngine(events, state, ctx) {
-  const positions = {};
-  const trails = {};
+  // Athletes
+  const athletes = Object.entries(state.scoring?.laps || {}).map(([athlete_id, laps]) => ({
+    athlete_id,
+    position: [Math.random() * 100, Math.random() * 100],
+    laps
+  }));
 
-  for (const event of events) {
-    if (event.type === "position") {
-      const { athlete_id, lat, lon, ts } = event;
-
-      positions[athlete_id] = { lat, lon, ts };
-
-      if (!trails[athlete_id]) trails[athlete_id] = [];
-      trails[athlete_id].push({ lat, lon, ts });
-
-      if (trails[athlete_id].length > spatialConfig.trail_length) {
-        trails[athlete_id].shift(); // keep only last N points
-      }
+  // Environments
+  const environments = [
+    {
+      id: "env_1",
+      type: spatialConfig.default_env,
+      active: true
     }
+  ];
+
+  // Props
+  const props = spatialConfig.default_props.map((p, i) => ({
+    id: `prop_${i + 1}`,
+    type: p
+  }));
+
+  // ✅ Checkpoints (each tied to every athlete)
+  const checkpoints = [];
+  for (const athlete of athletes) {
+    spatialConfig.default_checkpoints.forEach((label, i) => {
+      checkpoints.push({
+        runner_id: athlete.athlete_id,
+        checkpoint_id: `cp_${i + 1}`,
+        label,
+        position: [i * 50, 0] // mock positions
+      });
+    });
   }
 
   const spatial = {
-    region: spatialConfig.default_region,
-    positions,
-    trails,
-    checkpoints: [] // placeholder, can be filled from assets or events
+    athletes,
+    environments,
+    props,
+    checkpoints
   };
 
   schemaGate.validate("spatial", spatial);
@@ -51,7 +81,12 @@ export function runSpatialEngine(events, state, ctx) {
   ledgerService.event({
     engine: "spatial",
     type: "summary",
-    payload: { athletes: Object.keys(positions).length }
+    payload: {
+      athletes: athletes.length,
+      environments: environments.length,
+      props: props.length,
+      checkpoints: checkpoints.length
+    }
   });
 
   ctx.spatial = spatial;

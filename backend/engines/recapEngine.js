@@ -16,7 +16,11 @@ if (fs.existsSync(configPath)) {
 }
 
 export function runRecapEngine(events, state, ctx) {
-  const laps_summary = state.scoring?.laps || {};
+  // ✅ Convert laps object → array
+  const laps_summary = Object.entries(state.scoring?.laps || {}).map(([athlete_id, laps]) => ({
+    athlete_id,
+    laps
+  }));
 
   const highlight_reel = (ctx.story?.arcs || [])
     .slice(0, recapConfig.top_highlights)
@@ -34,7 +38,7 @@ export function runRecapEngine(events, state, ctx) {
   ledgerService.event({
     engine: "recap",
     type: "summary",
-    payload: { highlights: highlight_reel.length }
+    payload: { highlights: highlight_reel.length, athletes: laps_summary.length }
   });
 
   ctx.recap = recap;

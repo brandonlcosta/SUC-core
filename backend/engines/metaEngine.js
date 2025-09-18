@@ -17,21 +17,52 @@ if (fs.existsSync(configPath)) {
 
 export function runMetaEngine(events, state, ctx) {
   const rivalries = [];
+  const projections = [];
+  const highlights = [];
 
+  // Rivalries
   for (const [athlete, laps] of Object.entries(state.scoring?.laps || {})) {
     if (laps >= metaConfig.rivalry_threshold) {
       rivalries.push({ athlete_ids: [athlete], priority: 1 });
     }
   }
 
-  const meta = { rivalries: rivalries.slice(0, metaConfig.max_rivalries) };
+  // Projections (placeholder — can be replaced with real logic)
+  for (const [athlete, laps] of Object.entries(state.scoring?.laps || {})) {
+    projections.push({
+      athlete_id: athlete,
+      projected_laps: laps + 1,
+      confidence: 0.75
+    });
+  }
+
+  // Highlights (placeholder — pull from events)
+  for (const event of events) {
+    if (event.type === "capture") {
+      highlights.push({
+        athlete_id: event.athlete_id,
+        type: "capture",
+        timestamp: event.ts || Date.now()
+      });
+    }
+  }
+
+  const meta = {
+    rivalries: rivalries.slice(0, metaConfig.max_rivalries),
+    projections,
+    highlights
+  };
 
   schemaGate.validate("meta", meta);
 
   ledgerService.event({
     engine: "meta",
     type: "summary",
-    payload: { rivalries: meta.rivalries.length }
+    payload: {
+      rivalries: meta.rivalries.length,
+      projections: meta.projections.length,
+      highlights: meta.highlights.length
+    }
   });
 
   ctx.meta = meta;

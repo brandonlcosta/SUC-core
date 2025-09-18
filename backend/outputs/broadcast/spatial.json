@@ -1,25 +1,25 @@
 {
-  "athletes": [
+  "athletes": [],
+  "environments": [
     {
-      "id": "r123",
-      "name": "Alice",
-      "laps": 21,
-      "lat": 39.120726263530955,
-      "lon": -120.56208233705124
-    },
-    {
-      "id": "r456",
-      "name": "Bob",
-      "laps": 18,
-      "lat": 39.13126061273212,
-      "lon": -120.56715883864763
-    },
-    {
-      "id": "r789",
-      "name": "Charlie",
-      "laps": 14,
-      "lat": 39.140246607495015,
-      "lon": -120.57822935427052
+      "id": "env_1",
+      "type": "stadium",
+      "active": true
     }
-  ]
+  ],
+  "props": [
+    {
+      "id": "prop_1",
+      "type": "banner"
+    },
+    {
+      "id": "prop_2",
+      "type": "flag"
+    },
+    {
+      "id": "prop_3",
+      "type": "checkpoint"
+    }
+  ],
+  "checkpoints": []
 }

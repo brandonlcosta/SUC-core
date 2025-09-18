@@ -1,12 +1,12 @@
 {
   "overlays": [
     {
-      "event_id": "sponsor_maurten_1758235611910",
+      "event_id": "sponsor_maurten_1758238407539",
       "overlay_type": "sponsor_banner",
       "athlete_ids": [],
       "sponsor_slot": "maurten",
       "priority": 5,
-      "timestamp": 1758235611910
+      "timestamp": 1758238407539
     }
   ]
 }

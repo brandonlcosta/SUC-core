@@ -24,6 +24,7 @@ if (fs.existsSync(configPath)) {
 export function runScoringEngine(events, state, ctx) {
   const laps = {};
   const streaks = {};
+  const capturesMap = {};
 
   for (const event of events) {
     if (event.type === "lap") {
@@ -31,16 +32,32 @@ export function runScoringEngine(events, state, ctx) {
       laps[athleteId] = (laps[athleteId] || 0) + 1;
       streaks[athleteId] = (streaks[athleteId] || 0) + 1;
     }
+
+    if (event.type === "capture") {
+      const athleteId = event.athlete_id;
+      capturesMap[athleteId] = (capturesMap[athleteId] || 0) + 1;
+    }
+  }
+
+  // ✅ Convert map → array
+  const captures = Object.entries(capturesMap).map(([athlete_id, count]) => ({
+    athlete_id,
+    count
+  }));
+
+  const points = {};
+  for (const athlete of new Set([...Object.keys(laps), ...Object.keys(capturesMap)])) {
+    const lapScore = (laps[athlete] || 0) * scoringConfig.lap_points;
+    const streakScore = (streaks[athlete] || 0) * scoringConfig.streak_bonus;
+    const captureScore = (capturesMap[athlete] || 0) * scoringConfig.capture_bonus;
+    points[athlete] = lapScore + streakScore + captureScore;
   }
 
   const scoring = {
     laps,
     streaks,
-    points: Object.fromEntries(
-      Object.entries(laps).map(([athlete, lapCount]) => {
-        return [athlete, lapCount * scoringConfig.lap_points + (streaks[athlete] || 0) * scoringConfig.streak_bonus];
-      })
-    )
+    captures, // ✅ now array
+    points
   };
 
   schemaGate.validate("scoring", scoring);
@@ -48,7 +65,11 @@ export function runScoringEngine(events, state, ctx) {
   ledgerService.event({
     engine: "scoring",
     type: "summary",
-    payload: { athletes: Object.keys(laps).length, laps: Object.values(laps).reduce((a, b) => a + b, 0) }
+    payload: {
+      athletes: Object.keys(laps).length,
+      laps: Object.values(laps).reduce((a, b) => a + b, 0),
+      captures: captures.reduce((a, c) => a + c.count, 0)
+    }
   });
 
   ctx.scoring = scoring;
