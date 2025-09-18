@@ -1,0 +1,40 @@
+[
+  {
+    "id": "runner_brandon_v1",
+    "type": "avatar",
+    "mesh_url": "/assets/runners/runner_brandon_v1.glb",
+    "thumbnail_url": "/assets/runners/runner_brandon.png",
+    "style": "ps1_neon"
+  },
+  {
+    "id": "runner_emily_v1",
+    "type": "avatar",
+    "mesh_url": "/assets/runners/runner_emily_v1.glb",
+    "thumbnail_url": "/assets/runners/runner_emily.png",
+    "style": "ps1_neon"
+  },
+  {
+    "id": "backyard_loop_v1",
+    "type": "environment",
+    "mesh_url": "/assets/envs/backyard_loop_v1.glb",
+    "style": "ps1_neon"
+  },
+  {
+    "id": "marathon_aidstation_v1",
+    "type": "environment",
+    "mesh_url": "/assets/envs/marathon_aidstation_v1.glb",
+    "style": "ps1_neon"
+  },
+  {
+    "id": "cooler_suc",
+    "type": "prop",
+    "mesh_url": "/assets/props/cooler_suc.glb",
+    "style": "ps1_neon"
+  },
+  {
+    "id": "cooler_skratch",
+    "type": "prop",
+    "mesh_url": "/assets/props/cooler_skratch.glb",
+    "style": "ps1_neon"
+  }
+]

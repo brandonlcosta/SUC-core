@@ -1,0 +1,16 @@
+{
+  "ts": 1758077598909,
+  "mode": {
+    "current": "backyard_ultra"
+  },
+  "ticker": "LIVE ΓÇó SUC Demo",
+  "hud": {},
+  "highlights": [],
+  "recap": {},
+  "operator_overrides": {
+    "skip_bumper": null,
+    "pinned_arc": null,
+    "replay": null,
+    "muted_roles": []
+  }
+}

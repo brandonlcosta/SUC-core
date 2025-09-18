@@ -1,23 +1,27 @@
-// /tests/demoTurfWars.js
-// Demo harness: generates random Turf Wars events and runs pipeline
-
-import runPipeline from "../backend/services/pipelineService.js";
+// File: tests/demoTurfWars.js
 import fs from "fs";
-import { generateTurfWarsEvents } from "./utils/randomRaceGenerator.js";
+import path from "path";
 
-async function demoTurfWars() {
-  console.log("🚀 Running Turf Wars demo with synthetic events...");
+const OUTPUT = path.resolve("backend/outputs/broadcast/broadcastTicks.jsonl");
 
-  // Generate random events
-  const rawEvents = generateTurfWarsEvents(12, 150);
-
-  // Run pipeline
-  const outputs = await runPipeline(rawEvents);
-
-  // Persist outputs
-  fs.mkdirSync("./outputs", { recursive: true });
-  fs.writeFileSync("./outputs/demoTurfWars.json", JSON.stringify(outputs, null, 2));
-  console.log("✅ Turf Wars demo outputs written to ./outputs/demoTurfWars.json");
+function emitCapture(runners) {
+  const tick = {
+    event_id: `turfwars_${Date.now()}`,
+    session_id: "turfwars_day1",
+    overlay_type: "zone_capture",
+    athlete_ids: runners.map(r => r.athlete_id),
+    asset_ids: runners.map(r => r.asset_id),
+    environment_id: "turf_arena_v1",
+    sponsor_slot: "redbull_banner",
+    priority: 7,
+    timestamp: Date.now()
+  };
+  fs.appendFileSync(OUTPUT, JSON.stringify(tick) + "\n");
+  console.log("Turf Wars tick:", tick);
 }
 
-demoTurfWars();
+export function runTurfWars(runners) {
+  setInterval(() => {
+    emitCapture(runners);
+  }, 6000);
+}

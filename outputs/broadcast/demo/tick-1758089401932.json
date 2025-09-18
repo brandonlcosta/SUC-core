@@ -1,0 +1,17 @@
+{
+  "ts": 1758089401932,
+  "mode": {
+    "current": "backyard_ultra"
+  },
+  "ticker": "Route updated",
+  "hud": {},
+  "highlights": [],
+  "recap": {},
+  "operator_overrides": {
+    "skip_bumper": null,
+    "pinned_arc": null,
+    "replay": null,
+    "muted_roles": []
+  },
+  "overlays": []
+}

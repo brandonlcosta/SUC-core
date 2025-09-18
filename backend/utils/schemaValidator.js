@@ -1,61 +1,41 @@
-// /backend/utils/schemaValidator.js
+// File: backend/utils/schemaValidator.js
+// AJV 2020 with formats, caching, and full meta-schema support.
 import Ajv2020 from "ajv/dist/2020.js";
-import Ajv from "ajv"; // draft-07
 import addFormats from "ajv-formats";
 import fs from "fs";
-import path from "path";
 
-const ajv2020 = new Ajv2020({ allErrors: true, strict: false });
-const ajv07 = new Ajv({ allErrors: true, strict: false });
+const _cache = new Map();
 
-addFormats(ajv2020);
-addFormats(ajv07);
-
-const schemaCache = new Map();
-
-/**
- * Load and compile a schema from disk (cached).
- * @param {string} schemaPath - path to schema file
- * @returns {Function} compiled validator
- */
-function getValidator(schemaPath) {
-  const absPath = path.resolve(schemaPath);
-
-  if (schemaCache.has(absPath)) {
-    return schemaCache.get(absPath);
-  }
-
-  const schemaRaw = fs.readFileSync(absPath, "utf-8");
-  const schema = JSON.parse(schemaRaw);
-
-  const engine =
-    schema.$schema && schema.$schema.includes("draft-07") ? ajv07 : ajv2020;
-
-  const validate = engine.compile(schema);
-  schemaCache.set(absPath, validate);
-
-  return validate;
+function _getAjv() {
+  // validateSchema defaults to true here (meta-schema checked)
+  const ajv = new Ajv2020({
+    allErrors: true,
+    strict: false,
+    allowUnionTypes: true
+  });
+  addFormats(ajv);
+  return ajv;
 }
 
-/**
- * Validate an object against a JSON schema file.
- * @param {string} schemaPath - path to schema file
- * @param {Object} data - event object
- * @returns {boolean} valid
- */
-export function validateSchema(schemaPath, data) {
-  const validate = getValidator(schemaPath);
-  const valid = validate(data);
-
-  if (!valid) {
-    console.error(
-      `❌ Schema validation failed for ${schemaPath}`,
-      JSON.stringify(validate.errors, null, 2)
-    );
-    validateSchema.errors = validate.errors;
-  } else {
-    validateSchema.errors = null;
+export function validateAgainstSchema(schemaPath, data) {
+  try {
+    let compiled = _cache.get(schemaPath);
+    if (!compiled) {
+      const schema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
+      const ajv = _getAjv();
+      compiled = ajv.compile(schema);
+      _cache.set(schemaPath, compiled);
+    }
+    const ok = compiled(data);
+    if (!ok) {
+      const errs = (compiled.errors || [])
+        .map(e => `${e.instancePath || "/"} ${e.message}`)
+        .join("; ");
+      console.error(`Schema validation failed (${schemaPath}): ${errs}`);
+    }
+    return ok;
+  } catch (e) {
+    console.error(`Schema validate error for ${schemaPath}:`, e?.message || e);
+    return false;
   }
-
-  return valid;
 }

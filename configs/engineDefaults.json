@@ -1,26 +1,16 @@
 {
-  "logger": {
-    "logs": []
+  "tick_interval_ms": 1000,
+  "operator_api_port": 3100,
+  "dev_server_port": 3200,
+  "ws_tick_port": 3201,
+  "paths": {
+    "outputs_dir": "./outputs",
+    "demo_tick": "./outputs/broadcast/demo/latest.json"
   },
-  "story": {
-    "arcs": []
-  },
-  "broadcast": {
-    "bundle": []
-  },
-  "meta": {
-    "streaks": {}
-  },
-  "timing": {
-    "tick": 0,
-    "elapsed": 0
-  },
-  "vibe": {
-    "mood": "neutral",
-    "intensity": 0
-  },
-  "context": {
-    "environment": "default",
-    "feeds": []
+  "ledger": {
+    "backend": "auto",
+    "dir": "./backend/outputs/ledger",
+    "retention_days": 14,
+    "tail_size": 500
   }
 }

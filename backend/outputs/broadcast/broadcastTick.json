@@ -1,0 +1,78 @@
+{
+  "timestamp": 1758175032,
+  "geo_positions": {
+    "runner_brandon": [
+      {
+        "athlete_id": "runner_brandon",
+        "coordinates": [
+          -122.4194,
+          37.7749
+        ],
+        "lap": 1,
+        "distance_km": 0,
+        "rank": 1,
+        "timestamp": 1758175024
+      },
+      {
+        "athlete_id": "runner_brandon",
+        "coordinates": [
+          -122.418,
+          37.779
+        ],
+        "lap": 1,
+        "distance_km": 5,
+        "rank": 1,
+        "timestamp": 1758175026
+      },
+      {
+        "athlete_id": "runner_brandon",
+        "coordinates": [
+          -122.412,
+          37.79
+        ],
+        "lap": 1,
+        "distance_km": 10,
+        "rank": 1,
+        "timestamp": 1758175028
+      },
+      {
+        "athlete_id": "runner_brandon",
+        "coordinates": [
+          -122.405,
+          37.8
+        ],
+        "lap": 1,
+        "distance_km": 21,
+        "rank": 1,
+        "timestamp": 1758175030
+      },
+      {
+        "athlete_id": "runner_brandon",
+        "coordinates": [
+          -122.4,
+          37.81
+        ],
+        "lap": 1,
+        "distance_km": 42,
+        "rank": 1,
+        "timestamp": 1758175032
+      }
+    ]
+  },
+  "events": [
+    {
+      "event_id": "split_42k",
+      "athlete_id": "runner_brandon",
+      "distance_km": 42,
+      "timestamp": 1758175032
+    },
+    {
+      "event_id": "lap_completed",
+      "athlete_id": "runner_brandon",
+      "lap": 1,
+      "timestamp": 1758175032
+    }
+  ],
+  "mode": "marathon",
+  "session_id": "session_1758175022444"
+}

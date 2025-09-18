@@ -1,0 +1,102 @@
+{
+  "state_schema_version": 1,
+  "mode": {
+    "current": "backyard_ultra",
+    "supported": ["backyard_ultra", "turf_wars", "marathon"]
+  },
+  "logger": {
+    "logs": []
+  },
+  "timing": {
+    "tick": 0,
+    "elapsed": 0,
+    "start_epoch_ms": null,
+    "duration_ms": 0,
+    "frame_hz": 1,
+    "lap": {
+      "index": 0,
+      "distance_m": 0,
+      "elapsed_ms": 0
+    }
+  },
+  "context": {
+    "environment": "default",
+    "venue": {
+      "id": "default_arena",
+      "name": "Default Arena",
+      "variant": "studio"
+    },
+    "weather": {
+      "condition": "clear",
+      "temp_c": 20,
+      "wind_kph": 0
+    },
+    "feeds": []
+  },
+  "roster": {
+    "athletes": [],
+    "teams": []
+  },
+  "meta": {
+    "streaks": {},
+    "leaderboard": [],
+    "rankings": [],
+    "pace": {
+      "leader": 0,
+      "pack": 0
+    },
+    "awards": [],
+    "totals": {
+      "distance_m": 0,
+      "calories": 0,
+      "events": 0
+    }
+  },
+  "broadcast": {
+    "status": "idle",
+    "theme": {
+      "brand": "SUC",
+      "variant": "dark"
+    },
+    "hud": {
+      "panels": [],
+      "data": {}
+    },
+    "bundle": []
+  },
+  "story": {
+    "arcs": [],
+    "rivalries": []
+  },
+  "vibe": {
+    "mood": "neutral",
+    "intensity": 0,
+    "crowd": "calm"
+  },
+  "highlights": [],
+  "replay": {
+    "active": null,
+    "clips": []
+  },
+  "recap": {
+    "last_event_id": null,
+    "lines": []
+  },
+  "commentary": {
+    "personas": [
+      {
+        "role": "host",
+        "voice": "host_a"
+      },
+      {
+        "role": "color_commentator",
+        "voice": "color_a"
+      }
+    ],
+    "queue": []
+  },
+  "sponsors": {
+    "active_campaigns": [],
+    "placements": []
+  }
+}

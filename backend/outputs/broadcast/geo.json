@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "athlete_id": "runner_brandon",
+        "lap": 1,
+        "timestamp": 1758175024
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4194,
+          37.7749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "athlete_id": "runner_brandon",
+        "lap": 1,
+        "timestamp": 1758175026
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.418,
+          37.779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "athlete_id": "runner_brandon",
+        "lap": 1,
+        "timestamp": 1758175028
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.412,
+          37.79
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "athlete_id": "runner_brandon",
+        "lap": 1,
+        "timestamp": 1758175030
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.405,
+          37.8
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "athlete_id": "runner_brandon",
+        "lap": 1,
+        "timestamp": 1758175032
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4,
+          37.81
+        ]
+      }
+    }
+  ]
+}

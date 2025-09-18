@@ -1,61 +1,67 @@
-// /backend/engines/eventEngine.js
+// File: backend/engines/eventEngine.js
+
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-import { validateSchema } from "../utils/schemaValidator.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const OUTPUT_PATH = path.resolve("backend/outputs/broadcast/events.json");
 
-// Correct path: backend/engines → ../schemas
-const schemaPath = path.resolve(__dirname, "../schemas/event.schema.json");
-
-let eventSchema;
-try {
-  eventSchema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
-  console.log(`✅ Loaded event schema from: ${schemaPath}`);
-} catch (err) {
-  throw new Error(
-    `Failed to load event schema at ${schemaPath}: ${err.message}`
-  );
-}
-
-export function normalizeEvent(rawEvent) {
-  const normalized = { ...rawEvent };
-
-  if (!normalized.meta) normalized.meta = {};
-  if (!normalized.meta.ingested_at) {
-    normalized.meta.ingested_at = new Date().toISOString();
+/**
+ * EventEngine
+ * Detects key race milestones and emits events for overlays.
+ */
+export class EventEngine {
+  constructor() {
+    this.lastLeader = null;
+    this.completedSplits = new Set();
   }
 
-  if (!normalized.quality) {
-    normalized.quality = {
-      confidence: 0.0,
-      priority: 0.0,
-      trust_level: "projection"
-    };
+  /**
+   * Process an athlete tick and detect milestone events
+   * @param {Object} tick - { athlete_id, lap, distance_km, rank, timestamp }
+   * @returns {Array} events - array of event objects
+   */
+  processTick(tick) {
+    const events = [];
+
+    // Marathon: split milestones
+    if (tick.distance_km && [5, 10, 21, 42].includes(tick.distance_km)) {
+      const key = `${tick.athlete_id}_${tick.distance_km}`;
+      if (!this.completedSplits.has(key)) {
+        this.completedSplits.add(key);
+        events.push({
+          event_id: `split_${tick.distance_km}k`,
+          athlete_id: tick.athlete_id,
+          distance_km: tick.distance_km,
+          timestamp: tick.timestamp,
+        });
+      }
+    }
+
+    // Backyard Ultra: lap completed
+    if (tick.lap && tick.lap > 0) {
+      events.push({
+        event_id: "lap_completed",
+        athlete_id: tick.athlete_id,
+        lap: tick.lap,
+        timestamp: tick.timestamp,
+      });
+    }
+
+    // Leader change
+    if (tick.rank === 1 && this.lastLeader !== tick.athlete_id) {
+      this.lastLeader = tick.athlete_id;
+      events.push({
+        event_id: "new_leader",
+        athlete_id: tick.athlete_id,
+        lap: tick.lap,
+        timestamp: tick.timestamp,
+      });
+    }
+
+    if (events.length > 0) {
+      fs.writeFileSync(OUTPUT_PATH, JSON.stringify(events, null, 2));
+    }
+
+    return events;
   }
-
-  return normalized;
-}
-
-export function validateEvent(event) {
-  const normalized = normalizeEvent(event);
-  const valid = validateSchema(schemaPath, normalized);
-
-  if (!valid) {
-    throw new Error(
-      `Event validation failed: ${JSON.stringify(
-        validateSchema.errors,
-        null,
-        2
-      )}`
-    );
-  }
-
-  return normalized;
-}
-
-export function processEvents(events = []) {
-  return events.map((e) => validateEvent(e));
 }

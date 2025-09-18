@@ -1,16 +1,26 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Operator Controls Schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suc-core/schemas/operatorControls.schema.json",
+  "title": "Operator Overrides",
   "type": "object",
   "properties": {
     "skip_bumper": { "type": ["boolean", "null"] },
     "pinned_arc": { "type": ["string", "null"] },
-    "replay": { "type": ["object", "null"] },
+    "replay": {
+      "type": ["object", "null"],
+      "properties": {
+        "clip_id": { "type": "string" },
+        "start_ms": { "type": "number" },
+        "end_ms": { "type": "number" }
+      },
+      "required": ["clip_id", "start_ms", "end_ms"],
+      "additionalProperties": true
+    },
     "muted_roles": {
       "type": "array",
       "items": { "type": "string" },
-      "uniqueItems": true
+      "default": []
     }
   },
-  "required": ["skip_bumper", "pinned_arc", "replay", "muted_roles"]
+  "additionalProperties": false
 }

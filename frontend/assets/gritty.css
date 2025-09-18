@@ -1,0 +1,5 @@
+/* File: frontend/assets/gritty.css */
+body {
+  background: url("/assets/textures/gritty_ps1.png");
+  background-size: cover;
+}

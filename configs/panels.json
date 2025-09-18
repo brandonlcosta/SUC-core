@@ -1,0 +1,7 @@
+{
+  "marathon": ["LeaderboardPanel", "MapPanel", "TickerPanel"],
+  "backyard": ["LeaderboardPanel", "TickerPanel", "MapPanel"],
+  "turfwars": ["LeaderboardPanel", "MapPanel", "TickerPanel"],
+  "multiview": ["LeaderboardPanel", "MapPanel", "TickerPanel"],
+  "recap": ["ReplayOverlay", "TickerPanel"]
+}

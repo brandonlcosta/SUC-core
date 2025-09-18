@@ -1,0 +1,18 @@
+[
+  {
+    "id": "hylo",
+    "name": "Hylo",
+    "image": "/assets/hylo.png",
+    "description": "Sustainable performance shoe",
+    "link": "https://hyloathletics.com",
+    "ticker": "Hylo Run: sustainable performance shoes."
+  },
+  {
+    "id": "skratch",
+    "name": "Skratch Labs",
+    "image": "/assets/skratch.png",
+    "description": "Hydration for every mile",
+    "link": "https://skratchlabs.com",
+    "ticker": "Fueled by Skratch Labs."
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "session_id": "backyard_day1",
+    "line": "Brandon just completed another lap — Emily is right behind!",
+    "persona": "playByPlay"
+  },
+  {
+    "session_id": "marathon_day1",
+    "line": "At the 30K mark, Emily surges ahead with a strong split.",
+    "persona": "analyst"
+  }
+]

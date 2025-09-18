@@ -1,0 +1,10 @@
+{
+  "mapboxStyle": "mapbox://styles/mapbox/dark-v11",
+  "map": { "center": [-122.4194, 37.7749], "zoom": 11 },
+  "neon": {
+    "runnerTrail": "#22d3ee",
+    "zoneOwned": "#22c55e",
+    "zoneContested": "#f59e0b",
+    "runnerMarker": "#60a5fa"
+  }
+}

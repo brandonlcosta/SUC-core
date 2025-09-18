@@ -1,0 +1,16 @@
+{
+  "ts": 1758077072461,
+  "mode": {
+    "current": "backyard_ultra"
+  },
+  "ticker": "",
+  "hud": {},
+  "highlights": [],
+  "recap": {},
+  "operator_overrides": {
+    "skip_bumper": null,
+    "pinned_arc": null,
+    "replay": null,
+    "muted_roles": []
+  }
+}

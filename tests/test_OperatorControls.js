@@ -1,5 +1,5 @@
 // /tests/testOperatorControls.js
-import { operatorOverride } from "../backend/engines/operatorControls.system.js";
+import { operatorOverride } from "./backend/engines/operatorControls.system.js";
 
 let tick = {
   recap: { highlight_reel: ["Sophia dominant streak until Lap 23"] },

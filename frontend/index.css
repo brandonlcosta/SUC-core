@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-gray-950 text-white;
+/* Full viewport lock */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent accidental scrollbars */
+  background-color: #0f0f0f; /* Matches SUC Studio bg-gray-950 */
+  font-family: 'Inter', sans-serif; /* or SUC brand font */
 }

@@ -1,0 +1,9 @@
+{
+  "mapboxStyle": "mapbox://styles/mapbox/dark-v11",
+  "neon": {
+    "runnerTrail": "#00E5FF",
+    "runnerMarker": "#00FFA3",
+    "zoneOwned": "#8B5CF6",
+    "zoneContested": "#F59E0B"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "modes": {
+    "race": {
+      "name": "Broadcast",
+      "activePanels": [
+        "LeaderboardPanel",
+        "TickerPanel",
+        "MapPanel",
+        "RivalryCard",
+        "ReplayOverlay"
+      ]
+    },
+    "segmentWars": {
+      "name": "Game Mode",
+      "activePanels": [
+        "LeaderboardPanel",
+        "TickerPanel",
+        "MapPanel",
+        "RivalryCard"
+      ]
+    },
+    "recap": {
+      "name": "Replay",
+      "activePanels": [
+        "LeaderboardPanel",
+        "StoryPanel",
+        "ReplayOverlay"
+      ]
+    }
+  }
+}

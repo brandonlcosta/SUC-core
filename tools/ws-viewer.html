@@ -1,0 +1,32 @@
+<!-- File: tools/ws-viewer.html  (created automatically by the batch script, included here for reference) -->
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<title>WS Tick Viewer</title>
+<style>
+  body { font: 14px/1.4 system-ui, Segoe UI, Arial; margin: 20px }
+  pre { background: #f3f3f3; padding: 12px; border-radius: 8px; max-height: 60vh; overflow: auto }
+  #status { padding: 6px 10px; border-radius: 6px; display: inline-block; margin-bottom: 12px }
+</style>
+<body>
+  <div id="status" style="background:#ffd966">Connecting...</div>
+  <div>WS: ws://localhost:3201</div>
+  <pre id="out">Waiting for tick...</pre>
+  <script>
+    const status = document.getElementById('status');
+    const out = document.getElementById('out');
+    const ws = new WebSocket('ws://localhost:3201');
+    ws.onopen = () => status.textContent = 'Connected';
+    ws.onmessage = (e) => { try {
+      const m = JSON.parse(e.data);
+      if (m.type === 'tick') {
+        status.style.background = '#d9ead3';
+        status.textContent = 'Tick ' + m.tick.ts;
+        out.textContent = JSON.stringify(m.tick, null, 2);
+      }
+    } catch {} };
+    ws.onerror = () => { status.style.background = '#f4cccc'; status.textContent = 'WS error'; };
+    ws.onclose  = () => { status.style.background = '#f4cccc'; status.textContent = 'Disconnected'; };
+  </script>
+</body>
+</html>
