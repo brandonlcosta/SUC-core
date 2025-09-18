@@ -1,25 +1,30 @@
 // File: backend/server/server.js
 import express from "express";
 import path from "path";
-import fs from "fs";
-import cors from "cors";
-import { loadCfg } from "./loadCfg.js";
+import { fileURLToPath } from "url";
 
-const cfg = loadCfg();
-const PORT = Number(process.env.PORT || cfg.dev_server_port || 3200);
-const OUTPUTS_DIR = path.resolve(cfg.paths?.outputs_dir ?? "./outputs");
+// Engines (fix import paths)
+import eventEngine from "../engines/eventEngine.js";
+import scoringEngine from "../engines/scoringEngine.js";
+// ...add others as needed
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-app.use(cors());
-app.use(express.json());
 
-app.get("/health", (_req, res) => res.json({ ok: true, service: "static-server", port: PORT }));
-app.use("/outputs", express.static(OUTPUTS_DIR, { fallthrough: true }));
+// Serve frontend build
+app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
-const frontBuild = path.resolve("./frontend/dist");
-if (fs.existsSync(frontBuild)) app.use("/", express.static(frontBuild));
-
-app.listen(PORT, () => {
-  console.log(`🛰  SUC Static Server http://localhost:${PORT}`);
-  console.log(`📦 Serving outputs from: ${OUTPUTS_DIR}`);
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../../frontend/dist/index.html"));
 });
+
+// Sponsors API (from backend/configs/sponsorSlots.json)
+import sponsorSlots from "../configs/sponsorSlots.json" assert { type: "json" };
+app.get("/api/sponsors", (req, res) => {
+  res.json(sponsorSlots);
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
