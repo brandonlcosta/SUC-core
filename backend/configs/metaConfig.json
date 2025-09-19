@@ -1,4 +1,11 @@
 {
-  "rivalry_threshold": 2,
-  "max_rivalries": 5
+  "streak_thresholds": {
+    "captures": 3,
+    "wins": 5
+  },
+  "highlight_weights": {
+    "rivalry": 9,
+    "streak": 7,
+    "pr": 8
+  }
 }

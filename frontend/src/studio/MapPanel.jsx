@@ -1,16 +1,11 @@
 // File: frontend/src/studio/MapPanel.jsx
-//
-// MapPanel v3 — GeoJSON-native
-// ✅ Uses Mapbox Source with FeatureCollection
-// ✅ Shows athletes as circle layer
-// ✅ Ready for checkpoints + polygons later
 
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import { useBroadcast } from "./Reducer";
+import AssetLoader from "../assets/AssetLoader";
 
-mapboxgl.accessToken ="pk.eyJ1Ijoic2FjdWx0cmFjcmV3IiwiYSI6ImNtZjd0Z2ZidjBmcWwybXEyZWZkcGxsbDIifQ.Cpqbw4SxlvmJjtOct5RLDg"
-;
+mapboxgl.accessToken ="pk.eyJ1Ijoic2FjdWx0cmFjcmV3IiwiYSI6ImNtZjd0Z2ZidjBmcWwybXEyZWZkcGxsbDIifQ.Cpqbw4SxlvmJjtOct5RLDg";
 
 export default function MapPanel() {
   const { state } = useBroadcast();
@@ -24,20 +19,13 @@ export default function MapPanel() {
         center: [-122.4, 37.8],
         zoom: 12
       });
-    }
 
-    const map = mapRef.current;
-
-    // add data source or update
-    if (map.getSource("athletes")) {
-      map.getSource("athletes").setData(state.spatial);
-    } else {
-      map.on("load", () => {
-        map.addSource("athletes", {
+      mapRef.current.on("load", () => {
+        mapRef.current.addSource("athletes", {
           type: "geojson",
           data: state.spatial
         });
-        map.addLayer({
+        mapRef.current.addLayer({
           id: "athlete-points",
           type: "circle",
           source: "athletes",
@@ -49,8 +37,30 @@ export default function MapPanel() {
           }
         });
       });
+    } else {
+      const src = mapRef.current.getSource("athletes");
+      if (src) src.setData(state.spatial);
     }
   }, [state.spatial]);
 
-  return <div id="map" className="w-full h-full" />;
+  return (
+    <div className="w-full h-full relative">
+      <div id="map" className="w-full h-full" />
+      {/* Overlay avatars on top */}
+      {state.spatial.features
+        .filter((f) => f.geometry.type === "Point")
+        .map((f, idx) => (
+          <div
+            key={idx}
+            className="absolute"
+            style={{
+              left: `${50 + idx * 40}px`,
+              bottom: "20px"
+            }}
+          >
+            <AssetLoader id={f.properties.athlete_id} size={40} />
+          </div>
+        ))}
+    </div>
+  );
 }

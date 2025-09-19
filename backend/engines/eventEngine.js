@@ -1,40 +1,44 @@
 // File: backend/engines/eventEngine.js
-// Normalizes raw events and runs the event engine pipeline
+
+import { loadConfig } from "../services/configLoader.js";
 
 /**
- * Normalize a single raw event into a consistent schema
- * @param {Object} ev
+ * Normalizes a raw incoming event (from BLE, LoRa, Simulator).
+ * Ensures type validity based on current mode ruleset.
+ *
+ * @param {Object} rawEvent - incoming raw event
+ * @param {string} mode - active mode, e.g. "backyardUltra", "turfWars"
  * @returns {Object} normalized event
  */
-export function normalizeEvent(ev) {
+export function normalizeEvent(rawEvent, mode) {
+  // Load the active mode ruleset
+  const ruleset = loadConfig(`${mode}.ruleset.json`, "rulesets");
+
+  if (!ruleset || !ruleset.event_types) {
+    throw new Error(`[EventEngine] Missing event_types in ruleset for mode: ${mode}`);
+  }
+
+  if (!ruleset.event_types.includes(rawEvent.type)) {
+    throw new Error(`[EventEngine] Invalid event type "${rawEvent.type}" for mode: ${mode}`);
+  }
+
   return {
-    id: ev.id || `evt_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
-    type: ev.type || "unknown",
-    ts: ev.ts || Date.now(),
-    source: ev.source || "ingest",
-    payload: ev.payload || {},
+    event_id: rawEvent.id || `evt_${Date.now()}`,
+    type: rawEvent.type,
+    athlete_id: rawEvent.athlete_id,
+    crew_id: rawEvent.crew_id || null,
+    payload: rawEvent.payload || {}, // flexible payload for extensions
+    timestamp: rawEvent.timestamp || Date.now(),
   };
 }
 
 /**
- * Run the event engine: normalize all raw events
- * @param {Array<Object>} events
- * @returns {Array<Object>} normalized events
+ * Batch normalization for multiple events at once.
+ *
+ * @param {Array} rawEvents - list of raw incoming events
+ * @param {string} mode - active mode
+ * @returns {Array} list of normalized events
  */
-export function runEventEngine(events = []) {
-  return events.map(normalizeEvent);
+export function normalizeEvents(rawEvents, mode) {
+  return rawEvents.map(ev => normalizeEvent(ev, mode));
 }
-
-// Wrapper class for default export
-export class EventEngine {
-  normalize(ev) {
-    return normalizeEvent(ev);
-  }
-  run(events) {
-    return runEventEngine(events);
-  }
-}
-
-// Default singleton instance
-const eventEngine = new EventEngine();
-export default eventEngine;

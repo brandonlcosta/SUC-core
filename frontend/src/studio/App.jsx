@@ -1,41 +1,36 @@
 // File: frontend/src/studio/App.jsx
 //
-// Main application shell
-// ✅ Renders panels: Map, Leaderboard, Operator Console
-// ✅ Uses Tailwind grid layout
-// ✅ Modular broadcast-ready
+// SUC Studio App — Phase 3
+// ✅ Central mount point for all panels
+// ✅ Panels rendered conditionally via state.activePanels
+// ✅ OperatorConsole always visible
 
 import React from "react";
-import MapPanel from "./MapPanel";
-import LeaderboardPanel from "./LeaderboardPanel";
-import OperatorConsole from "./OperatorConsole";
-import TickerPanel from "./TickerPanel";
+import { useBroadcast } from "./Reducer";
+
+import LeaderboardPanel from "./LeaderboardPanel.jsx";
+import TickerPanel from "./TickerPanel.jsx";
+import MapPanel from "./MapPanel.jsx";
+import StoryPanel from "./StoryPanel.jsx";
+import RivalryCard from "./RivalryCard.jsx";
+import ReplayOverlay from "./ReplayOverlay.jsx";
+import OperatorConsole from "./OperatorConsole.jsx";
 
 export default function App() {
+  const { state } = useBroadcast();
+
   return (
-    <div className="w-screen h-screen bg-gray-950 text-white overflow-hidden">
-      {/* Main grid layout */}
-      <div className="grid grid-cols-4 grid-rows-6 gap-2 w-full h-full p-2">
-        {/* Map takes big central area */}
-        <div className="col-span-3 row-span-6 relative rounded-xl overflow-hidden border border-gray-800 shadow-lg">
-          <MapPanel />
-        </div>
+    <div className="w-screen h-screen bg-black text-white overflow-hidden relative">
+      {/* Core Panels */}
+      {state.activePanels?.includes("leaderboard") && <LeaderboardPanel />}
+      {state.activePanels?.includes("ticker") && <TickerPanel />}
+      {state.activePanels?.includes("map") && <MapPanel />}
+      {state.activePanels?.includes("story") && <StoryPanel />}
+      {state.activePanels?.includes("rivalry") && <RivalryCard />}
+      {state.activePanels?.includes("replay") && <ReplayOverlay />}
 
-        {/* Right sidebar */}
-        <div className="col-span-1 row-span-6 flex flex-col gap-2">
-          <LeaderboardPanel />
-          {/* Space reserved for RivalryCard or ReplayOverlay later */}
-          <div className="flex-1 bg-gray-900/70 rounded-xl border border-gray-800 shadow-inner p-2">
-            <p className="text-gray-500 italic text-sm">Overlays slot</p>
-          </div>
-          <OperatorConsole />
-        </div>
-      </div>
-
-      {/* Bottom Ticker always on */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <TickerPanel />
-      </div>
+      {/* Operator console pinned in corner */}
+      <OperatorConsole />
     </div>
   );
 }

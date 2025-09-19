@@ -1,8 +1,8 @@
 {
-  "arc_limit": 3,
-  "priority_weights": {
-    "rivalry": 2,
-    "comeback": 3,
-    "streak": 1
-  }
+  "arc_types": [
+    "rivalry",
+    "comeback",
+    "dominance",
+    "underdog"
+  ]
 }

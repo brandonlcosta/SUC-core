@@ -1,9 +1,13 @@
 {
-  "overlay_priority": [
-    "rivalry_card",
-    "sponsor_banner",
+  "ticker_priority": [
     "highlight",
-    "announcement"
+    "rivalry",
+    "routine"
   ],
-  "max_overlays": 5
+  "reel_length": 5,
+  "panels": [
+    "leaderboard",
+    "rival_card",
+    "story_panel"
+  ]
 }

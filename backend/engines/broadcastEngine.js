@@ -1,77 +1,49 @@
 // File: backend/engines/broadcastEngine.js
 
-import * as schemaGate from "../services/schemaGate.js";
-import * as ledgerService from "../services/ledgerService.js";
-import * as sponsorService from "../services/sponsorService.js";
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import { loadConfig } from "../services/configLoader.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const configPath = path.resolve(__dirname, "../configs/broadcastConfig.json");
+/**
+ * Packages overlays into a broadcast-ready sequence.
+ * Pure orchestrator — sequencing & layout logic live in broadcastConfig.json.
+ *
+ * @param {Array} overlays - list of overlays to package
+ * @returns {Array} ordered overlays
+ */
+export function packageBroadcast(overlays = []) {
+  const broadcastConfig = loadConfig("broadcastConfig.json", "configs");
 
-let broadcastConfig = { overlay_priority: [] };
-if (fs.existsSync(configPath)) {
-  broadcastConfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
-}
-
-export function runBroadcastEngine(events, state, ctx) {
-  const overlays = [];
-
-  ctx.meta?.rivalries?.forEach(r => {
-    overlays.push({
-      event_id: `rivalry_${r.athlete_ids.join("_")}`,
-      overlay_type: "rivalry_card",
-      athlete_ids: r.athlete_ids,
-      sponsor_slot: null,
-      priority: r.priority,
-      timestamp: Date.now()
-    });
-  });
-
-  ctx.story?.arcs?.forEach(arc => {
-    overlays.push({
-      event_id: `${arc.type}_${Date.now()}`,
-      overlay_type: arc.type,
-      athlete_ids: arc.athlete_ids || [],
-      sponsor_slot: null,
-      priority: arc.priority,
-      timestamp: Date.now()
-    });
-  });
-
-  const sponsor = sponsorService.pickSlot();
-  if (sponsor) {
-    overlays.push({
-      event_id: `sponsor_${sponsor.id}_${Date.now()}`,
-      overlay_type: "sponsor_banner",
-      athlete_ids: [],
-      sponsor_slot: sponsor.id,
-      priority: sponsor.priority,
-      timestamp: Date.now()
-    });
+  if (!broadcastConfig) {
+    throw new Error("[BroadcastEngine] Missing broadcastConfig.json in /configs");
   }
 
-  const broadcastTick = { overlays };
+  const { ticker_priority, reel_length, panels } = broadcastConfig;
 
-  schemaGate.validate("broadcastTick", broadcastTick);
+  // Sort overlays by ticker priority
+  const sorted = overlays.sort((a, b) => {
+    const aIndex = ticker_priority.indexOf(a.type);
+    const bIndex = ticker_priority.indexOf(b.type);
 
-  ledgerService.event({
-    engine: "broadcast",
-    type: "summary",
-    payload: { overlays: overlays.length }
+    return (aIndex === -1 ? Infinity : aIndex) - (bIndex === -1 ? Infinity : bIndex);
   });
 
-  ctx.broadcast = broadcastTick;
-  return broadcastTick;
+  // Trim to configured reel length
+  return sorted.slice(0, reel_length).map((overlay) => ({
+    ...overlay,
+    panel: panels.includes(overlay.panel) ? overlay.panel : panels[0], // fallback to first panel
+  }));
 }
 
-export class BroadcastEngine {
-  run(events, state, ctx) {
-    return runBroadcastEngine(events, state, ctx);
-  }
+/**
+ * Groups overlays by panel type (leaderboard, story, rivalry, etc.).
+ * Useful for reducer + frontend to display grouped panels.
+ *
+ * @param {Array} overlays
+ * @returns {Object} panel → overlays[]
+ */
+export function groupByPanel(overlays = []) {
+  return overlays.reduce((acc, overlay) => {
+    if (!acc[overlay.panel]) acc[overlay.panel] = [];
+    acc[overlay.panel].push(overlay);
+    return acc;
+  }, {});
 }
-
-const broadcastEngine = new BroadcastEngine();
-export default broadcastEngine;

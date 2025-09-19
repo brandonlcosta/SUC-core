@@ -1,97 +1,56 @@
 // File: frontend/src/studio/LeaderboardPanel.jsx
-import React, { useState, useRef, useEffect } from "react";
+//
+// LeaderboardPanel v3 — Phase 3 Polish
+// ✅ Sorted roster
+// ✅ Crew color accent
+// ✅ Highlight glow for leader
+// ✅ Streak glow if active
+
+import React from "react";
 import { useBroadcast } from "./Reducer";
-import { motion, AnimatePresence } from "framer-motion";
+import AssetLoader from "../assets/AssetLoader";
 
-const crewColors = {
-  SUC: "text-pink-400",
-  "Trail Blazers": "text-blue-400",
-  "Iron Runners": "text-yellow-300",
-  default: "text-gray-300"
-};
-
-export default function LeaderboardPanel({ compact = false }) {
+export default function LeaderboardPanel() {
   const { state } = useBroadcast();
-  const [lastLaps, setLastLaps] = useState({});
-  const prevLapsRef = useRef({});
+  const roster = state.roster || [];
 
-  // Always define sorted + display
-  const sorted = [...(state.roster || [])].sort((a, b) => {
-    if (b.laps !== a.laps) return b.laps - a.laps;
-    return (b.lastSeen || 0) - (a.lastSeen || 0);
-  });
-  const display = compact ? sorted.slice(0, 5) : sorted;
+  if (!roster.length) return null;
 
-  // Detect lap changes without infinite loop
-  useEffect(() => {
-    let changes = {};
-    let changed = false;
-
-    sorted.forEach((a) => {
-      const prev = prevLapsRef.current[a.athlete_id] ?? 0;
-      if (a.laps > prev) {
-        changes[a.athlete_id] = true;
-        changed = true;
-      }
-      prevLapsRef.current[a.athlete_id] = a.laps;
-    });
-
-    // Only update state if there’s a real change
-    if (changed) {
-      setLastLaps((prev) => ({ ...prev, ...changes }));
-    }
-  }, [JSON.stringify(sorted.map((a) => ({ id: a.athlete_id, laps: a.laps })))]);
-
-  if (display.length === 0) {
-    return (
-      <div className="absolute top-4 left-4 bg-gray-900/80 rounded-xl p-4 text-gray-400 italic">
-        No athletes yet…
-      </div>
-    );
-  }
+  const sorted = [...roster].sort((a, b) => b.laps - a.laps);
 
   return (
-    <div className="absolute top-4 left-4 bg-gray-900/95 rounded-xl p-4 shadow-2xl border border-pink-500/50 w-72">
-      <h2 className="text-pink-400 font-bold flex items-center mb-3">
-        <span className="mr-2">🏆</span> Leaderboard
-      </h2>
+    <div className="absolute top-4 left-4 bg-black/70 p-4 rounded-2xl border-2 border-neon-green shadow-lg w-64">
+      <h2 className="text-neon-green font-bold mb-2">Leaderboard</h2>
+      {sorted.map((athlete, idx) => {
+        const isLeader = idx === 0;
+        const isStreak = athlete.streak_active; // backend field (bool)
 
-      <div className="flex flex-col gap-2">
-        <AnimatePresence>
-          {display.map((athlete, idx) => {
-            const color = crewColors[athlete.crew] || crewColors.default;
-            const lapChanged = lastLaps[athlete.athlete_id];
-
-            return (
-              <motion.div
-                key={athlete.athlete_id}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.3 }}
-                className="flex justify-between items-center bg-gray-800/80 rounded-md px-3 py-1.5"
+        return (
+          <div
+            key={athlete.athlete_id}
+            className={`flex items-center gap-2 mb-1 px-2 py-1 rounded-lg ${
+              isLeader ? "bg-neon-green/20" : ""
+            } ${isStreak ? "animate-pulse border border-neon-yellow" : ""}`}
+          >
+            <AssetLoader id={athlete.athlete_id} size={32} />
+            <div className="flex flex-col">
+              <span
+                className={`font-semibold ${
+                  isLeader ? "text-neon-green" : "text-white"
+                }`}
               >
-                <span className={`font-semibold ${color}`}>
-                  #{idx + 1} {athlete.athlete_id}
-                </span>
-                <motion.span
-                  key={athlete.laps}
-                  initial={{ scale: 1 }}
-                  animate={
-                    lapChanged
-                      ? { scale: [1.2, 1], color: ["#facc15", "#fef9c3"] }
-                      : { scale: 1, color: "#facc15" }
-                  }
-                  transition={{ duration: 0.5 }}
-                  className="font-bold text-yellow-400"
-                >
-                  {athlete.laps} {athlete.laps === 1 ? "lap" : "laps"}
-                </motion.span>
-              </motion.div>
-            );
-          })}
-        </AnimatePresence>
-      </div>
+                {idx + 1}. {athlete.athlete_id}
+              </span>
+              <span className="text-xs text-gray-400">
+                {athlete.crew || "No Crew"}
+              </span>
+            </div>
+            <span className="ml-auto text-neon-yellow font-bold">
+              {athlete.laps} laps
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 }
