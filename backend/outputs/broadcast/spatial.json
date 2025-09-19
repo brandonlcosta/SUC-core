@@ -2,13 +2,13 @@
   "athletes": [
     {
       "athlete_id": "runner_brandon",
-      "x": 330,
-      "y": 226
+      "x": 2750,
+      "y": 1678
     },
     {
       "athlete_id": "runner_emily",
-      "x": 370,
-      "y": 246
+      "x": 2790,
+      "y": 1698
     }
   ],
   "checkpoints": [

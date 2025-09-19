@@ -1,4 +1,47 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4,
+          37.8
+        ]
+      },
+      "properties": {
+        "athlete_id": "runner_brandon",
+        "crew": "SUC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.41,
+          37.81
+        ]
+      },
+      "properties": {
+        "athlete_id": "runner_emily",
+        "crew": "Trail Blazers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.42,
+          37.82
+        ]
+      },
+      "properties": {
+        "checkpoint_id": "cp1",
+        "name": "Checkpoint 1"
+      }
+    }
+  ]
 }

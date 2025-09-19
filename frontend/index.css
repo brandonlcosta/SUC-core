@@ -1,6 +1,0 @@
-/* SUC custom HUD + neon styles */
-@import "./assets/gritty.css";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
