@@ -1,57 +1,49 @@
 // File: frontend/studio/RivalryCard.jsx
 
-import React from "react";
-import { useBroadcast } from "./BroadcastContext";
-import AssetLoader from "../assets/AssetLoader";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { useBroadcast } from "./BroadcastContext.jsx";
+import assets from "../assets/assets.json";
+import AssetLoader from "../assets/AssetLoader.jsx";
 
-const RivalryCard = () => {
+export default function RivalryCard() {
   const { state } = useBroadcast();
+  const [rivalry, setRivalry] = useState(null);
 
-  // Grab the most recent rivalry overlay event
-  const rivalryEvent = [...state.overlays]
-    .reverse()
-    .find((o) => o.type === "rivalry_card");
+  // Update when reducer pushes a rivalry overlay
+  useEffect(() => {
+    if (
+      state.currentOverlay &&
+      state.currentOverlay.overlay_type === "rivalry_card"
+    ) {
+      setRivalry(state.currentOverlay);
+    }
+  }, [state.currentOverlay]);
 
-  // If no rivalry event, render nothing
-  if (!rivalryEvent) {
-    return null;
-  }
+  if (!rivalry) return null; // No rivalry active
 
-  const { athletes = [], rivalry = "Head-to-Head", sponsor } =
-    rivalryEvent.data || {};
+  const [athleteA, athleteB] = rivalry.athlete_ids || [];
+  const assetA = assets.find((a) => a.id === athleteA);
+  const assetB = assets.find((a) => a.id === athleteB);
 
   return (
-    <AnimatePresence>
-      {rivalryEvent && (
-        <motion.div
-          key="rivalry-card"
-          initial={{ x: 300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: 300, opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="p-4 bg-gray-900 bg-opacity-90 rounded-2xl shadow-lg text-white space-y-4"
-        >
-          <h2 className="text-xl font-bold text-neon text-center">{rivalry}</h2>
+    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[600px] bg-black/80 text-white rounded-2xl shadow-2xl p-6 animate-slide-in">
+      <h2 className="text-2xl font-bold text-suc-red mb-4">🔥 Rivalry Alert</h2>
+      <div className="flex justify-between items-center">
+        {/* Athlete A */}
+        <div className="flex flex-col items-center">
+          <AssetLoader asset={assetA} size={96} />
+          <span className="mt-2 font-semibold">{athleteA}</span>
+        </div>
 
-          <div className="flex justify-around items-center">
-            {athletes.map((id) => (
-              <div key={id} className="flex flex-col items-center space-y-2">
-                <AssetLoader id={id} className="w-16 h-16" />
-                <span className="font-semibold">{id}</span>
-              </div>
-            ))}
-          </div>
+        {/* VS */}
+        <div className="text-4xl font-extrabold text-suc-red">VS</div>
 
-          {sponsor && (
-            <div className="text-xs text-gray-400 text-center mt-2">
-              Sponsored by {sponsor}
-            </div>
-          )}
-        </motion.div>
-      )}
-    </AnimatePresence>
+        {/* Athlete B */}
+        <div className="flex flex-col items-center">
+          <AssetLoader asset={assetB} size={96} />
+          <span className="mt-2 font-semibold">{athleteB}</span>
+        </div>
+      </div>
+    </div>
   );
-};
-
-export default RivalryCard;
+}

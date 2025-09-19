@@ -1,5 +1,54 @@
-/* File: frontend/assets/gritty.css */
-body {
-  background: url("/assets/textures/gritty_ps1.png");
-  background-size: cover;
+/* ==========================
+   SUC Neon + Glitch Styles
+   ========================== */
+
+/* Neon scroll effect */
+@keyframes ticker-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.ticker-track {
+  display: inline-block;
+  animation: ticker-scroll 20s linear infinite;
+}
+
+/* Glitch text effect */
+.glitch-text {
+  position: relative;
+  color: #ff004d;
+  text-shadow: 1px 1px 2px #000;
+}
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+}
+.glitch-text::before {
+  animation: glitchTop 2s infinite linear alternate-reverse;
+  color: #00fff7;
+}
+.glitch-text::after {
+  animation: glitchBottom 1.5s infinite linear alternate-reverse;
+  color: #ff004d;
+}
+@keyframes glitchTop {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  20% { clip: rect(0, 9999px, 5px, 0); transform: translate(-2px, -2px); }
+  40% { clip: rect(0, 9999px, 8px, 0); transform: translate(2px, 2px); }
+  60% { clip: rect(0, 9999px, 3px, 0); transform: translate(-2px, 0); }
+  80% { clip: rect(0, 9999px, 6px, 0); transform: translate(2px, -1px); }
+  100% { clip: rect(0, 9999px, 0, 0); transform: translate(0); }
+}
+@keyframes glitchBottom {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  20% { clip: rect(0, 9999px, 5px, 0); transform: translate(2px, 2px); }
+  40% { clip: rect(0, 9999px, 8px, 0); transform: translate(-2px, -2px); }
+  60% { clip: rect(0, 9999px, 3px, 0); transform: translate(2px, 0); }
+  80% { clip: rect(0, 9999px, 6px, 0); transform: translate(-2px, 1px); }
+  100% { clip: rect(0, 9999px, 0, 0); transform: translate(0); }
 }

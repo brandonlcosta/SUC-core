@@ -1,65 +1,44 @@
 // File: backend/engines/overlayEngine.js
-// Reducer: builds polygons and heatmaps for map overlays
 
-import fs from "fs";
-import path from "path";
-import { validateAgainstSchema } from "../utils/schemaValidator.js";
+import * as schemaGate from "../services/schemaGate.js";
+import * as ledgerService from "../services/ledgerService.js";
 
-const OUTPUT_PATH = path.resolve("./outputs/broadcast/overlays.json");
-const SCHEMA_PATH = path.resolve("./backend/schemas/mapOverlay.schema.json");
-
-/**
- * Build overlay JSON from capture/zone events
- * @param {Array<Object>} events - capture/zone events with polygons
- * @returns {Object} overlays JSON
- */
-export function overlayReducer(events = []) {
-  const overlays = [];
-
-  events.forEach((evt) => {
-    if (evt.type === "zone" && evt.polygon) {
-      overlays.push({
-        id: evt.zoneId || `zone-${overlays.length}`,
-        type: "zone",
-        polygon: evt.polygon,
-        properties: evt.properties || {},
-      });
+export function runOverlayEngine(events, state, ctx) {
+  // ✅ Example overlay: leaderboard
+  const overlays = [
+    {
+      overlay_id: "overlay_1",
+      overlay_type: "leaderboard",
+      priority: 1,
+      timestamp: Date.now(),
+      data: {
+        top_athletes: Object.entries(state.scoring?.points || {})
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 5)
+          .map(([athlete_id, score]) => ({ athlete_id, score }))
+      }
     }
-    if (evt.type === "heatmap" && Array.isArray(evt.points)) {
-      overlays.push({
-        id: evt.heatmapId || `heatmap-${overlays.length}`,
-        type: "heatmap",
-        points: evt.points,
-      });
-    }
+  ];
+
+  const overlayPayload = { overlays };
+
+  schemaGate.validate("overlay", overlayPayload);
+
+  ledgerService.event({
+    engine: "overlay",
+    type: "summary",
+    payload: { overlays: overlays.length }
   });
 
-  return { overlays };
+  ctx.overlay = overlayPayload;
+  return overlayPayload;
 }
 
-/**
- * Run overlay engine and persist output
- * @param {Array<Object>} events
- * @returns {Object|null} overlays
- */
-export function runOverlayEngine(events = []) {
-  const overlays = overlayReducer(events);
-
-  const valid = validateAgainstSchema(SCHEMA_PATH, overlays);
-  if (!valid) {
-    console.error("❌ OverlayEngine schema validation failed");
-    return null;
+export class OverlayEngine {
+  run(events, state, ctx) {
+    return runOverlayEngine(events, state, ctx);
   }
-
-  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(overlays, null, 2));
-  console.log(`🗺️ OverlayEngine wrote ${OUTPUT_PATH}`);
-
-  return overlays;
 }
 
-// ✅ Default export for server.js clean imports
-export default {
-  overlayReducer,
-  runOverlayEngine,
-};
+const overlayEngine = new OverlayEngine();
+export default overlayEngine;

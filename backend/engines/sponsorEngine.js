@@ -1,79 +1,64 @@
 // File: backend/engines/sponsorEngine.js
 
-// Reducer: manages sponsor slots, TTL enforcement, and impression logging
-
+import * as schemaGate from "../services/schemaGate.js";
+import * as ledgerService from "../services/ledgerService.js";
 import fs from "fs";
 import path from "path";
-import { validateAgainstSchema } from "../utils/schemaValidator.js";
+import { fileURLToPath } from "url";
 
-const LOG_PATH = path.resolve("./outputs/logs/sponsorImpressions.jsonl");
-const SCHEMA_PATH = path.resolve("./backend/schemas/sponsor.schema.json");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const configPath = path.resolve(__dirname, "../configs/sponsorConfig.json");
 
-/**
- * Reducer: apply sponsor logic to broadcast state
- * @param {Object} state - current broadcast state
- * @param {Object} action - sponsor action { type, slotId, sponsorId, ttl }
- * @returns {Object} updated state
- */
-export function sponsorReducer(state = {}, action = {}) {
-  if (!action || !action.type) return state;
-
-  switch (action.type) {
-    case "SPONSOR_IMPRESSION": {
-      const { slotId, sponsorId, ttl } = action;
-      if (!slotId || !sponsorId) return state;
-
-      const updatedSlot = {
-        sponsorId,
-        slotId,
-        ttl: ttl || 30,
-        lastServed: Date.now(),
-      };
-
-      const updatedState = {
-        ...state,
-        sponsors: {
-          ...(state.sponsors || {}),
-          [slotId]: updatedSlot,
-        },
-      };
-
-      logImpression(updatedSlot);
-      return updatedState;
-    }
-
-    default:
-      return state;
+// ✅ Safe defaults
+let sponsorConfig = {
+  default_sponsor: {
+    sponsor_id: "sponsor_default",
+    logo: "default_logo.png",
+    message: "Powered by SUC-core",
+    campaign: "default_campaign"
   }
-}
-
-/**
- * Logs sponsor impressions for reporting
- */
-export function logImpression(slot) {
-  try {
-    const entry = {
-      ...slot,
-      timestamp: Date.now(),
-    };
-
-    // Validate against schema
-    const valid = validateAgainstSchema(SCHEMA_PATH, entry);
-    if (!valid) {
-      console.error("❌ Invalid sponsor impression schema", entry);
-      return;
-    }
-
-    fs.mkdirSync(path.dirname(LOG_PATH), { recursive: true });
-    fs.appendFileSync(LOG_PATH, JSON.stringify(entry) + "\n");
-    console.log("📊 Logged sponsor impression", entry);
-  } catch (err) {
-    console.error("❌ Failed to log sponsor impression", err);
-  }
-}
-
-// ✅ Default export for server.js clean imports
-export default {
-  sponsorReducer,
-  logImpression,
 };
+
+if (fs.existsSync(configPath)) {
+  try {
+    const raw = JSON.parse(fs.readFileSync(configPath, "utf8"));
+    sponsorConfig = {
+      default_sponsor: raw.default_sponsor || sponsorConfig.default_sponsor
+    };
+  } catch (err) {
+    console.error("[sponsorEngine] Failed to load config, using defaults:", err);
+  }
+}
+
+export function runSponsorEngine(events, state, ctx) {
+  const sponsor = sponsorConfig.default_sponsor;
+
+  const sponsorPayload = {
+    sponsor_id: sponsor.sponsor_id,
+    logo: sponsor.logo,
+    message: sponsor.message,
+    campaign: sponsor.campaign,
+    timestamp: Date.now()
+  };
+
+  schemaGate.validate("sponsor", sponsorPayload);
+
+  ledgerService.event({
+    engine: "sponsor",
+    type: "summary",
+    payload: { sponsor_id: sponsorPayload.sponsor_id }
+  });
+
+  ctx.sponsor = sponsorPayload;
+  return sponsorPayload;
+}
+
+export class SponsorEngine {
+  run(events, state, ctx) {
+    return runSponsorEngine(events, state, ctx);
+  }
+}
+
+const sponsorEngine = new SponsorEngine();
+export default sponsorEngine;

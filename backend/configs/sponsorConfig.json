@@ -1,8 +1,8 @@
 {
-  "frequency_cap_ms": 30000,
-  "slots": [
-    { "id": "skratch", "priority": 6, "slot": "banner" },
-    { "id": "maurten", "priority": 5, "slot": "banner" },
-    { "id": "suunto", "priority": 4, "slot": "banner" }
-  ]
+  "default_sponsor": {
+    "sponsor_id": "sponsor_01",
+    "logo": "sponsor01.png",
+    "message": "Fueling the race!",
+    "campaign": "fall_series"
+  }
 }

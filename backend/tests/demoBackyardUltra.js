@@ -1,50 +1,88 @@
 // File: backend/tests/demoBackyardUltra.js
+//
+// Phase 3 Demo Adapter — Backyard Ultra
+// ✅ Writes roster.json, spatial.json, overlays.json
+// ✅ Outputs to both backend/outputs/ and frontend/public/outputs/
+// ✅ Ensures directories exist before writing
+// ✅ Simulates laps, spatial positions, overlays
 
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const FEEDS_PATH = path.join(process.cwd(), "backend", "outputs", "broadcast", "feeds.json");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const athletes = [
-  { athlete_id: "runner_brandon", name: "Brandon", crew: "SUC", tier: "vip", laps: 0 },
-  { athlete_id: "runner_emily", name: "Emily", crew: "Trail Blazers", tier: "standard", laps: 0 }
-];
+// --- Output Directories ---
+const BACKEND_OUTPUT_DIR = path.resolve(__dirname, "../outputs/broadcast");
+const FRONTEND_OUTPUT_DIR = path.resolve(__dirname, "../../frontend/public/outputs/broadcast");
 
-function initFeed() {
-  const feed = {
-    session_id: "demo_backyard_ultra",
-    athletes,
-    events: []
+// ensure both dirs exist
+fs.mkdirSync(BACKEND_OUTPUT_DIR, { recursive: true });
+fs.mkdirSync(FRONTEND_OUTPUT_DIR, { recursive: true });
+
+function writeJSON(file, data) {
+  const json = JSON.stringify(data, null, 2);
+  // backend copy
+  fs.writeFileSync(path.join(BACKEND_OUTPUT_DIR, file), json);
+  // frontend copy (so React can fetch it)
+  fs.writeFileSync(path.join(FRONTEND_OUTPUT_DIR, file), json);
+  console.log(`[Demo] Wrote ${file}`);
+}
+
+// --- Demo State ---
+const roster = {
+  athletes: [
+    { athlete_id: "runner_brandon", crew: "SUC", laps: 0, status: "active" },
+    { athlete_id: "runner_emily", crew: "Trail Blazers", laps: 0, status: "active" }
+  ]
+};
+
+let tick = 0;
+
+// --- Demo Generators ---
+function getSpatial() {
+  return {
+    athletes: roster.athletes.map((a, i) => ({
+      athlete_id: a.athlete_id,
+      x: 20 + i * 40 + tick * 5,
+      y: 40 + i * 20 + tick * 3
+    })),
+    checkpoints: [
+      { checkpoint_id: "cp1", x: 50, y: 20, name: "CP1" },
+      { checkpoint_id: "cp2", x: 120, y: 50, name: "CP2" }
+    ]
   };
-  fs.mkdirSync(path.dirname(FEEDS_PATH), { recursive: true });
-  fs.writeFileSync(FEEDS_PATH, JSON.stringify(feed, null, 2));
 }
 
-function startEmitter() {
-  let tick = 0;
-  setInterval(() => {
-    tick++;
-    const athlete = athletes[tick % athletes.length];
-    athlete.laps++;
-
-    const event = {
-      event_id: `evt_${Date.now()}`,
-      overlay_type: "lap_update",
-      athlete_ids: [athlete.athlete_id],
-      priority: 5,
+function getOverlays() {
+  return [
+    {
+      event_id: `evt_${tick}`,
+      overlay_type: tick % 2 === 0 ? "leaderboard" : "map",
+      athlete_ids: roster.athletes.map(a => a.athlete_id),
+      sponsor_slot: null,
+      priority: tick % 2 === 0 ? 8 : 5,
       timestamp: Date.now()
-    };
-
-    const feed = JSON.parse(fs.readFileSync(FEEDS_PATH));
-    feed.athletes = athletes;
-    feed.events.push(event);
-
-    fs.writeFileSync(FEEDS_PATH, JSON.stringify(feed, null, 2));
-    console.log(`Lap event emitted for ${athlete.name}`);
-  }, 5000);
+    }
+  ];
 }
 
-if (!fs.existsSync(FEEDS_PATH)) {
-  initFeed();
+// --- Demo Loop ---
+function loop() {
+  tick++;
+
+  // increment laps every few ticks
+  roster.athletes.forEach(a => {
+    if (tick % 3 === 0) a.laps++;
+  });
+
+  writeJSON("roster.json", roster);
+  writeJSON("spatial.json", getSpatial());
+  writeJSON("overlays.json", getOverlays());
+
+  setTimeout(loop, 5000); // every 5s
 }
-startEmitter();
+
+console.log("[Demo] Backyard Ultra adapter running…");
+loop();

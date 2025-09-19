@@ -1,24 +1,36 @@
 // File: frontend/studio/TickerPanel.jsx
 
-import { useEffect, useState } from "react";
-import sponsorSlots from "@configs/sponsorSlots.json";
+import React, { useEffect, useState } from "react";
+import { useBroadcast } from "./BroadcastContext.jsx";
 
-export default function TickerPanel({ baseTicker = [] }) {
-  const sponsorLines = sponsorSlots.map((s) => s.ticker);
-  const [messages] = useState([...baseTicker, ...sponsorLines]);
-  const [index, setIndex] = useState(0);
+export default function TickerPanel() {
+  const { state } = useBroadcast();
+  const [lines, setLines] = useState([]);
 
+  // Listen for ticker overlay events
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % messages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [messages]);
+    if (state.currentOverlay && state.currentOverlay.overlay_type === "ticker_line") {
+      const newLine = {
+        id: state.currentOverlay.event_id,
+        text: state.currentOverlay.text || "Update incoming...",
+      };
+      setLines((prev) => [...prev.slice(-4), newLine]); // keep last 5 lines max
+    }
+  }, [state.currentOverlay]);
+
+  if (!lines.length) return null;
 
   return (
-    <div className="w-full bg-gray-900 border-t border-neon py-2 overflow-hidden">
-      <div className="animate-marquee whitespace-nowrap">
-        <p className="text-white text-sm px-4">{messages[index]}</p>
+    <div className="absolute bottom-0 left-0 w-full bg-black/80 border-t-2 border-suc-red overflow-hidden">
+      <div className="ticker-track whitespace-nowrap animate-scroll flex gap-12 py-2 px-4">
+        {lines.map((line) => (
+          <span
+            key={line.id}
+            className="text-suc-red font-bold text-lg glitch-text"
+          >
+            {line.text}
+          </span>
+        ))}
       </div>
     </div>
   );

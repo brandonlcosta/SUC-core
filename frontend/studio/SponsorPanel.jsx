@@ -1,43 +1,44 @@
 // File: frontend/studio/SponsorPanel.jsx
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import sponsorSlots from "@configs/sponsorSlots.json";
+import React, { useEffect, useState } from "react";
+import { useBroadcast } from "./BroadcastContext.jsx";
+import assets from "../assets/assets.json";
 
 export default function SponsorPanel() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { state } = useBroadcast();
+  const [sponsor, setSponsor] = useState(null);
 
+  // Listen for sponsor overlays
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % sponsorSlots.length);
-    }, Math.floor(Math.random() * 30000) + 30000); // rotate every 30–60s
-    return () => clearInterval(interval);
-  }, []);
+    if (
+      state.currentOverlay &&
+      state.currentOverlay.overlay_type === "sponsor_overlay"
+    ) {
+      setSponsor(state.currentOverlay);
+    }
+  }, [state.currentOverlay]);
 
-  const sponsor = sponsorSlots[activeIndex];
+  if (!sponsor) return null; // No sponsor active
+
+  // Try to resolve sponsor logo from assets.json
+  const sponsorAsset = assets.find((a) => a.id === sponsor.sponsor_id);
+  const logoUrl = sponsor.logo || sponsorAsset?.thumbnail_url;
 
   return (
-    <div className="absolute top-4 right-4 bg-gray-900/80 border border-neon rounded-2xl p-3 w-56">
-      <AnimatePresence mode="wait">
-        <motion.a
-          key={sponsor.id}
-          href={sponsor.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block text-center"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.5 }}
-        >
+    <div className="absolute bottom-0 w-full flex justify-center">
+      <div className="bg-black/80 border-2 border-suc-red rounded-t-2xl px-6 py-3 flex items-center gap-4 shadow-lg animate-pulse-neon">
+        {logoUrl ? (
           <img
-            src={sponsor.image}
-            alt={sponsor.name}
-            className="w-full h-24 object-contain mb-2"
+            src={logoUrl}
+            alt={sponsor.sponsor_id}
+            className="h-12 object-contain"
           />
-          <p className="text-white text-sm">{sponsor.description}</p>
-        </motion.a>
-      </AnimatePresence>
+        ) : (
+          <span className="text-white font-bold text-lg">
+            {sponsor.message || "Presented by SUC"}
+          </span>
+        )}
+      </div>
     </div>
   );
 }

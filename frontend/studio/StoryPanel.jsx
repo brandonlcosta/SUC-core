@@ -1,38 +1,28 @@
 // File: frontend/studio/StoryPanel.jsx
 
-import React, { useContext } from "react";
-import { BroadcastContext } from "./BroadcastContext";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { useBroadcast } from "./BroadcastContext.jsx";
 
 export default function StoryPanel() {
-  const { state } = useContext(BroadcastContext);
+  const { state } = useBroadcast();
+  const [arc, setArc] = useState(null);
 
-  // Filter for story-type events coming from StoryEngine
-  const arcs = state.events.filter((e) => e.overlay_type === "story_arc");
+  // Watch reducer for story arcs
+  useEffect(() => {
+    if (
+      state.currentOverlay &&
+      state.currentOverlay.overlay_type === "story_arc"
+    ) {
+      setArc(state.currentOverlay);
+    }
+  }, [state.currentOverlay]);
 
-  if (!arcs.length) return null;
-
-  // Show the most recent arc
-  const latestArc = arcs[arcs.length - 1];
+  if (!arc) return null; // no active story arc
 
   return (
-    <AnimatePresence>
-      <motion.div
-        key={latestArc.event_id}
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[600px] bg-zinc-900/80 text-white rounded-2xl border-4 border-purple-500 shadow-[0_0_20px_rgba(168,85,247,0.8)] p-4 z-40"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 50 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h3 className="text-xl font-bold text-purple-300 mb-2">
-          {latestArc.arc_type?.toUpperCase() || "STORY"}
-        </h3>
-        <p className="text-lg">{latestArc.message}</p>
-        <div className="text-sm opacity-70 mt-2">
-          {new Date(latestArc.timestamp * 1000).toLocaleTimeString()}
-        </div>
-      </motion.div>
-    </AnimatePresence>
+    <div className="absolute top-20 right-4 w-72 bg-black/70 text-white rounded-xl shadow-md p-4 animate-glitch-in">
+      <h3 className="text-lg font-bold text-suc-red mb-2">📖 Story Arc</h3>
+      <p className="text-sm">{arc.description || "New rivalry emerging..."}</p>
+    </div>
   );
 }
